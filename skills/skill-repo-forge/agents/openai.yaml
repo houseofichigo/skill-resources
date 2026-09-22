@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Repo Forge"
+  short_description: "Find, audit, fix, and package Agent Skills for any host"
+  default_prompt: "Use $skill-repo-forge to audit this Skill for every platform and turn it into a GitHub-ready repo."
