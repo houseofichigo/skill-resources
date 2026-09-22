@@ -1,0 +1,22 @@
+{
+  "name": "which-ai-model",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Build tooling for the Which AI Model skill, infographic and teaching deck.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "npm run build:deck && npm run build:infographic && npm run build:pdf && npm run build:skill",
+    "build:deck": "node presentation/build_deck.js",
+    "build:infographic": "node scripts/render_infographic.js",
+    "build:pdf": "bash scripts/build_pdf.sh",
+    "build:skill": "bash scripts/build_skill_zip.sh",
+    "check": "node --check presentation/build_deck.js && node --check scripts/render_infographic.js && bash -n scripts/build_pdf.sh && bash -n scripts/build_skill_zip.sh"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1",
+    "pptxgenjs": "4.0.1"
+  }
+}

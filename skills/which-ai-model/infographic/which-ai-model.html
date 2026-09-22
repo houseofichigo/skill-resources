@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Which AI Model Should You Use?</title>
+<link rel="stylesheet" href="../brand/tokens.css">
+<style>
+  @page{size:1600px 2950px;margin:0}
+  html,body{margin:0;padding:0}
+  body{font-synthesis-weight:none;font-synthesis-style:none}
+  .logo-lockup{aspect-ratio:670/790;align-self:flex-start}
+  .logo-mark{aspect-ratio:1/1;align-self:flex-start}
+  .poster{width:1600px;min-height:2450px;background:var(--white);
+    display:flex;flex-direction:column}
+
+  /* ── head ─────────────────────────────────────────── */
+  .head{background:var(--ink);color:var(--white);
+    padding:64px 96px 56px;flex:0 0 auto}
+  .head .eyebrow{color:var(--cobalt-light)}
+  .head h1{font-size:88px;letter-spacing:var(--track-xl);
+    margin:20px 0 0;color:var(--white);line-height:1.0}
+  .head .accent{color:var(--cobalt-light)}
+  .head .sub{font-family:var(--s);font-size:20px;line-height:1.5;
+    color:rgba(255,255,255,.72);margin:24px 0 0;max-width:62ch}
+  .head-row{display:flex;justify-content:space-between;align-items:flex-start;gap:40px}
+  .head img{height:96px;align-self:flex-start}
+
+  /* ── body ─────────────────────────────────────────── */
+  .body{flex:1;padding:56px 96px 0;display:flex;flex-direction:column;gap:44px}
+  .sec{display:flex;flex-direction:column}
+  .sec > .eyebrow{margin-bottom:12px}
+  .sec h2{font-family:var(--d);font-weight:var(--w-display);
+    font-size:36px;letter-spacing:var(--track-md);margin:0 0 6px;line-height:1.1}
+  .sec .lede{font-family:var(--s);font-size:17px;color:var(--slate);
+    margin:0 0 24px;max-width:88ch}
+
+  /* four-layer route */
+  .route{display:flex;align-items:stretch;gap:0;border-top:var(--rule-heavy) solid var(--ink);padding-top:24px}
+  .route .step{flex:1;padding-inline:28px;border-inline-start:1px solid var(--line)}
+  .route .step:first-child{padding-inline-start:0;border-inline-start:none}
+  .route .n{font-family:var(--m);font-size:12px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--slate)}
+  .route .t{font-family:var(--d);font-weight:700;font-size:26px;
+    letter-spacing:var(--track-sm);margin:10px 0 8px}
+  .route .d{font-family:var(--s);font-size:15px;line-height:1.5;color:var(--ink)}
+  .route .step:last-child .t{color:var(--cobalt)}
+  .route-note{font-family:var(--m);font-size:13px;letter-spacing:.06em;
+    color:var(--slate);margin-top:20px;text-transform:uppercase}
+
+  /* decision tree */
+  .tree{display:flex;flex-direction:column;
+    border-top:var(--rule-heavy) solid var(--ink)}
+  .q{display:grid;grid-template-columns:70px 1fr 1fr;gap:32px;
+    padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .q:last-child{border-bottom:none}
+  .q .qn{font-family:var(--m);font-size:26px;color:var(--cobalt);
+    font-variant-numeric:tabular-nums}
+  .q .qt{font-family:var(--d);font-weight:600;font-size:23px;
+    letter-spacing:var(--track-sm);line-height:1.25}
+  .q .qa{font-family:var(--s);font-size:16px;line-height:1.55}
+  .q .qa b{font-weight:600}
+  .q .hard{border-inline-start:var(--rule-pillar) solid var(--cobalt);
+    padding-inline-start:20px}
+
+  /* ladder */
+  .ladder{border-top:var(--rule-heavy) solid var(--ink);padding-top:0}
+  table{width:100%;border-collapse:collapse}
+  th{font-family:var(--m);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--slate);text-align:left;
+    padding:16px 20px 12px 0;border-bottom:1.2px solid var(--ink)}
+  th.r{text-align:right}
+  td{padding:18px 20px 18px 0;border-bottom:1px solid var(--line);
+    vertical-align:top;font-family:var(--s);font-size:16px;line-height:1.5}
+  td.rung{font-family:var(--d);font-weight:700;font-size:20px;
+    letter-spacing:var(--track-sm);width:230px}
+  td.cost{font-family:var(--m);text-align:right;width:150px;
+    font-variant-numeric:tabular-nums;color:var(--cobalt);font-size:18px}
+  tbody tr:last-child td{border-bottom:none}
+  .ladder-note{font-family:var(--s);font-size:15px;color:var(--slate);
+    margin-top:18px;max-width:100ch}
+
+  /* rules of thumb */
+  .rules{display:grid;grid-template-columns:1fr 1fr;gap:0 56px;
+    border-top:var(--rule-heavy) solid var(--ink);padding-top:24px}
+  .r{padding:16px 0;border-bottom:1px solid var(--line)}
+  .rules .r:nth-last-child(-n+2){border-bottom:none}
+  .r .rt{font-family:var(--d);font-weight:700;font-size:19px;
+    letter-spacing:var(--track-sm);margin-bottom:6px}
+  .r .rd{font-family:var(--s);font-size:15px;line-height:1.5;color:var(--ink)}
+
+  /* conviction */
+  .conv{background:var(--ink);color:var(--white);
+    padding:44px 96px;margin-top:8px}
+  .conv p{font-family:var(--d);font-weight:600;font-size:42px;
+    letter-spacing:var(--track-md);margin:0;line-height:1.14}
+  .conv .accent{color:var(--cobalt-light)}
+  .conv .sub{font-family:var(--s);font-size:17px;
+    color:rgba(255,255,255,.66);margin-top:16px;max-width:90ch;font-weight:400;
+    letter-spacing:0}
+
+  /* foot */
+  .foot{flex:0 0 auto;padding:22px 96px 26px;
+    border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:var(--m);font-size:13px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--slate)}
+  .foot .l{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <div class="head">
+    <div class="head-row">
+      <div>
+        <div class="eyebrow">AI capability · decision guide</div>
+        <h1>Which AI should<br>you <span class="accent">actually</span> use?</h1>
+        <p class="sub">Most people ask which model is strongest. That is the wrong first
+        question — the strongest model is often the wrong choice. Route through four
+        layers and pick the model last.</p>
+      </div>
+      <img src="../brand/hoi_lockup_cobalt_rgb.png" alt="House of Ichigo" class="logo-lockup">
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- ── 1. the route ── -->
+    <section class="sec">
+      <div class="eyebrow">Start here</div>
+      <h2>Four layers, in this order</h2>
+      <p class="lede">Product capability is not model capability is not tool availability.
+      A weaker model inside the right product beats a stronger model in the wrong one.</p>
+      <div class="route">
+        <div class="step">
+          <div class="n">01</div>
+          <div class="t">Task</div>
+          <div class="d">What is the output, and who reads it? Push past “write something”.</div>
+        </div>
+        <div class="step">
+          <div class="n">02</div>
+          <div class="t">Capability</div>
+          <div class="d">Live search, long documents, vision, code execution, structured output.</div>
+        </div>
+        <div class="step">
+          <div class="n">03</div>
+          <div class="t">Product &amp; tools</div>
+          <div class="d">Where the work happens: chat, research mode, coding agent, pipeline.</div>
+        </div>
+        <div class="step">
+          <div class="n">04</div>
+          <div class="t">Model tier</div>
+          <div class="d">Only now. Fast, balanced or frontier — and rarely the frontier.</div>
+        </div>
+      </div>
+      <div class="route-note">Pick the model last</div>
+    </section>
+
+    <!-- ── 2. decision tree ── -->
+    <section class="sec">
+      <div class="eyebrow">The seven questions</div>
+      <h2>Stop at the first one that decides it</h2>
+      <p class="lede">Earlier questions outrank later ones. A hard tool requirement beats
+      any amount of model quality.</p>
+      <div class="tree">
+
+        <div class="q">
+          <div class="qn">01</div>
+          <div class="qt">Does the answer depend on information that can change?</div>
+          <div class="qa hard"><b>Yes → live search is mandatory</b>, and citations too if
+          anyone will check the claims. A model without search answers confidently and
+          wrongly.</div>
+        </div>
+
+        <div class="q">
+          <div class="qn">02</div>
+          <div class="qt">Is the work tied to a particular environment?</div>
+          <div class="qa">Drive, SharePoint, a repository, a database — whatever reaches
+          the data wins. Integration outweighs a modest quality difference.</div>
+        </div>
+
+        <div class="q">
+          <div class="qn">03</div>
+          <div class="qt">How many files, and how long?</div>
+          <div class="qa">A few: attach them. One very long one: long-document handling.
+          Dozens: file search. Thousands: an indexing project, not a chat.</div>
+        </div>
+
+        <div class="q">
+          <div class="qn">04</div>
+          <div class="qt">What is in the input besides text?</div>
+          <div class="qa">Charts, scans, audio, video. Check this before comparing
+          intelligence — a smarter model that cannot see the chart is useless.</div>
+        </div>
+
+        <div class="q">
+          <div class="qn">05</div>
+          <div class="qt">How hard is the thinking, honestly?</div>
+          <div class="qa">Routine work on the flagship wastes money. Client-facing work on
+          the cheap tier costs more the first time someone has to fix it.</div>
+        </div>
+
+        <div class="q">
+          <div class="qn">06</div>
+          <div class="qt">Which constraint actually binds — quality, speed or cost?</div>
+          <div class="qa">One usually dominates. Name it, optimise for it, and say what
+          was traded away.</div>
+        </div>
+
+        <div class="q">
+          <div class="qn">07</div>
+          <div class="qt">Is the data sensitive or regulated?</div>
+          <div class="qa hard"><b>A hard gate, not a preference.</b> Use what the
+          organisation has approved, even when it is the weaker tool.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── 3. the ladder ── -->
+    <section class="sec">
+      <div class="eyebrow">Tier translation</div>
+      <h2>Three practical rungs, without fixed price bands</h2>
+      <p class="lede">Most lineups fit this ladder. Names and price gaps change, so look
+      them up before recommending a model.</p>
+      <div class="ladder">
+        <table>
+          <thead>
+            <tr><th>Rung</th><th>What it is for</th><th class="r">Cost tendency</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="rung">Fast / light</td>
+              <td>High volume and repetitive: classification, extraction, short summaries,
+              quick answers. Most automated work belongs here.</td>
+              <td class="cost">Lowest</td>
+            </tr>
+            <tr>
+              <td class="rung">Balanced</td>
+              <td>Most real work: drafting, analysis, everyday coding, document work.
+              This is the default for a working professional.</td>
+              <td class="cost">Higher</td>
+            </tr>
+            <tr>
+              <td class="rung">Frontier</td>
+              <td>Hard reasoning, architecture, long autonomous runs, and anything where
+              being wrong is expensive. Reach for it deliberately.</td>
+              <td class="cost">Highest</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="ladder-note">Provider price gaps vary too much for one multiplier.
+        Verify current pricing and measure cost per successful task. In consumer apps this
+        ladder often appears as a thinking control — fast, think harder, maximum.</p>
+      </div>
+    </section>
+
+    <!-- ── 4. rules of thumb ── -->
+    <section class="sec">
+      <div class="eyebrow">Six things people get wrong</div>
+      <h2>Rules of thumb</h2>
+      <div class="rules">
+        <div class="r">
+          <div class="rt">Cost per successful task, not per token</div>
+          <div class="rd">A cheap model that retries twice and needs a human fix is the
+          expensive one.</div>
+        </div>
+        <div class="r">
+          <div class="rt">“Analyse this PDF” is not one task</div>
+          <div class="rd">A summary, one exact fact, a table, a chart reading and a
+          judgement route to four different setups.</div>
+        </div>
+        <div class="r">
+          <div class="rt">A big context window is not comprehension</div>
+          <div class="rd">Fitting the text in is not the same as reasoning well over all
+          of it.</div>
+        </div>
+        <div class="r">
+          <div class="rt">Benchmarks shortlist, they do not decide</div>
+          <div class="rd">Run three real examples through two candidates. Ten minutes
+          beats any leaderboard.</div>
+        </div>
+        <div class="r">
+          <div class="rt">“Write code” is four different jobs</div>
+          <div class="rd">One function, a bug hunt, a repo-wide refactor and an
+          architecture review need different setups.</div>
+        </div>
+        <div class="r">
+          <div class="rt">Do not switch provider for a few points</div>
+          <div class="rd">Connectors, ecosystem fit and the subscription already paid for
+          usually matter more.</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="conv">
+    <p>The strongest model is <span class="accent">rarely</span> the right one.</p>
+    <p class="sub">Route by what the task requires, not by what scores highest.
+    Then verify the names — lineups, tiers and prices change monthly, and anything
+    printed on paper is already going stale.</p>
+  </div>
+
+  <div class="foot">
+    <span class="l">House of Ichigo · Equipped to run</span>
+    <span>Snapshot 2026-09-22 · verify current models before use</span>
+  </div>
+
+</div>
+</body>
+</html>
