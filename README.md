@@ -10,6 +10,7 @@ package, with its verified source link and distributable archive.
 |---|---|---|
 | [Which AI Model](skills/which-ai-model/) | Routes a task through capability, product and tooling constraints before recommending a model tier. | [Download](skills/which-ai-model/dist/which-ai-model.zip) |
 | [Skill Repo Forge](skills/skill-repo-forge/) | Finds, audits, improves, installs and packages portable Agent Skills. [Standalone repository](https://github.com/houseofichigo/skill-repo-forge). | [Download](skills/skill-repo-forge/dist/skill.zip) |
+| [Visual Prompt Scout](skills/visual-prompt-scout/) | Finds and improves current image or video prompts with live source retrieval, provenance controls and prompt-injection quarantine. [Standalone repository](https://github.com/houseofichigo/visual-prompt-scout). | [Download](skills/visual-prompt-scout/dist/skill.zip) |
 | [HOI OS](skills/hoi-os/) | Complete 15-skill HOI OS suite. The [HOI OS repository](https://github.com/houseofichigo/hoi-os) is the single canonical source. | [Download package](skills/hoi-os/dist/hoi-os-skills.zip) |
 
 ## Repository structure
