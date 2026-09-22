@@ -1,8 +1,8 @@
 # House of Ichigo skills
 
 Open, installable AI skills created by [House of Ichigo](https://houseofichigo.com).
-Each folder is self-contained: the skill, its references, source material, teaching
-artifacts and a ready-to-install ZIP live together.
+Each entry is self-contained as either a standalone skill or an aggregate suite
+package, with its verified source link and distributable archive.
 
 ## Skills
 
@@ -33,8 +33,10 @@ public source.
 
 ## Install a skill
 
-Use the instructions in the skill's README. Agents that support the Agent Skills
-convention can install directly from `skills/<skill-name>/`.
+Use the instructions in the entry's README. Standalone skills can be installed from
+their `skills/<skill-name>/` folder. Aggregate suites such as HOI OS must follow the
+canonical repository's setup instructions; their ZIP is a multi-skill bundle, not a
+single-skill upload.
 
 ## Licence
 
