@@ -1,0 +1,11 @@
+{
+  "name": "HOI OS",
+  "canonical_repository": "https://github.com/houseofichigo/hoi-os",
+  "canonical_skill_path": "https://github.com/houseofichigo/hoi-os/tree/main/skills",
+  "source_commit": "f50961e62a60d521cd7a17b14ea06fc2f3e16497",
+  "skill_count": 15,
+  "package": "dist/hoi-os-skills.zip",
+  "package_sha256": "d48183d1972776d8435e6de68131bbdde8bd3f7a6f9c61ab6babd3da064ab302",
+  "ingested_at": "2026-09-22",
+  "role": "aggregate package and catalogue pointer; canonical skill source remains hoi-os"
+}
