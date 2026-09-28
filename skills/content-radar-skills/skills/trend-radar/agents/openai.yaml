@@ -1,0 +1,7 @@
+interface:
+  display_name: "Trend Radar"
+  short_description: "Find and rank timely content trends"
+  default_prompt: "Use $trend-radar to find and rank current trends for our brand."
+
+policy:
+  allow_implicit_invocation: true

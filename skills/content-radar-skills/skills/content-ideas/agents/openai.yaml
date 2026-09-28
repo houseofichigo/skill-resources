@@ -1,0 +1,7 @@
+interface:
+  display_name: "Content Ideas"
+  short_description: "Turn timely topics into channel-ready ideas"
+  default_prompt: "Use $content-ideas to turn this topic into one strong idea per channel."
+
+policy:
+  allow_implicit_invocation: true

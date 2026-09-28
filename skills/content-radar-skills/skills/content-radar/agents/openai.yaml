@@ -1,0 +1,7 @@
+interface:
+  display_name: "Content Radar"
+  short_description: "Run the complete weekly content radar"
+  default_prompt: "Use $content-radar to produce this week's sourced content brief and plan."
+
+policy:
+  allow_implicit_invocation: true
