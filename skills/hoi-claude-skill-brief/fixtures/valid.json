@@ -1,0 +1,28 @@
+{
+  "platform": "claude_skill",
+  "profile": "skill",
+  "expectedRequiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Skill entry point and progressive disclosure",
+    "Supporting resources and script review",
+    "Host availability and sharing"
+  ],
+  "expectedRequiredArtifacts": [
+    "SKILL.md draft",
+    "Relative resource inventory",
+    "Script and permission review",
+    "Upload and invocation test plan"
+  ],
+  "expectedVerifierChecks": [
+    "skill-entrypoint-resources",
+    "portable-reference-resolution",
+    "script-side-effect-review",
+    "host-and-sharing-review"
+  ],
+  "expectedPackageVersion": "1.0.0-draft.2"
+}

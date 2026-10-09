@@ -1,0 +1,36 @@
+{
+  "platform": "apps_script",
+  "profiles": ["workflow"],
+  "requiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Script entry points and services",
+    "Execution identity and OAuth scopes",
+    "Triggers, quotas and recovery",
+    "Deployment and testing assumptions"
+  ],
+  "requiredArtifacts": [
+    "Apps Script implementation brief",
+    "Function and Google-service mapping",
+    "Manifest scope and execution-identity specification",
+    "Trigger, quota, duplicate-event and recovery plan"
+  ],
+  "platformRules": [
+    "Map the approved process to explicit functions, Google services and entry points; identify whether the script is bound, standalone or a web app.",
+    "Declare least-privilege OAuth scopes in the manifest plan and document the execution identity for every entry point. An installable trigger runs as its creator.",
+    "Distinguish simple from installable triggers and specify event validation, duplicate-event protection and trigger ownership; never claim a trigger has been installed.",
+    "Refer to current quota documentation rather than hardcoding limits; define bounded batches, concurrency protection, retry limits and terminal failure reporting as design requirements.",
+    "Preserve approval before consequential writes and test denied scopes, revoked authorization, quota exhaustion and duplicate events.",
+    "Produce a reviewable implementation brief only; do not run scripts, install triggers, grant scopes or deploy a web app."
+  ],
+  "forbidden": [
+    "credentials",
+    "automatic external deployment",
+    "unapproved process changes",
+    "uncited provider assertions"
+  ]
+}

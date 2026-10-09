@@ -1,0 +1,30 @@
+{
+  "platform": "pipedream",
+  "profile": "workflow",
+  "expectedRequiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Workflow lifecycle warning",
+    "Trigger and step data contracts",
+    "Account and environment requirements",
+    "Retry and migration handover"
+  ],
+  "expectedRequiredArtifacts": [
+    "Workflow maintenance and migration brief",
+    "Trigger and ordered-step data contract",
+    "Account, environment and permission inventory",
+    "Replay, failure and export handover plan"
+  ],
+  "expectedVerifierChecks": [
+    "workflow-retirement-warning",
+    "connect-workflow-distinction",
+    "existing-account-readiness",
+    "step-data-and-account-contract",
+    "retry-migration-handover"
+  ],
+  "expectedPackageVersion": "1.0.0-draft.2"
+}

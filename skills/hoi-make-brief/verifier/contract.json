@@ -1,0 +1,15 @@
+{
+  "packageVersion": "1.0.0-draft.2",
+  "checks": [
+    "supported-profile",
+    "required-sections",
+    "source-citations",
+    "no-credential-material",
+    "no-external-mutation",
+    "approval-lineage",
+    "scenario-field-map",
+    "profile-specific-tool-boundaries",
+    "connection-and-human-approval",
+    "error-route-replay-deduplication"
+  ]
+}

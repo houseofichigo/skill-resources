@@ -1,0 +1,15 @@
+{
+  "packageVersion": "1.0.0-draft.2",
+  "checks": [
+    "supported-profile",
+    "required-sections",
+    "source-citations",
+    "no-credential-material",
+    "no-external-mutation",
+    "approval-lineage",
+    "agents-skill-scope-separation",
+    "codex-host-path-review",
+    "tool-stack-operation-separation",
+    "sandbox-confirmation-boundary"
+  ]
+}

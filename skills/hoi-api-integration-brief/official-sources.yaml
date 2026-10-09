@@ -1,0 +1,7 @@
+platform: api_integration
+family: generic
+packageVersion: 1.0.0-draft.2
+provenance: hoi_generic
+sources:
+  - url: "https://spec.openapis.org/oas/v3.2.1.html"
+    kind: official_docs

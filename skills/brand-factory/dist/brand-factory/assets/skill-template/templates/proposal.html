@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<title>{{brand}} — proposal</title>
+<link rel="stylesheet" href="../references/tokens.css">
+<style>
+  /* A4 portrait, multi-page. A proposal is read in one order by one person
+     who is deciding, so the order below is the argument, not a template:
+       1 cover        who, for whom, what it is
+       2 understanding  their problem in THEIR words, before yours
+       3 approach     what you will do, in phases
+       4 commercials  the number, with what is and is not included
+       5 signature    what happens when they say yes
+     Delete a page only if you can say what carries its job instead. */
+  body{background:var(--muted);margin:0}
+  .page{width:210mm;min-height:297mm;background:var(--ground);
+    margin:0 auto 6mm;padding:24mm 22mm 20mm;display:flex;
+    flex-direction:column;position:relative}
+  .page.dark{background:var(--ink);color:var(--ground)}
+  .eyebrow{font-family:var(--mono);font-size:8pt;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--brand)}
+  .page.dark .eyebrow{color:var(--brand-on-dark)}
+  h1{font-size:34pt;line-height:1.02;letter-spacing:var(--track-xl);
+    margin:6mm 0 0}
+  h2{font-size:20pt;margin:0 0 6mm}
+  h3{font-size:11.5pt;margin:6mm 0 2mm}
+  p{font-size:10.5pt;line-height:1.6;margin-top:3mm;max-width:66ch}
+  .lede{font-size:12pt;line-height:1.5;margin-top:6mm;max-width:60ch}
+  .meta{font-family:var(--mono);font-size:8.5pt;line-height:1.7;
+    margin-top:auto}
+  .page.dark .meta{color:var(--brand-on-dark)}
+  ul{margin:3mm 0 0 5mm}
+  li{font-size:10.5pt;line-height:1.55;margin-top:1.5mm}
+  /* A quote from the client's own brief, set apart. Their words carry more
+     weight in a proposal than yours do. */
+  .quote{border-left:2px solid var(--brand);padding-left:6mm;margin-top:6mm;
+    font-size:11.5pt;line-height:1.5;max-width:58ch}
+  table{width:100%;border-collapse:collapse;font-size:10pt;margin-top:5mm}
+  td,th{padding:3mm 3mm 3mm 0;border-bottom:1px solid var(--line);
+    text-align:left;vertical-align:top}
+  th{font-family:var(--mono);font-size:8pt;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted);
+    border-bottom:1.4px solid var(--ink)}
+  td.n,th.n{font-family:var(--mono);text-align:right;white-space:nowrap}
+  tr.total td{border-bottom:none;border-top:1.4px solid var(--ink);
+    font-family:var(--display);font-weight:700;padding-top:3mm}
+  /* What is NOT included belongs in the proposal, not in the first invoice
+     conversation. */
+  .excl{background:var(--surface);padding:5mm;margin-top:6mm}
+  .excl p{margin-top:1mm;font-size:9.5pt;color:var(--muted)}
+  .sign{display:grid;grid-template-columns:1fr 1fr;gap:12mm;margin-top:14mm}
+  .sign div{border-top:1px solid var(--ink);padding-top:2mm;
+    font-family:var(--mono);font-size:8pt;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--muted)}
+  .foot{margin-top:auto;border-top:1px solid var(--line);padding-top:4mm;
+    font-family:var(--mono);font-size:8pt;color:var(--muted);
+    display:flex;justify-content:space-between}
+  @media print{body{background:#fff}.page{margin:0;page-break-after:always}}
+</style></head>
+<body>
+
+<!-- 1 · cover -->
+<section class="page dark">
+  <div class="eyebrow">PROPOSAL · REF 0000</div>
+  <h1>WHAT THIS WILL <span class="accent">ACHIEVE</span>.</h1>
+  <p class="lede">ONE SENTENCE NAMING THE OUTCOME, NOT THE ACTIVITY. "A
+    TRAINED TEAM" IS AN ACTIVITY; "TWELVE PEOPLE SHIPPING WITHOUT REVIEW"
+    IS AN OUTCOME.</p>
+  <div class="meta">
+    PREPARED FOR · CLIENT<br>
+    PREPARED BY · {{brand}}<br>
+    DATE · DATE<br>
+    VALID UNTIL · DATE
+  </div>
+</section>
+
+<!-- 2 · their problem, in their words -->
+<section class="page">
+  <div class="eyebrow">01 · WHAT WE HEARD</div>
+  <h2>YOUR SITUATION.</h2>
+  <div class="quote">"QUOTE THE CLIENT. THEIR SENTENCE, FROM THE CALL OR THE
+    BRIEF, WITH NOTHING SMOOTHED OUT."</div>
+  <h3>WHAT THAT COSTS TODAY</h3>
+  <p>BODY. NAME THE COST IN THEIR UNITS — HOURS, DEALS, REWORK. A PROPOSAL
+    THAT CANNOT NAME THE COST IS ASKING THEM TO INFER IT.</p>
+  <h3>WHAT WE ARE NOT SOLVING</h3>
+  <p>BODY. THE BOUNDARY, STATED HERE RATHER THAN DISCOVERED IN WEEK SIX.</p>
+  <div class="foot"><span>{{brand}}</span><span>01</span></div>
+</section>
+
+<!-- 3 · approach -->
+<section class="page">
+  <div class="eyebrow">02 · APPROACH</div>
+  <h2>HOW WE WILL WORK.</h2>
+  <table><thead><tr><th>PHASE</th><th>WHAT HAPPENS</th>
+    <th class="n">WEEKS</th></tr></thead><tbody>
+    <tr><td>01 · NAME</td><td>WHAT WE DO, AND WHAT YOU GET AT THE END OF
+      IT.</td><td class="n">0</td></tr>
+    <tr><td>02 · NAME</td><td>WHAT WE DO.</td><td class="n">0</td></tr>
+    <tr><td>03 · NAME</td><td>WHAT WE DO.</td><td class="n">0</td></tr>
+  </tbody></table>
+  <h3>WHAT WE NEED FROM YOU</h3>
+  <ul><li>ONE NAMED DECISION-MAKER.</li>
+    <li>ACCESS TO X.</li>
+    <li>A DECISION BY DATE.</li></ul>
+  <div class="foot"><span>{{brand}}</span><span>02</span></div>
+</section>
+
+<!-- 4 · commercials -->
+<section class="page">
+  <div class="eyebrow">03 · COMMERCIALS</div>
+  <h2>INVESTMENT.</h2>
+  <table><thead><tr><th>ITEM</th><th class="n">AMOUNT</th></tr></thead>
+    <tbody>
+    <tr><td>PHASE 01 · NAME</td><td class="n">0 000</td></tr>
+    <tr><td>PHASE 02 · NAME</td><td class="n">0 000</td></tr>
+    <tr class="total"><td>TOTAL, EXCLUDING TAX</td>
+      <td class="n">0 000</td></tr>
+  </tbody></table>
+  <div class="excl">
+    <h3 style="margin-top:0">NOT INCLUDED</h3>
+    <p>TRAVEL · THIRD-PARTY LICENCES · ANYTHING ADDED AFTER SIGNATURE.
+      Each one priced on request, in writing, before it starts.</p>
+  </div>
+  <div class="foot"><span>{{brand}}</span><span>03</span></div>
+</section>
+
+<!-- 5 · signature -->
+<section class="page">
+  <div class="eyebrow">04 · NEXT</div>
+  <h2>IF THIS IS RIGHT.</h2>
+  <p>ONE PARAGRAPH: WHAT HAPPENS IN THE FIRST WEEK AFTER SIGNATURE. A
+    PROPOSAL THAT ENDS AT THE PRICE MAKES THE CLIENT INVENT THE NEXT STEP.</p>
+  <div class="sign">
+    <div>FOR CLIENT · NAME, DATE</div>
+    <div>FOR {{brand}} · NAME, DATE</div>
+  </div>
+  <div class="foot"><span>{{brand}}</span><span>04</span></div>
+</section>
+
+</body></html>

@@ -1,0 +1,9 @@
+platform: codex_cli
+family: openai
+packageVersion: 1.0.0-draft.2
+provenance: hoi_authored_official_docs
+sources:
+  - url: "https://learn.chatgpt.com/docs/build-skills"
+    kind: official_docs
+  - url: "https://github.com/openai/codex"
+    kind: official_repository

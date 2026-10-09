@@ -1,0 +1,36 @@
+{
+  "platform": "pipedream",
+  "profiles": ["workflow"],
+  "requiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Workflow lifecycle warning",
+    "Trigger and step data contracts",
+    "Account and environment requirements",
+    "Retry and migration handover"
+  ],
+  "requiredArtifacts": [
+    "Workflow maintenance and migration brief",
+    "Trigger and ordered-step data contract",
+    "Account, environment and permission inventory",
+    "Replay, failure and export handover plan"
+  ],
+  "platformRules": [
+    "Include the official Workflows shutdown notice: March 31, 2027, with workflow data deletion announced for April 30, 2027. Record the retrieval date and require a current lifecycle review before adoption.",
+    "Distinguish Workflows from Pipedream Connect; Connect is not a replacement workflow runtime and is explicitly unaffected by the notice.",
+    "Use this target for review of an existing workflow; do not promise new Workflows signups or new product features. Preserve the target without silently rerouting it.",
+    "Describe the trigger, step inputs and outputs, connected-account ownership and environment requirements without credentials.",
+    "Define bounded retry, deduplication and partial-side-effect recovery as requirements to verify against the existing account. Do not assert plan limits from historical forum posts.",
+    "Provide a manual export and migration handover checklist with a named owner. Never execute, deploy, delete, migrate or export a workflow automatically."
+  ],
+  "forbidden": [
+    "credentials",
+    "automatic external deployment",
+    "unapproved process changes",
+    "uncited provider assertions"
+  ]
+}

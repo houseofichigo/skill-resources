@@ -1,0 +1,15 @@
+{
+  "source": "/Users/sabribenradhia/House of Ichigo/hoi-os/skills/hoi-knowledge-review",
+  "importedAt": "2026-09-27T15:12:56.527363+00:00",
+  "publication": "local-only; no GitHub update",
+  "files": [
+    {
+      "file": "SKILL.md",
+      "sha256": "e9b958c281b441a1875138f7c07bbd0dcd538540302f9ccef0b9ea4dae2ddd23"
+    },
+    {
+      "file": "references/review-contract.md",
+      "sha256": "d1c151a4068726a829b64a4e58347a6026613b641878e2acda473dbdbb554055"
+    }
+  ]
+}

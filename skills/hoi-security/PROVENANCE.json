@@ -1,0 +1,12 @@
+{
+  "skill": "hoi-security",
+  "source": "hoi-os/skills/hoi-security",
+  "importedAt": "2026-09-26",
+  "publication": "Local development revision; not published",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "4bf0a7757da60480e3a0234fc4828afaf085fbab8a0355a113cd8b3832495cad"
+    }
+  ]
+}

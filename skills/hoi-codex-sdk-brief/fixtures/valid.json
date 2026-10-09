@@ -1,0 +1,28 @@
+{
+  "platform": "codex_sdk",
+  "profile": "agent",
+  "expectedRequiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Thread lifecycle and events",
+    "Working directory and repository scope",
+    "Sandbox and approval policy"
+  ],
+  "expectedRequiredArtifacts": [
+    "Codex SDK repository brief",
+    "Thread and event contract",
+    "Workspace, sandbox and approval matrix",
+    "Resume and failure test plan"
+  ],
+  "expectedVerifierChecks": [
+    "codex-thread-lifecycle",
+    "event-and-failure-contract",
+    "workspace-tenant-isolation",
+    "sandbox-approval-boundary"
+  ],
+  "expectedPackageVersion": "1.0.0-draft.2"
+}

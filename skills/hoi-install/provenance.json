@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-26",
+  "source": "hoi-os/skills/hoi-install",
+  "destination": "skills/houseofichigo-skills/skills/hoi-install",
+  "status": "local-unreleased; existing public downloads unchanged",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "d1e498a567852c2820eca8be8402f2e43f7e05d9f570ca8abbbc517ef8fcb5a7"
+    },
+    {
+      "path": "references/chat-guidance.md",
+      "sha256": "ed1a22436430729a8b436f38bcd48cfbfcc3b56ce7eaa8c12d4f88c208bb95c5"
+    },
+    {
+      "path": "references/local-setup.md",
+      "sha256": "d97214483548055b39a4e2dc33939cb9527718965d30d313dcc3da80f1630059"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+platform: dust
+family: automation
+packageVersion: 1.0.0-draft.2
+provenance: hoi_authored_official_docs
+sources:
+  - url: "https://docs.dust.tt/docs/user-documentation/agents/create-your-first-agent"
+    kind: official_docs
+  - url: "https://docs.dust.tt/docs/user-documentation/admins/spaces-management"
+    kind: official_docs

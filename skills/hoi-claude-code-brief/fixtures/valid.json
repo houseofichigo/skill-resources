@@ -1,0 +1,28 @@
+{
+  "platform": "claude_code",
+  "profile": "skill",
+  "expectedRequiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Project instructions versus skills",
+    "Invocation and scope",
+    "Tools, scripts and permission review"
+  ],
+  "expectedRequiredArtifacts": [
+    "SKILL.md draft",
+    "Project instruction integration guide",
+    "Referenced files and tool requirements",
+    "Invocation and denial test plan"
+  ],
+  "expectedVerifierChecks": [
+    "project-policy-skill-separation",
+    "scope-invocation-contract",
+    "tool-script-hook-review",
+    "host-permission-denials"
+  ],
+  "expectedPackageVersion": "1.0.0-draft.2"
+}

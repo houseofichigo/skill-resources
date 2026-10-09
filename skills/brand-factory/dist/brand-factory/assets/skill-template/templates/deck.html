@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<title>{{brand}} — deck</title>
+<link rel="stylesheet" href="../references/tokens.css">
+<style>
+  /* 16:9 slides, 254 x 143mm — the PowerPoint widescreen size, so this
+     exports to PDF and imports at the right proportions. Replace the ALL
+     CAPS placeholders, delete the layouts you do not use, and add slides by
+     copying a <section>. Every value comes from tokens.css; do not add a hex.
+
+     Type here is LARGER than in a document and the scale is separate. A
+     print size on a slide reads as a wall of text from the third row. */
+  body{background:var(--muted);margin:0}
+  .slide{width:254mm;height:143mm;background:var(--ground);margin:0 auto 6mm;
+    padding:14mm 16mm 12mm;display:flex;flex-direction:column;
+    position:relative;overflow:hidden}
+  .slide.dark{background:var(--ink);color:var(--ground)}
+  .eyebrow{font-family:var(--mono);font-size:9pt;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--brand)}
+  .slide.dark .eyebrow{color:var(--brand-on-dark)}
+  h1{font-size:40pt;line-height:1;letter-spacing:var(--track-xl);margin:6mm 0 0}
+  h2{font-size:26pt;line-height:1.05;margin:4mm 0 0}
+  .lede{font-size:14pt;line-height:1.4;margin-top:6mm;max-width:58ch}
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:10mm;
+    margin-top:8mm;flex:1}
+  .cols>div{display:flex;flex-direction:column}
+  .cols h3{font-size:14pt;margin-bottom:3mm}
+  .cols p{font-size:11pt;line-height:1.45;color:var(--muted)}
+  .slide.dark .cols p{color:var(--ground)}
+  .num{font-family:var(--mono);font-size:34pt;color:var(--brand);
+    line-height:1;margin-bottom:3mm}
+  .slide.dark .num{color:var(--brand-on-dark)}
+  /* A media frame, not a media file. Drop the image in and delete the
+     label; never ship the placeholder. */
+  .media{flex:1;margin-top:8mm;border:1px solid var(--line);
+    background:var(--surface);display:flex;align-items:center;
+    justify-content:center;font-family:var(--mono);font-size:9pt;
+    color:var(--muted);letter-spacing:.14em;text-transform:uppercase}
+  .media img{width:100%;height:100%;object-fit:cover;align-self:stretch}
+  table{width:100%;border-collapse:collapse;font-size:11pt;margin-top:6mm}
+  td,th{padding:2.6mm 3mm 2.6mm 0;border-bottom:1px solid var(--line);
+    text-align:left}
+  th{font-family:var(--mono);font-size:8.5pt;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted);
+    border-bottom:1.4px solid var(--ink)}
+  td.n{font-family:var(--mono);text-align:right}
+  .foot{position:absolute;left:16mm;right:16mm;bottom:6mm;
+    display:flex;justify-content:space-between;font-family:var(--mono);
+    font-size:8pt;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted)}
+  .slide.dark .foot{color:var(--brand-on-dark)}
+  @media print{body{background:#fff}
+    .slide{margin:0;page-break-after:always}}
+</style></head>
+<body>
+
+<!-- 01 · title -->
+<section class="slide dark">
+  <div class="eyebrow">{{brand}}</div>
+  <h1>THE ARGUMENT, IN <span class="accent">ONE LINE</span>.</h1>
+  <p class="lede">ONE SENTENCE OF CONTEXT. NOT A SUBTITLE THAT REPEATS THE
+    TITLE.</p>
+  <div class="foot"><span>PRESENTER</span><span>DATE</span></div>
+</section>
+
+<!-- 02 · statement -->
+<section class="slide">
+  <div class="eyebrow">SECTION</div>
+  <h2>ONE IDEA PER SLIDE, AND THE <span class="accent">IDEA</span> IS THE
+    HEADLINE.</h2>
+  <p class="lede">IF THE HEADLINE IS A LABEL — "OVERVIEW", "CONTEXT" — THE
+    SLIDE HAS NOT DECIDED WHAT IT SAYS.</p>
+  <div class="foot"><span>{{brand}}</span><span>02</span></div>
+</section>
+
+<!-- 03 · three columns -->
+<section class="slide">
+  <div class="eyebrow">SECTION</div>
+  <h2>THREE THINGS, NOT SEVEN.</h2>
+  <div class="cols">
+    <div><div class="num">01</div><h3>FIRST</h3>
+      <p>ONE OR TWO SENTENCES.</p></div>
+    <div><div class="num">02</div><h3>SECOND</h3>
+      <p>ONE OR TWO SENTENCES.</p></div>
+    <div><div class="num">03</div><h3>THIRD</h3>
+      <p>ONE OR TWO SENTENCES.</p></div>
+  </div>
+  <div class="foot"><span>{{brand}}</span><span>03</span></div>
+</section>
+
+<!-- 04 · visual / media -->
+<section class="slide">
+  <div class="eyebrow">SECTION</div>
+  <h2>A PICTURE THAT CARRIES THE POINT.</h2>
+  <div class="media">REPLACE WITH IMAGE, CHART OR DIAGRAM</div>
+  <div class="foot"><span>{{brand}}</span><span>04</span></div>
+</section>
+
+<!-- 05 · data -->
+<section class="slide">
+  <div class="eyebrow">SECTION</div>
+  <h2>NUMBERS, IN THE MONO FACE.</h2>
+  <table><thead><tr><th>WHAT</th><th>NOW</th><th class="n">VALUE</th></tr>
+    </thead><tbody>
+    <tr><td>ROW</td><td>STATE</td><td class="n">0.00</td></tr>
+    <tr><td>ROW</td><td>STATE</td><td class="n">0.00</td></tr>
+    <tr><td>ROW</td><td>STATE</td><td class="n">0.00</td></tr>
+  </tbody></table>
+  <div class="foot"><span>{{brand}}</span><span>05</span></div>
+</section>
+
+<!-- 06 · close -->
+<section class="slide dark">
+  <div class="eyebrow">NEXT</div>
+  <h1>ONE ASK, <span class="accent">NAMED</span>.</h1>
+  <p class="lede">A CLOSING SLIDE THAT SAYS "THANK YOU" WASTES THE ONLY
+    SLIDE PEOPLE PHOTOGRAPH.</p>
+  <div class="foot"><span>{{brand}}</span><span>06</span></div>
+</section>
+
+</body></html>

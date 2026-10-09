@@ -1,0 +1,37 @@
+{
+  "platform": "api_integration",
+  "profiles": ["workflow"],
+  "requiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Technology and endpoint decisions",
+    "API schemas and mappings",
+    "Retries, rate limits and idempotency",
+    "Observability and deployment assumptions"
+  ],
+  "requiredArtifacts": [
+    "API integration implementation brief",
+    "Endpoint, request, response and error contract",
+    "Authentication and field-mapping matrix",
+    "Retry, replay and failure test plan",
+    "Deployment and operational handover assumptions"
+  ],
+  "platformRules": [
+    "Name the selected API providers, API versions, transport and implementation runtime from supplied evidence; unresolved choices remain explicit gaps.",
+    "Map each approved process step to documented operations, request and response fields, pagination and errors. Never invent endpoints, quotas or idempotency support.",
+    "Use a supported OpenAPI version when describing HTTP APIs; the OpenAPI specification is a format reference, not evidence that a vendor endpoint exists.",
+    "Describe least-privilege authentication, server-side secret references, tenant authorization and explicit confirmation before consequential writes. Never include secret values.",
+    "Specify bounded timeouts, rate-limit handling and retry eligibility per operation. Do not blindly retry non-idempotent writes; document duplicate detection and recovery from partial effects.",
+    "Define redacted correlation logs, error ownership, integration tests and deployment/rollback assumptions. Produce a reviewable brief only; do not call APIs, provision resources or deploy."
+  ],
+  "forbidden": [
+    "credentials",
+    "automatic external deployment",
+    "unapproved process changes",
+    "uncited provider assertions"
+  ]
+}

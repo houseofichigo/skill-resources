@@ -1,0 +1,37 @@
+{
+  "platform": "custom_code",
+  "profiles": ["workflow", "agent", "hybrid"],
+  "requiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Architecture and technology decisions",
+    "Interfaces and data ownership",
+    "Workflow and agent boundaries",
+    "Testing, observability and deployment assumptions"
+  ],
+  "requiredArtifacts": [
+    "Custom implementation brief",
+    "Technology and dependency decision record",
+    "Module, interface and data contract",
+    "Security and human-approval matrix",
+    "Test, observability and rollback plan"
+  ],
+  "platformRules": [
+    "State the chosen language, runtime, dependency versions, storage and deployment environment only when supplied or explicitly proposed for review; distinguish assumptions from confirmed facts.",
+    "Map approved process steps and owners to modules, input/output contracts and data ownership without changing process lineage or approval gates.",
+    "For workflow, agent and hybrid profiles, identify deterministic steps versus model-driven decisions, bounded execution and the owner of each consequential action. Do not introduce agents when the selected profile is workflow.",
+    "Document authentication, tenant isolation, input validation, server-only secrets and least-privilege access. Model output and generated code never grant authority.",
+    "Specify unit, integration, negative-authorization and failure-recovery tests, redacted telemetry and operational ownership; unexecuted tests are a plan, not passing evidence.",
+    "Provide dependency/license review, deployment assumptions and application rollback preserving business history. Return a reviewable build brief, not executed source, infrastructure changes or an automatic deployment."
+  ],
+  "forbidden": [
+    "credentials",
+    "automatic external deployment",
+    "unapproved process changes",
+    "uncited provider assertions"
+  ]
+}

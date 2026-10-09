@@ -1,0 +1,27 @@
+{
+  "platform": "claude_sdk",
+  "profile": "agent",
+  "expectedRequiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Agent loop and structured output",
+    "Session isolation and recovery",
+    "Permissions and hooks"
+  ],
+  "expectedRequiredArtifacts": [
+    "Repository build brief",
+    "Tool and permission matrix",
+    "Session lifecycle and bounded-run test plan"
+  ],
+  "expectedVerifierChecks": [
+    "agent-loop-output-schema",
+    "session-resume-isolation",
+    "permissions-hooks-approval",
+    "bounded-run-recovery"
+  ],
+  "expectedPackageVersion": "1.0.0-draft.2"
+}

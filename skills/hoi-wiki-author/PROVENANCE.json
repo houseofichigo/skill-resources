@@ -1,0 +1,15 @@
+{
+  "source": "/Users/sabribenradhia/House of Ichigo/hoi-os/skills/hoi-wiki-author",
+  "importedAt": "2026-09-27T15:12:56.460011+00:00",
+  "publication": "local-only; no GitHub update",
+  "files": [
+    {
+      "file": "SKILL.md",
+      "sha256": "c62b6a5859dfe4665711f0e2dc1300693d3100e00bbc7c6d76643b97018fbb9a"
+    },
+    {
+      "file": "references/authoring.md",
+      "sha256": "e97c3c11a6ad0510eef11852ad17f820819ca04622f28db65a0582afdcc7d973"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "platform": "apps_script",
+  "profile": "workflow",
+  "expectedRequiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Script entry points and services",
+    "Execution identity and OAuth scopes",
+    "Triggers, quotas and recovery",
+    "Deployment and testing assumptions"
+  ],
+  "expectedRequiredArtifacts": [
+    "Apps Script implementation brief",
+    "Function and Google-service mapping",
+    "Manifest scope and execution-identity specification",
+    "Trigger, quota, duplicate-event and recovery plan"
+  ],
+  "expectedVerifierChecks": [
+    "entrypoint-service-map",
+    "scope-execution-identity",
+    "trigger-owner-and-event-guards",
+    "quota-concurrency-recovery",
+    "approval-and-denial-tests"
+  ],
+  "expectedPackageVersion": "1.0.0-draft.2"
+}

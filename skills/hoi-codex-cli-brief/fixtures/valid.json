@@ -1,0 +1,28 @@
+{
+  "platform": "codex_cli",
+  "profile": "skill",
+  "expectedRequiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "AGENTS.md scope and precedence",
+    "Reusable skill package",
+    "Sandbox and tool confirmation"
+  ],
+  "expectedRequiredArtifacts": [
+    "AGENTS.md draft",
+    "Task-scoped SKILL.md and resources",
+    "Instruction-scope integration guide",
+    "Sandbox and invocation test plan"
+  ],
+  "expectedVerifierChecks": [
+    "agents-skill-scope-separation",
+    "codex-host-path-review",
+    "tool-stack-operation-separation",
+    "sandbox-confirmation-boundary"
+  ],
+  "expectedPackageVersion": "1.0.0-draft.2"
+}

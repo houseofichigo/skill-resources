@@ -1,0 +1,16 @@
+{
+  "skill": "hoi-chief-of-staff",
+  "source": "hoi-os/skills/hoi-chief-of-staff",
+  "importedAt": "2026-09-26",
+  "publication": "Local development only; new skills not published",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "363deb1407bae04f35e72b11306ed69086cb33c2727a8ab099f877e5868f8a35"
+    },
+    {
+      "path": "references/daily-inputs.md",
+      "sha256": "4c18f4b0fbd095b34558ab4a82fca4f17b985f16603be58f852d8af61f83f69f"
+    }
+  ]
+}

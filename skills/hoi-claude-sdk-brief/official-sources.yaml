@@ -1,0 +1,9 @@
+platform: claude_sdk
+family: anthropic
+packageVersion: 1.0.0-draft.2
+provenance: hoi_authored_official_docs
+sources:
+  - url: "https://code.claude.com/docs/en/agent-sdk/overview"
+    kind: official_docs
+  - url: "https://github.com/anthropics/claude-agent-sdk-typescript"
+    kind: official_repository

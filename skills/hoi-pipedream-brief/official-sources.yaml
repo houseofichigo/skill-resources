@@ -1,0 +1,7 @@
+platform: pipedream
+family: automation
+packageVersion: 1.0.0-draft.2
+provenance: hoi_authored_official_docs
+sources:
+  - url: "https://pipedream.com/docs/workflows"
+    kind: official_docs

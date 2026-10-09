@@ -1,0 +1,7 @@
+platform: chatgpt_skill
+family: openai
+packageVersion: 1.0.0-draft.2
+provenance: hoi_authored_official_docs
+sources:
+  - url: "https://help.openai.com/en/articles/20001066-skills-in-chatgpt"
+    kind: official_docs

@@ -1,0 +1,32 @@
+{
+  "platform": "claude_sdk",
+  "profiles": ["agent"],
+  "requiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Agent loop and structured output",
+    "Session isolation and recovery",
+    "Permissions and hooks"
+  ],
+  "requiredArtifacts": [
+    "Repository build brief",
+    "Tool and permission matrix",
+    "Session lifecycle and bounded-run test plan"
+  ],
+  "platformRules": [
+    "Describe the application-owned Agent SDK loop, typed outputs and tool interfaces; do not substitute a Claude Project or uploadable skill.",
+    "Bind each session and tool call to the authorized organization and actor; recheck source access after resume.",
+    "Specify permission decisions, hooks, explicit consequential-action approval, deadlines, turn/cost limits and interruption recovery. Hooks and model output never grant authority.",
+    "Produce reviewed source/configuration guidance only; do not run an SDK, install dependencies or deploy."
+  ],
+  "forbidden": [
+    "credentials",
+    "automatic external deployment",
+    "unapproved process changes",
+    "uncited provider assertions"
+  ]
+}

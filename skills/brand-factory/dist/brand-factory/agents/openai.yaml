@@ -1,0 +1,7 @@
+interface:
+  display_name: "Brand Factory"
+  short_description: "Build a self-checking brand system and its AI Skill"
+  default_prompt: "Use $brand-factory to build a brand book and brand Skill for this company"
+  brand_color: "#1231D6"
+policy:
+  allow_implicit_invocation: true

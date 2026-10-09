@@ -1,0 +1,224 @@
+{
+  "skills": [
+    {
+      "skill": "hoi-3d-map",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    },
+    {
+      "skill": "hoi-audit",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    },
+    {
+      "skill": "hoi-build-capability",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    },
+    {
+      "skill": "hoi-capture",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    },
+    {
+      "skill": "hoi-chief-of-staff",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    },
+    {
+      "skill": "hoi-connect",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    },
+    {
+      "skill": "hoi-consolidate",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    },
+    {
+      "skill": "hoi-evaluate",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    },
+    {
+      "skill": "hoi-ingest",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    },
+    {
+      "skill": "hoi-install",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    },
+    {
+      "skill": "hoi-knowledge-review",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    },
+    {
+      "skill": "hoi-meeting-prep",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    },
+    {
+      "skill": "hoi-onboard",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    },
+    {
+      "skill": "hoi-organize",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    },
+    {
+      "skill": "hoi-project-intake",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    },
+    {
+      "skill": "hoi-retrieve",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    },
+    {
+      "skill": "hoi-security",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    },
+    {
+      "skill": "hoi-session-capture",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    },
+    {
+      "skill": "hoi-task-intake",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    },
+    {
+      "skill": "hoi-wiki",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    },
+    {
+      "skill": "hoi-wiki-author",
+      "status": "pass",
+      "counts": {
+        "blocker": 0,
+        "warning": 0,
+        "note": 0
+      },
+      "findings": []
+    }
+  ],
+  "privacyScan": "No selected private-pattern matches in skill files",
+  "allowedAttribution": [
+    "MIT copyright notice",
+    "public upstream links",
+    "stable HOI OS identifiers"
+  ],
+  "limitations": [
+    "Heuristic static scan; not a guarantee of absence of confidential content",
+    "No fresh runtime, clean-install or live-provider checks in this build"
+  ]
+}

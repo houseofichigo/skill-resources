@@ -1,0 +1,9 @@
+platform: claude_skill
+family: anthropic
+packageVersion: 1.0.0-draft.2
+provenance: hoi_authored_official_docs
+sources:
+  - url: "https://support.claude.com/en/articles/12512180-use-skills-in-claude"
+    kind: official_docs
+  - url: "https://github.com/anthropics/skills"
+    kind: official_repository

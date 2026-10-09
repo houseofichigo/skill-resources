@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<title>{{brand}} — document</title>
+<link rel="stylesheet" href="../references/tokens.css">
+<style>
+  /* A4 portrait. Replace the ALL CAPS placeholders and delete what you
+     do not use. Every value comes from tokens.css — do not add hexes. */
+  /* Preview chrome only — the page itself is var(--ground). */
+  body{background:var(--muted);margin:0}
+  .page{width:210mm;min-height:297mm;background:var(--ground);
+    margin:0 auto 6mm;padding:24mm 22mm 20mm;display:flex;
+    flex-direction:column;position:relative}
+  .rail{display:grid;grid-template-columns:3fr 9fr;gap:10mm;flex:1}
+  .rail>.side,.rail>.main{display:flex;flex-direction:column}
+  .eyebrow{font-family:var(--mono);font-size:8pt;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--brand)}
+  h1{font-size:30pt;margin:4mm 0 0}
+  .lede{font-size:12pt;line-height:1.5;margin-top:6mm;max-width:62ch}
+  p{font-size:10.5pt;line-height:1.6;margin-top:4mm;max-width:66ch}
+  .foot{margin-top:auto;border-top:1px solid var(--line);padding-top:4mm;
+    font-family:var(--mono);font-size:8pt;color:var(--muted);
+    display:flex;justify-content:space-between}
+  @media print{body{background:#fff}.page{margin:0;page-break-after:always}}
+</style></head>
+<body>
+<section class="page">
+  <div class="rail">
+    <div class="side">
+      <div class="eyebrow">SECTION</div>
+      <p style="font-size:9pt;color:var(--muted)">SIDE NOTE. Use this
+        column for context, definitions and sources — never for the
+        argument itself.</p>
+    </div>
+    <div class="main">
+      <h1>TITLE WITH ONE <span class="accent">ACCENT</span>.</h1>
+      <p class="lede">ONE SENTENCE THAT SAYS WHAT THIS DOCUMENT
+        CONCLUDES, BEFORE THE READER HAS TO LOOK FOR IT.</p>
+      <p>BODY.</p>
+    </div>
+  </div>
+  <div class="foot"><span>{{brand}}</span><span>01</span></div>
+</section>
+</body></html>
