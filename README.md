@@ -100,3 +100,7 @@ Community preparation provenance: [`2026-09-29 manifest`](../../archives/2026-09
 Publication record: [2026-09-29 provenance](../../archives/2026-09-29/hoi-os-skills-publication/provenance.json). The exact public edition is stored under `skills/hoi-os/publications/0.2.0-alpha.1/`; product development skills remain separately maintained.
 
 Local unreleased guide integration (2026-09-30): `hoi-install` and `hoi-onboard` working copies describe versioned workspace guides. Table links identify the earlier public edition, not these unpublished changes. [Provenance](../../archives/2026-09-30/hoi-os-governance-guides/provenance.json).
+
+Local n8n brief update (2026-10-09): draft.3 checks the generated package and customer handover, not external execution. [Provenance](../../archives/2026-10-09/n8n-generated-package-scope/provenance.json). Unpublished.
+
+Reviewed retrieval update (local, unpublished): six HOI runtime skills now describe schema-19 unified evidence and versioned memory review. [Provenance and preserved versions](../../archives/2026-10-09/hoi-reviewed-retrieval/provenance.json). Existing public links refer to earlier published editions.

@@ -1,0 +1,14 @@
+{
+  "adapter": "n8n-workflow.ts, n8n-agent.ts and hybrid.ts",
+  "preserved": [
+    "Importable workflow JSON",
+    "Companion Markdown brief",
+    "Credential placeholder and structural validation",
+    "Agent approval wiring"
+  ],
+  "openGaps": [
+    "Generated-package checks are wired; supported node coverage and provider parity remain incomplete",
+    "Old/new output parity has not passed real-provider acceptance",
+    "No external create/update operation is performed, so retrieval verification remains a handover instruction"
+  ]
+}

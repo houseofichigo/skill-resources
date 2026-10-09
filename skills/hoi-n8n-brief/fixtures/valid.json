@@ -1,0 +1,31 @@
+{
+  "platform": "n8n",
+  "profile": "workflow",
+  "expectedRequiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Workflow definition",
+    "Credential requirements",
+    "Failure path",
+    "Node and configuration assumptions"
+  ],
+  "expectedRequiredArtifacts": [
+    "Importable workflow JSON",
+    "Companion implementation brief",
+    "Credential requirements without secret values",
+    "Failure-path and test plan"
+  ],
+  "expectedVerifierChecks": [
+    "importable-workflow-json",
+    "unique-trigger-and-reachable-nodes",
+    "credential-placeholders-only",
+    "fallible-node-error-paths",
+    "approval-configuration-handover",
+    "post-create-retrieval-verification-plan"
+  ],
+  "expectedPackageVersion": "1.0.0-draft.3"
+}
