@@ -1,0 +1,17 @@
+{
+  "packageVersion": "1.0.0-draft.2",
+  "checks": [
+    "supported-profile",
+    "required-sections",
+    "source-citations",
+    "no-credential-material",
+    "no-external-mutation",
+    "approval-lineage",
+    "crew-or-flow-topology",
+    "agent-task-source-binding",
+    "tool-guardrail-approval-boundary",
+    "state-memory-scope",
+    "bounded-execution-recovery",
+    "licence-native-handover-review"
+  ]
+}

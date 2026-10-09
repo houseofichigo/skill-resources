@@ -55,6 +55,7 @@ Onboarding update: [source and checksums](../../archives/2026-09-28/hoi-os-onboa
 | [hoi-claude-code-brief](skills/hoi-claude-code-brief/) | vNext claude_code brief contract; runtime acceptance pending. | Unpublished local draft |
 | [hoi-codex-cli-brief](skills/hoi-codex-cli-brief/) | vNext codex_cli brief contract; runtime acceptance pending. | Unpublished local draft |
 | [HOI OS](skills/hoi-os/) | 21 community skills under MIT; separate app remains unpublished. Historical bundle preserved. | [Published skills repository](https://github.com/houseofichigo/hoi-os) |
+| [hoi-crewai-brief](skills/hoi-crewai-brief/) | vNext CrewAI agent/task/Flow review contract; pinned-source licence, provider and managed acceptance pending. | Unpublished local draft |
 
 
 
@@ -104,3 +105,5 @@ Local unreleased guide integration (2026-09-30): `hoi-install` and `hoi-onboard`
 Local n8n brief update (2026-10-09): draft.3 checks the generated package and customer handover, not external execution. [Provenance](../../archives/2026-10-09/n8n-generated-package-scope/provenance.json). Unpublished.
 
 Reviewed retrieval update (local, unpublished): six HOI runtime skills now describe schema-19 unified evidence and versioned memory review. [Provenance and preserved versions](../../archives/2026-10-09/hoi-reviewed-retrieval/provenance.json). Existing public links refer to earlier published editions.
+
+CrewAI draft ingestion: [2026-10-09 provenance](../../archives/2026-10-09/vnext-crewai-candidate-87bbf8c/provenance.json). No upstream code copied, host installation or publication.

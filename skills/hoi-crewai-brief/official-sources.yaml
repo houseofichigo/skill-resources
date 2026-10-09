@@ -1,0 +1,13 @@
+platform: crewai
+family: framework
+packageVersion: 1.0.0-draft.2
+provenance: adapted_official_skill
+sources:
+  - url: "https://github.com/crewAIInc/skills"
+    kind: official_skill
+    upstreamCommit: a8d7ea68c2c50da49df8d7f18e407bec3931f884
+    upstreamPath: "skills"
+    sourceChecksum: dd045c04541371739af40c5d9f9fa70bebb7a572899060ca598a01a7931b2faf
+    sourceAudit: adaptation_required
+  - url: "https://docs.crewai.com/"
+    kind: official_docs

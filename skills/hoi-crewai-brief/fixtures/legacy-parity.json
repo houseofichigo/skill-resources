@@ -1,0 +1,13 @@
+{
+  "adapter": "generic-brief.ts via the brief router",
+  "preserved": [
+    "Approved process and Use Case lineage",
+    "Existing Markdown format, provider grounding and usage controls",
+    "Separate approvals and explicit unresolved gaps"
+  ],
+  "openGaps": [
+    "Pinned upstream licence evidence and publication remain unresolved",
+    "Native configuration, source narrative fidelity and effect semantics require implementation review",
+    "Old/new real-provider parity and managed acceptance remain open"
+  ]
+}

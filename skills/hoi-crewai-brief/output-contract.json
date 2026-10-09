@@ -1,0 +1,37 @@
+{
+  "platform": "crewai",
+  "profiles": ["agent"],
+  "requiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Crew or Flow",
+    "Agents and tasks",
+    "Guardrails",
+    "State and recovery",
+    "Licence and native implementation review"
+  ],
+  "requiredArtifacts": [
+    "Crew or Flow implementation brief",
+    "Agent and task source contract",
+    "Tool and guardrail permission plan",
+    "Scoped state and failure test plan"
+  ],
+  "platformRules": [
+    "Select sequential, hierarchical or Flow orchestration explicitly. Preserve source branches; do not flatten a nonlinear process into a crew task list.",
+    "Bind every task and tool to recorded source facts. Proposed agent roles do not change human ownership or confer authorization. Trigger and human steps remain outside autonomous agent execution.",
+    "Keep output guardrails separate from authorization. Consequential tool effects require current source access and explicit human confirmation, including retries and resumed execution.",
+    "Bound iterations, time and retries; guardrail retries cannot replay non-idempotent writes. Model, SDK version and native configuration require current implementation review.",
+    "Scope any future state to organization, user and source record; memory and persistence remain unconfigured pending data review. Never export credentials or raw payload logs.",
+    "Generate a Markdown implementation review only, with no native Python, YAML, JSONC, deployment or execution. The pinned upstream skill licence evidence remains unresolved; do not copy its code or mark it published."
+  ],
+  "forbidden": [
+    "credentials",
+    "automatic external deployment",
+    "unapproved process changes",
+    "uncited provider assertions"
+  ]
+}

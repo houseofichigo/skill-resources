@@ -1,0 +1,32 @@
+{
+  "platform": "crewai",
+  "profile": "agent",
+  "expectedRequiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Crew or Flow",
+    "Agents and tasks",
+    "Guardrails",
+    "State and recovery",
+    "Licence and native implementation review"
+  ],
+  "expectedRequiredArtifacts": [
+    "Crew or Flow implementation brief",
+    "Agent and task source contract",
+    "Tool and guardrail permission plan",
+    "Scoped state and failure test plan"
+  ],
+  "expectedVerifierChecks": [
+    "crew-or-flow-topology",
+    "agent-task-source-binding",
+    "tool-guardrail-approval-boundary",
+    "state-memory-scope",
+    "bounded-execution-recovery",
+    "licence-native-handover-review"
+  ],
+  "expectedPackageVersion": "1.0.0-draft.2"
+}
