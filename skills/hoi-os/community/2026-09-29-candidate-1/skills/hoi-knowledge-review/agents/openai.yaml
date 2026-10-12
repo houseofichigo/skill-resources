@@ -1,4 +1,0 @@
-interface:
-  display_name: "Knowledge review"
-  short_description: "Review outdated evidence and proposed knowledge changes."
-  default_prompt: "Use $hoi-knowledge-review for this request, respecting HOI review and source permissions."

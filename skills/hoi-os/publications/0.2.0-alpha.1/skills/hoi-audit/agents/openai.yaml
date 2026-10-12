@@ -1,4 +1,0 @@
-interface:
-  display_name: "Workspace audit"
-  short_description: "Check source health, backups and workspace readiness."
-  default_prompt: "Use $hoi-audit for this request, respecting HOI review and source permissions."

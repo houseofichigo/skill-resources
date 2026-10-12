@@ -1,5 +1,6 @@
-# House of Ichigo skills
+# House of Ichigo Skill Resources
 
+<<<<<<< HEAD
 > This is the complete local canonical collection and therefore includes HOI OS
 > product skills and unpublished company briefs. The public general-purpose catalogue
 > is the separately maintained neutral mirror at `../repos/skill-resources/`; it has
@@ -10,17 +11,19 @@
 Open, installable AI skills created by [House of Ichigo](https://houseofichigo.com).
 Each entry is self-contained as either a standalone skill or an aggregate suite
 package, with its verified source link and distributable archive.
+=======
+Reusable, installable AI skills created and maintained by
+[House of Ichigo](https://houseofichigo.com). The publisher identity and licence
+remain House of Ichigo; the operational instructions are organization-neutral so
+teams can supply their own company, industry, audience, competitors, sources and
+constraints during onboarding.
+>>>>>>> 3fa4cd9eb4fb7fd112d8226fdb2cbc3865287e21
 
-Batch F security-skill provenance: [2026-09-27 update](../../archives/2026-09-27/hoi-os-batch-f/skill-update.json).
+## Catalogue
 
-Current HOI OS standardization: [provenance and checksums](../../archives/2026-09-28/hoi-os-standardization/ingestion-manifest.json). All 21 current skills are present; no new publication is claimed.
-
-Onboarding update: [source and checksums](../../archives/2026-09-28/hoi-os-onboarding/provenance.json), shared resumable app/assistant checkpoints; unpublished.
-
-## Skills
-
-| Skill | What it does | Installable ZIP |
+| Package | Included skill IDs | Installable ZIP |
 |---|---|---|
+<<<<<<< HEAD
 | [Knowledge map](skills/hoi-3d-map/) | Use when requested to open the local HOI Workspace App or its optional 3D knowledge map to inspect source-backed search, wiki, memory, entities, relationships, and temporal views. | [Public preview](https://github.com/houseofichigo/hoi-os/tree/66fcc668b3a4e0085bdc3eb3d23209fadb2ba052/skills/hoi-3d-map) |
 | [Workspace audit](skills/hoi-audit/) | Use when requested to inspect an HOI OS workspace for schema, database, extraction, backup, adapter, connection, workflow, and memory health without changing it. | [Public preview](https://github.com/houseofichigo/hoi-os/tree/66fcc668b3a4e0085bdc3eb3d23209fadb2ba052/skills/hoi-audit) |
 | [Capability builder](skills/hoi-build-capability/) | Use when requested to define, evaluate, and activate a bounded HOI workflow using registered tools. | [Public preview](https://github.com/houseofichigo/hoi-os/tree/66fcc668b3a4e0085bdc3eb3d23209fadb2ba052/skills/hoi-build-capability) |
@@ -64,38 +67,57 @@ Onboarding update: [source and checksums](../../archives/2026-09-28/hoi-os-onboa
 | [hoi-codex-cli-brief](skills/hoi-codex-cli-brief/) | vNext codex_cli draft.3; exact reference provenance recorded; adaptation and runtime acceptance pending. | Unpublished local draft |
 | [HOI OS](skills/hoi-os/) | 21 community skills under MIT; separate app remains unpublished. Historical bundle preserved. | [Published skills repository](https://github.com/houseofichigo/hoi-os) |
 | [hoi-crewai-brief](skills/hoi-crewai-brief/) | vNext CrewAI draft.3; reviewed MIT source notice, source-bound handover; adaptation, provider and managed acceptance pending. | Unpublished local draft |
+=======
+| [Brand Factory](skills/brand-factory/) | `brand-factory` | [Download](skills/brand-factory/dist/skill.zip) |
+| [Content Radar](skills/content-radar-skills/) | `content-radar-setup`, `content-radar`, `trend-radar`, `competitor-scan`, `newsjacking`, `content-ideas`, `seo-aeo-geo` | [Download suite](skills/content-radar-skills/dist/content-radar-skills.zip) |
+| [Prompt Optimizer](skills/prompt-optimizer/) | `prompt-optimizer` | [Download](skills/prompt-optimizer/dist/skill.zip) |
+| [Skill Repo Forge](skills/skill-repo-forge/) | `skill-repo-forge` | [Download](skills/skill-repo-forge/dist/skill.zip) |
+| [Vibe Prompt Architect](skills/vibe-prompt-architect/) | `vibe-prompt-architect` | [Download](skills/vibe-prompt-architect/dist/skill.zip) |
+| [Visual Prompt Scout](skills/visual-prompt-scout/) | `visual-prompt-scout` | [Download](skills/visual-prompt-scout/dist/skill.zip) |
+| [Which AI Model](skills/which-ai-model/) | `which-ai-model` | [Download](skills/which-ai-model/dist/which-ai-model.zip) |
+>>>>>>> 3fa4cd9eb4fb7fd112d8226fdb2cbc3865287e21
 
+Machine-readable paths, onboarding classes and distribution files are recorded in
+[`catalog.json`](catalog.json). All packages follow the reusable-skill contract in
+[`STANDARD.md`](STANDARD.md).
 
+## Onboarding model
 
+- **Profile onboarding** is used when a skill needs durable business context. The
+  skill asks for only relevant details and stores them outside the distributable
+  package: organization, industry, audience, competitors, regions/languages, goals,
+  constraints, approved sources, output channels and review ownership.
+- **Task intake** is used for stateless skills. The skill asks only questions that
+  materially affect the result and makes assumptions visible instead of inventing
+  company facts.
 
+No package contains a House of Ichigo client profile or requires House of Ichigo's
+internal workspace. Publisher attribution, repository URLs and MIT copyright notices
+are intentionally retained.
 
-## Repository structure
+## Install
 
-```text
-skills/
-  <skill-name>/
-    SKILL.md
-    references/
-    README.md
-    dist/
-    ...supporting sources and artifacts
+Download the ZIP linked above or copy the relevant skill directory into the skills
+directory supported by your host. A suite ZIP may contain several independent skill
+folders. Read the package README for host-specific instructions and dependencies.
+
+## Validation
+
+```bash
+python3 scripts/validate_catalog.py
 ```
 
-New resources belong under `skills/<skill-or-package-name>/`. A standalone skill
-keeps its installable files at the folder root. A suite such as HOI OS uses one
-historical aggregate entry; every current HOI-authored constituent skill is also
-ingested individually with provenance. Product `hoi-os/skills/` owns runtime changes;
-this collection preserves the matching company copies. Every House of Ichigo-created
-or -published skill or suite must be represented here and linked to its verified
-public source.
+The validator checks the catalogue, skill frontmatter, onboarding declarations,
+local links, ZIP/source agreement and operational-content neutrality. GitHub Actions
+runs the same check on every change.
 
-## Install a skill
+## Licence and ownership
 
-Use the instructions in the entry's README. Standalone skills can be installed from
-their `skills/<skill-name>/` folder. Aggregate suites such as HOI OS must follow the
-canonical repository's setup instructions; their ZIP is a multi-skill bundle, not a
-single-skill upload.
+Unless a package says otherwise, original code and content are copyright House of
+Ichigo and released under the [MIT License](LICENSE). Third-party material keeps its
+own licence and attribution. See a package's notices before redistributing it.
 
+<<<<<<< HEAD
 ## Licence
 
 Unless a skill folder says otherwise, original House of Ichigo code and content are
@@ -139,3 +161,6 @@ Separate SaaS drafts; no publication or runtime acceptance claimed. Original des
 
 
 Website-source intake (2026-10-11): a user-supplied Brand Factory variant and supporting assets were preserved without replacing the current skill. Provenance: `archives/2026-10-11/website-materials-230053/manifest.json` from the Hub root. Existing remote links describe earlier publication evidence; no new publication claimed.
+=======
+Created by House of Ichigo.
+>>>>>>> 3fa4cd9eb4fb7fd112d8226fdb2cbc3865287e21

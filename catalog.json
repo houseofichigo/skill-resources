@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "publisher": "House of Ichigo",
+  "repository": "https://github.com/houseofichigo/skill-resources",
+  "license": "MIT",
+  "standard": "STANDARD.md",
+  "skills": [
+    {"id":"brand-factory","package":"skills/brand-factory","source":"skills/brand-factory","distribution":"skills/brand-factory/dist/skill.zip","onboarding":"profile"},
+    {"id":"competitor-scan","package":"skills/content-radar-skills","source":"skills/content-radar-skills/skills/competitor-scan","distribution":"skills/content-radar-skills/dist/competitor-scan.zip","onboarding":"profile"},
+    {"id":"content-ideas","package":"skills/content-radar-skills","source":"skills/content-radar-skills/skills/content-ideas","distribution":"skills/content-radar-skills/dist/content-ideas.zip","onboarding":"profile"},
+    {"id":"content-radar-setup","package":"skills/content-radar-skills","source":"skills/content-radar-skills/skills/content-radar-setup","distribution":"skills/content-radar-skills/dist/content-radar-setup.zip","onboarding":"profile"},
+    {"id":"content-radar","package":"skills/content-radar-skills","source":"skills/content-radar-skills/skills/content-radar","distribution":"skills/content-radar-skills/dist/content-radar.zip","onboarding":"profile"},
+    {"id":"newsjacking","package":"skills/content-radar-skills","source":"skills/content-radar-skills/skills/newsjacking","distribution":"skills/content-radar-skills/dist/newsjacking.zip","onboarding":"profile"},
+    {"id":"seo-aeo-geo","package":"skills/content-radar-skills","source":"skills/content-radar-skills/skills/seo-aeo-geo","distribution":"skills/content-radar-skills/dist/seo-aeo-geo.zip","onboarding":"profile"},
+    {"id":"trend-radar","package":"skills/content-radar-skills","source":"skills/content-radar-skills/skills/trend-radar","distribution":"skills/content-radar-skills/dist/trend-radar.zip","onboarding":"profile"},
+    {"id":"prompt-optimizer","package":"skills/prompt-optimizer","source":"skills/prompt-optimizer","distribution":"skills/prompt-optimizer/dist/skill.zip","onboarding":"intake"},
+    {"id":"skill-repo-forge","package":"skills/skill-repo-forge","source":"skills/skill-repo-forge","distribution":"skills/skill-repo-forge/dist/skill.zip","onboarding":"intake"},
+    {"id":"vibe-prompt-architect","package":"skills/vibe-prompt-architect","source":"skills/vibe-prompt-architect","distribution":"skills/vibe-prompt-architect/dist/skill.zip","onboarding":"intake"},
+    {"id":"visual-prompt-scout","package":"skills/visual-prompt-scout","source":"skills/visual-prompt-scout","distribution":"skills/visual-prompt-scout/dist/skill.zip","onboarding":"intake"},
+    {"id":"which-ai-model","package":"skills/which-ai-model","source":"skills/which-ai-model","distribution":"skills/which-ai-model/dist/which-ai-model.zip","onboarding":"intake"}
+  ]
+}
