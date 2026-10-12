@@ -1,4 +1,0 @@
-interface:
-  display_name: "Security review"
-  short_description: "Inspect security checks and their coverage."
-  default_prompt: "Use $hoi-security for this request, respecting HOI review and source permissions."

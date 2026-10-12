@@ -1,6 +1,7 @@
 ---
 name: which-ai-model
 description: Help a non-technical person decide which AI product, mode and model to use for a specific task — ChatGPT vs Claude vs Gemini, which tier inside each, and whether a chat window, a research mode, a coding agent or an API pipeline is the right place to do the work. Use when someone asks "which model should I use for this", "is ChatGPT or Claude better for X", "which Gemini should I pick", "am I overpaying for the expensive model", "why is my AI bad at this task", or asks to compare AI assistants for a job. Also use when someone is choosing an AI subscription or standardising model choice for a team. Not for routing API traffic programmatically — that is a job for a router library, not this skill.
+license: MIT
 ---
 
 # Which AI Model Should I Use?
