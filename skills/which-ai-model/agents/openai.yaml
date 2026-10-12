@@ -1,0 +1,7 @@
+interface:
+  display_name: "Which AI Model"
+  short_description: "Choose the right AI setup for a task"
+  default_prompt: "Use $which-ai-model to recommend the best current AI product, mode, and model for my task."
+
+policy:
+  allow_implicit_invocation: true

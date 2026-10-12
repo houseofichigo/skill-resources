@@ -1,5 +1,12 @@
 # House of Ichigo skills
 
+> This is the complete local canonical collection and therefore includes HOI OS
+> product skills and unpublished company briefs. The public general-purpose catalogue
+> is the separately maintained neutral mirror at `../repos/skill-resources/`; it has
+> seven packages and 13 reusable skill IDs. House of Ichigo publisher attribution and
+> MIT ownership are retained there, while company-specific operational assumptions are
+> excluded.
+
 Open, installable AI skills created by [House of Ichigo](https://houseofichigo.com).
 Each entry is self-contained as either a standalone skill or an aggregate suite
 package, with its verified source link and distributable archive.
@@ -35,10 +42,10 @@ Onboarding update: [source and checksums](../../archives/2026-09-28/hoi-os-onboa
 | [Extract to-dos](skills/hoi-task-intake/) | Use when requested to extract evidence-backed to-do proposals from selected transcripts, briefs, Gmail messages or Calendar context; check existing commitments and route ambiguous duplicates to review without approving tasks or changing calendars. | [Public preview](https://github.com/houseofichigo/hoi-os/tree/66fcc668b3a4e0085bdc3eb3d23209fadb2ba052/skills/hoi-task-intake) |
 | [Wiki editor](skills/hoi-wiki/) | Use when requested to build and maintain cited, reviewable current-view wiki pages from HOI OS evidence without replacing original sources or history. | [Public preview](https://github.com/houseofichigo/hoi-os/tree/66fcc668b3a4e0085bdc3eb3d23209fadb2ba052/skills/hoi-wiki) |
 | [Wiki author](skills/hoi-wiki-author/) | Use when requested to create or revise cited HOI wiki drafts for clients, projects, people, offerings, topics and decisions; resolve existing pages first and preserve evidence, attribution and revision history. | [Public preview](https://github.com/houseofichigo/hoi-os/tree/66fcc668b3a4e0085bdc3eb3d23209fadb2ba052/skills/hoi-wiki-author) |
-| [Which AI Model](skills/which-ai-model/) | Routes a task through capability, product and tooling constraints before recommending a model tier. | [Download](skills/which-ai-model/dist/which-ai-model.zip) |
+| [Which AI Model](skills/which-ai-model/) | Routes a task through capability, product and tooling constraints before recommending a model tier; canonical copy includes explicit MIT metadata and OpenAI host presentation. | [Download](skills/which-ai-model/dist/which-ai-model.zip) · [Public source](https://github.com/houseofichigo/skill-resources/tree/3fa4cd9eb4fb7fd112d8226fdb2cbc3865287e21/skills/which-ai-model) |
 | [Skill Repo Forge](skills/skill-repo-forge/) | Finds, audits, improves, installs and packages portable Agent Skills. [Standalone repository](https://github.com/houseofichigo/skill-repo-forge). | [Download](skills/skill-repo-forge/dist/skill.zip) |
 | [Visual Prompt Scout](skills/visual-prompt-scout/) | Finds and improves current image or video prompts with live source retrieval, provenance controls and prompt-injection quarantine. [Standalone repository](https://github.com/houseofichigo/visual-prompt-scout). | [Download](skills/visual-prompt-scout/dist/skill.zip) |
-| [Brand Factory](skills/brand-factory/) | Builds a machine-readable, self-checking brand system and generates its installable brand Skill. [Standalone repository](https://github.com/houseofichigo/brand-factory). | [Download](skills/brand-factory/dist/skill.zip) |
+| [Brand Factory](skills/brand-factory/) | Builds a machine-readable, self-checking brand system and generates its installable brand Skill. [New website-source variant, pending adoption](skills/brand-factory/source-imports/2026-10-11-website-os-230053/SKILL.md). [Standalone repository](https://github.com/houseofichigo/brand-factory). | [Download](skills/brand-factory/dist/skill.zip) |
 | [Prompt Optimizer](skills/prompt-optimizer/) | Creates, improves, researches and evaluates proportionate prompts with adaptive web research, source provenance and prompt-injection quarantine. [Standalone repository](https://github.com/houseofichigo/prompt-optimizer). | [Download](skills/prompt-optimizer/dist/skill.zip) |
 | [Vibe Prompt Architect](skills/vibe-prompt-architect/) | Turns app and feature ideas into tool-specific prompts for vibecoding builders, from quick mock-ups to spec-driven development. [Standalone repository](https://github.com/houseofichigo/vibe-prompt-architect). | [Download](skills/vibe-prompt-architect/dist/skill.zip) |
 | [Content Radar Skills](skills/content-radar-skills/) | Seven reusable skills for content intelligence, trends, competitors, responsible newsjacking, ideas and SEO/AEO/GEO briefs. [Standalone suite repository](https://github.com/houseofichigo/content-radar-skills). | [Download suite](skills/content-radar-skills/dist/content-radar-skills.zip) |
@@ -48,14 +55,15 @@ Onboarding update: [source and checksums](../../archives/2026-09-28/hoi-os-onboa
 | [hoi-dust-brief](skills/hoi-dust-brief/) | vNext dust brief package; draft contracts, runtime acceptance pending. | Unpublished local draft |
 | [hoi-api-integration-brief](skills/hoi-api-integration-brief/) | vNext api_integration brief contract; runtime acceptance pending. | Unpublished local draft |
 | [hoi-custom-code-brief](skills/hoi-custom-code-brief/) | vNext custom_code brief contract; runtime acceptance pending. | Unpublished local draft |
-| [hoi-claude-sdk-brief](skills/hoi-claude-sdk-brief/) | vNext claude_sdk brief contract; runtime acceptance pending. | Unpublished local draft |
-| [hoi-codex-sdk-brief](skills/hoi-codex-sdk-brief/) | vNext codex_sdk brief contract; runtime acceptance pending. | Unpublished local draft |
-| [hoi-claude-skill-brief](skills/hoi-claude-skill-brief/) | vNext claude_skill brief contract; runtime acceptance pending. | Unpublished local draft |
+| [hoi-zapier-brief](skills/hoi-zapier-brief/) | vNext zapier draft.3; exact reference provenance recorded; adaptation and runtime acceptance pending. | Unpublished local draft |
+| [hoi-claude-sdk-brief](skills/hoi-claude-sdk-brief/) | vNext claude_sdk draft.4; HOI-authored from official documentation; restricted repository retained as excluded history. Provider/managed acceptance pending. | Unpublished local draft |
+| [hoi-codex-sdk-brief](skills/hoi-codex-sdk-brief/) | vNext codex_sdk draft.3; exact reference provenance recorded; adaptation and runtime acceptance pending. | Unpublished local draft |
+| [hoi-claude-skill-brief](skills/hoi-claude-skill-brief/) | vNext claude_skill draft.3; exact reference provenance recorded; adaptation and runtime acceptance pending. | Unpublished local draft |
 | [hoi-chatgpt-skill-brief](skills/hoi-chatgpt-skill-brief/) | vNext chatgpt_skill brief contract; runtime acceptance pending. | Unpublished local draft |
 | [hoi-claude-code-brief](skills/hoi-claude-code-brief/) | vNext claude_code brief contract; runtime acceptance pending. | Unpublished local draft |
-| [hoi-codex-cli-brief](skills/hoi-codex-cli-brief/) | vNext codex_cli brief contract; runtime acceptance pending. | Unpublished local draft |
+| [hoi-codex-cli-brief](skills/hoi-codex-cli-brief/) | vNext codex_cli draft.3; exact reference provenance recorded; adaptation and runtime acceptance pending. | Unpublished local draft |
 | [HOI OS](skills/hoi-os/) | 21 community skills under MIT; separate app remains unpublished. Historical bundle preserved. | [Published skills repository](https://github.com/houseofichigo/hoi-os) |
-| [hoi-crewai-brief](skills/hoi-crewai-brief/) | vNext CrewAI agent/task/Flow review contract; pinned-source licence, provider and managed acceptance pending. | Unpublished local draft |
+| [hoi-crewai-brief](skills/hoi-crewai-brief/) | vNext CrewAI draft.3; reviewed MIT source notice, source-bound handover; adaptation, provider and managed acceptance pending. | Unpublished local draft |
 
 
 
@@ -107,3 +115,27 @@ Local n8n brief update (2026-10-09): draft.3 checks the generated package and cu
 Reviewed retrieval update (local, unpublished): six HOI runtime skills now describe schema-19 unified evidence and versioned memory review. [Provenance and preserved versions](../../archives/2026-10-09/hoi-reviewed-retrieval/provenance.json). Existing public links refer to earlier published editions.
 
 CrewAI draft ingestion: [2026-10-09 provenance](../../archives/2026-10-09/vnext-crewai-candidate-87bbf8c/provenance.json). No upstream code copied, host installation or publication.
+
+Memory draft workflow update (2026-10-09): [provenance](../../archives/2026-10-09/hoi-memory-draft-skill/provenance.json). Capture now documents versioned editing, comparison and reviewed restoration. Local only; public snapshots remain unchanged.
+
+Platform provenance update (2026-10-09): five draft.3 reference packages have exact upstream file and licence evidence. [Preserved versions and checksums](../../archives/2026-10-09/vnext-source-qualification/canonical-sync.json). Claude Agent SDK commercial terms require review; no upstream scripts were installed or executed. All five remain unpublished.
+
+CrewAI source update (2026-10-09): exact `bebb6e8` content and MIT notice reviewed together; ten skills statically inspected, deployment remains excluded. [Originals, fingerprints and preserved canonical version](../../archives/2026-10-09/crewai-reviewed-source-bebb6e8/canonical-sync.json). Local draft.3 only, not installed or published.
+
+## Platform knowledge adaptations — 2026-10-11
+
+Separate SaaS drafts; no publication or runtime acceptance claimed. Original desktop skills remain unchanged. Provenance: `archives/2026-10-11/platform-knowledge-skill-adaptation/manifest.json`.
+
+| Skill | Scope | Publication |
+|---|---|---|
+| [hoi-platform-ingest](skills/hoi-platform-ingest/) | client_admin | Unpublished draft.2; complete release resources, runtime verification pending |
+| [hoi-platform-wiki-author](skills/hoi-platform-wiki-author/) | client_admin | Unpublished draft.2; complete release resources, runtime verification pending |
+| [hoi-platform-knowledge-review](skills/hoi-platform-knowledge-review/) | client_admin | Unpublished draft.2; complete release resources, runtime verification pending |
+| [hoi-platform-retrieve](skills/hoi-platform-retrieve/) | client_admin, employee, platform_admin | Unpublished draft.2; complete release resources, runtime verification pending |
+| [hoi-platform-onboard](skills/hoi-platform-onboard/) | client_admin | Unpublished draft.2; complete release resources, runtime verification pending |
+| [hoi-platform-audit](skills/hoi-platform-audit/) | client_admin, platform_admin | Unpublished draft.2; complete release resources, runtime verification pending |
+| [hoi-platform-security](skills/hoi-platform-security/) | client_admin, platform_admin | Unpublished draft.2; complete release resources, runtime verification pending |
+| [hoi-platform-evaluate](skills/hoi-platform-evaluate/) | client_admin, platform_admin | Unpublished draft.2; complete release resources, runtime verification pending |
+
+
+Website-source intake (2026-10-11): a user-supplied Brand Factory variant and supporting assets were preserved without replacing the current skill. Provenance: `archives/2026-10-11/website-materials-230053/manifest.json` from the Hub root. Existing remote links describe earlier publication evidence; no new publication claimed.

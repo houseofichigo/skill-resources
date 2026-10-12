@@ -1,0 +1,766 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/houseofichigo/website-os/skills/brand-factory/assets/schema/brand.config.v2.schema.json",
+  "title": "brand-factory config v2",
+  "description": "The only hand-edited file in a brand. Structure is checked here; provenance ($src / $conf / $gap on any object, inherited from the nearest ancestor) is checked by build/config.py, because JSON Schema cannot follow inheritance.",
+  "type": "object",
+  "required": [
+    "config_version",
+    "mode",
+    "brand",
+    "slug",
+    "version",
+    "sources",
+    "locales",
+    "color",
+    "type",
+    "layout",
+    "density",
+    "shape",
+    "elevation",
+    "effects",
+    "motion",
+    "a11y",
+    "voice"
+  ],
+  "properties": {
+    "config_version": {
+      "const": 2
+    },
+    "mode": {
+      "enum": [
+        "reproduce",
+        "create"
+      ],
+      "description": "reproduce: the brand exists; never invent, every value cites a source, gaps stay null, fidelity is gated. create: no brand yet; values may be proposed ($conf default), and fidelity is not run."
+    },
+    "brand": {
+      "type": "string",
+      "minLength": 1
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "version": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "supersedes": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "object"
+    },
+    "sources": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "pattern": "^(S\\d+|WO)$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "kind",
+          "title"
+        ],
+        "properties": {
+          "kind": {
+            "enum": [
+              "person",
+              "book",
+              "pdf",
+              "tokens",
+              "stylesheet",
+              "checker",
+              "assets",
+              "figma",
+              "site",
+              "deck",
+              "document",
+              "default",
+              "references"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "url": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string"
+          },
+          "locator": {
+            "enum": [
+              "page",
+              "frame",
+              "url",
+              "path",
+              "line"
+            ]
+          },
+          "date": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "locales": {
+      "type": "object",
+      "required": [
+        "default",
+        "list"
+      ],
+      "properties": {
+        "default": {
+          "type": "string"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z]{2}(-[A-Z]{2})?$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "rtl": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "identity": {
+      "type": "object"
+    },
+    "voice": {
+      "type": "object",
+      "required": [
+        "banned"
+      ],
+      "properties": {
+        "banned": {
+          "type": "object",
+          "required": [
+            "list"
+          ],
+          "properties": {
+            "list": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "logo": {
+      "type": "object"
+    },
+    "color": {
+      "type": "object",
+      "required": [
+        "roles"
+      ],
+      "properties": {
+        "roles": {
+          "type": "object",
+          "required": [
+            "bg",
+            "fg",
+            "accent",
+            "accent_on",
+            "muted",
+            "surface",
+            "border"
+          ],
+          "patternProperties": {
+            "^[^$]": {
+              "$ref": "#/$defs/colourOrGap"
+            }
+          }
+        },
+        "states": {
+          "type": "object",
+          "patternProperties": {
+            "^[^$]": {
+              "$ref": "#/$defs/colourOrGap"
+            }
+          }
+        },
+        "accents": {
+          "type": "object",
+          "patternProperties": {
+            "^[^$]": {
+              "$ref": "#/$defs/colourOrGap"
+            }
+          }
+        },
+        "semantic": {
+          "type": "object",
+          "patternProperties": {
+            "^[^$]": {
+              "$ref": "#/$defs/colourOrGap"
+            }
+          }
+        },
+        "retired": {
+          "type": "object"
+        },
+        "dark": {
+          "type": "object"
+        },
+        "dataviz": {
+          "type": "object"
+        },
+        "ramps": {
+          "type": "object"
+        },
+        "tints": {
+          "type": "object"
+        },
+        "proportion": {
+          "type": "object"
+        },
+        "pairings": {
+          "type": "object"
+        }
+      }
+    },
+    "avoid_palettes": {
+      "type": "object"
+    },
+    "type": {
+      "type": "object",
+      "required": [
+        "families",
+        "scale"
+      ],
+      "properties": {
+        "families": {
+          "type": "object",
+          "required": [
+            "display",
+            "text",
+            "mono"
+          ],
+          "patternProperties": {
+            "^[^$]": {
+              "type": "object",
+              "required": [
+                "family"
+              ],
+              "properties": {
+                "family": {
+                  "type": "string"
+                },
+                "has_italic": {
+                  "type": "boolean"
+                },
+                "weights": {
+                  "type": "object",
+                  "description": "axis: [min, max] for a variable face; static: the list of shipped weights. Never both.",
+                  "oneOf": [
+                    {
+                      "required": [
+                        "axis"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "static"
+                      ]
+                    }
+                  ],
+                  "properties": {
+                    "axis": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 2,
+                      "maxItems": 2
+                    },
+                    "static": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "scale": {
+          "type": "object",
+          "required": [
+            "roles"
+          ],
+          "properties": {
+            "roles": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": [
+                  "role",
+                  "family",
+                  "weight",
+                  "px",
+                  "lh"
+                ],
+                "properties": {
+                  "role": {
+                    "type": "string"
+                  },
+                  "family": {
+                    "type": "string"
+                  },
+                  "weight": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "px": {
+                    "type": "object",
+                    "required": [
+                      "desktop"
+                    ],
+                    "properties": {
+                      "desktop": {
+                        "type": "number"
+                      },
+                      "tablet": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "phone": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      }
+                    }
+                  },
+                  "lh": {
+                    "type": [
+                      "number",
+                      "null"
+                    ],
+                    "minimum": 0.8,
+                    "maximum": 2.2
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "layout": {
+      "type": "object",
+      "required": [
+        "spacing",
+        "breakpoints",
+        "grid"
+      ],
+      "properties": {
+        "spacing": {
+          "type": "object",
+          "required": [
+            "base_px",
+            "steps"
+          ]
+        },
+        "breakpoints": {
+          "type": "object",
+          "required": [
+            "order",
+            "min"
+          ],
+          "properties": {
+            "order": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1
+            },
+            "min": {
+              "type": "object",
+              "patternProperties": {
+                "^[^$]": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            },
+            "tailwind": {
+              "type": "object"
+            }
+          }
+        },
+        "grid": {
+          "type": "object",
+          "required": [
+            "desktop"
+          ]
+        }
+      }
+    },
+    "density": {
+      "type": "object",
+      "required": [
+        "line_height",
+        "scales"
+      ],
+      "properties": {
+        "scales": {
+          "type": "object",
+          "patternProperties": {
+            "^[^$]": {
+              "type": "object",
+              "required": [
+                "row",
+                "text",
+                "label",
+                "pad_x"
+              ],
+              "properties": {
+                "row": {
+                  "type": "number"
+                },
+                "text": {
+                  "type": "number"
+                },
+                "label": {
+                  "type": "number"
+                },
+                "pad_x": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "shape": {
+      "type": "object",
+      "required": [
+        "surface",
+        "control",
+        "floating"
+      ],
+      "properties": {
+        "surface": {
+          "type": "number",
+          "minimum": 0
+        },
+        "control": {
+          "type": "number",
+          "minimum": 0
+        },
+        "floating": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "elevation": {
+      "type": "object",
+      "required": [
+        "method",
+        "levels"
+      ],
+      "properties": {
+        "method": {
+          "enum": [
+            "border",
+            "shadow",
+            "both"
+          ]
+        },
+        "shadows": {}
+      }
+    },
+    "effects": {
+      "type": "object",
+      "required": [
+        "policy"
+      ],
+      "properties": {
+        "policy": {
+          "type": "object",
+          "description": "Per-brand prohibitions. check.py reads these instead of hard-coding HOI's.",
+          "required": [
+            "shadow",
+            "gradient",
+            "blur",
+            "radius_max_px",
+            "transform_on_press"
+          ],
+          "properties": {
+            "shadow": {
+              "enum": [
+                "none",
+                "tokens",
+                "allowed"
+              ]
+            },
+            "gradient": {
+              "enum": [
+                "none",
+                "allowed"
+              ]
+            },
+            "blur": {
+              "enum": [
+                "none",
+                "allowed"
+              ]
+            },
+            "filter": {
+              "enum": [
+                "none",
+                "allowed"
+              ]
+            },
+            "radius_max_px": {
+              "type": "number",
+              "minimum": 0
+            },
+            "elevation": {
+              "enum": [
+                "border",
+                "shadow",
+                "both"
+              ]
+            },
+            "transform_on_press": {
+              "type": "boolean"
+            },
+            "decorative_animation": {
+              "type": "boolean"
+            },
+            "card_grids": {
+              "type": "boolean"
+            },
+            "scroll_linked_motion": {
+              "type": "boolean"
+            },
+            "opacity_hover": {
+              "type": "boolean"
+            },
+            "font_service_links": {
+              "enum": [
+                "none",
+                "allowed"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "icons": {
+      "type": "object"
+    },
+    "imagery": {
+      "type": "object"
+    },
+    "motion": {
+      "type": "object",
+      "required": [
+        "durations_ms",
+        "easing"
+      ],
+      "properties": {
+        "durations_ms": {
+          "type": "object",
+          "patternProperties": {
+            "^[^$]": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "easing": {
+          "type": "object",
+          "patternProperties": {
+            "^[^$]": {
+              "type": "string",
+              "pattern": "^cubic-bezier\\("
+            }
+          }
+        },
+        "max_ms": {
+          "type": "number"
+        }
+      }
+    },
+    "components": {
+      "type": "object"
+    },
+    "patterns": {
+      "type": "object"
+    },
+    "applications": {
+      "type": "object"
+    },
+    "a11y": {
+      "type": "object",
+      "required": [
+        "target_min_px",
+        "floors"
+      ],
+      "properties": {
+        "floors": {
+          "type": "object",
+          "required": [
+            "body_text",
+            "large_text",
+            "component_boundary"
+          ]
+        }
+      }
+    },
+    "seo": {
+      "type": "object"
+    },
+    "book": {
+      "type": "object"
+    },
+    "governance": {
+      "type": "object"
+    },
+    "reconcile": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "path",
+              "status",
+              "chosen",
+              "why"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^R\\d+$"
+              },
+              "path": {
+                "type": "string"
+              },
+              "status": {
+                "enum": [
+                  "resolved",
+                  "confirm",
+                  "confirmed"
+                ]
+              },
+              "candidates": {
+                "type": "array"
+              },
+              "why": {
+                "type": "string"
+              },
+              "question": {
+                "type": "string"
+              },
+              "affects": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "answer": {}
+            },
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "confirm"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "question"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "hex": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$"
+    },
+    "colourOrGap": {
+      "description": "A colour entry. hex is a colour, or null with $gap or policy:none. value carries non-hex colours (rgba).",
+      "type": "object",
+      "anyOf": [
+        {
+          "required": [
+            "hex"
+          ],
+          "properties": {
+            "hex": {
+              "$ref": "#/$defs/hex"
+            }
+          }
+        },
+        {
+          "required": [
+            "hex"
+          ],
+          "properties": {
+            "hex": {
+              "const": null
+            }
+          },
+          "anyOf": [
+            {
+              "required": [
+                "$gap"
+              ]
+            },
+            {
+              "required": [
+                "policy"
+              ]
+            }
+          ]
+        },
+        {
+          "required": [
+            "value"
+          ]
+        }
+      ]
+    }
+  }
+}

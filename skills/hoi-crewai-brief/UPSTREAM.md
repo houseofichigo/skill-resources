@@ -2,10 +2,10 @@
 
 Package provenance: **adapted_official_skill**.
 
-- official_skill: https://github.com/crewAIInc/skills
-  - commit: `a8d7ea68c2c50da49df8d7f18e407bec3931f884`
+- official_skill: https://github.com/crewAIInc/skills — MIT
+  - commit: `bebb6e8fc10bb8d07961969fb7bfd7d6091b421a`
   - path: `skills`
-  - SHA-256: `dd045c04541371739af40c5d9f9fa70bebb7a572899060ca598a01a7931b2faf`
+  - SHA-256: `aca17453cd6354cf063d7a8cdd88f669927eadc1e2eda5450a2f0a452cd55148`
   - audit: `adaptation_required`
 - official_docs: https://docs.crewai.com/
 

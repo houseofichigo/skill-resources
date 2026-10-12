@@ -23,5 +23,5 @@
     "permissions-hooks-approval",
     "bounded-run-recovery"
   ],
-  "expectedPackageVersion": "1.0.0-draft.2"
+  "expectedPackageVersion": "1.0.0-draft.4"
 }

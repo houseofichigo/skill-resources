@@ -1,0 +1,14 @@
+{
+  "sourceRepository": "https://github.com/houseofichigo/hoi-os",
+  "sourceCommit": "9ca79f2770c3e16ec0862a82237c83a3e5b7b4ef",
+  "sourceSkill": "hoi-evaluate",
+  "sourceFiles": {
+    "skills/hoi-evaluate/SKILL.md": "e1c2e1b627980cdf85cd8b379db809f4b8a1e8c1d3b7b0b569cd638bd9e2dad6",
+    "skills/hoi-evaluate/agents/openai.yaml": "ee0dca56c1d2ed445ee18914b3872e613955d6c94962637bcf90cc0f33bb1a35"
+  },
+  "license": "MIT",
+  "licenseSha256": "35ec55efea143442d4f008c6b1eedca0106612a6cb912f11d6088019fdf27f49",
+  "adaptation": "HOI SaaS operation overlay; desktop source preserved, not executable",
+  "publication": "not published",
+  "runtimeAcceptance": "not performed"
+}

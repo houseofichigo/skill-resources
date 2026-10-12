@@ -1,0 +1,1149 @@
+{
+  "$comment": "House of Ichigo 3.3 → 3.4 proposals. Machine-readable; merge into brand.config.json. Every block below is either a NEW node or an AMENDMENT to an existing node at the same path. Style slots hold references, keywords or composites only. Source id S6 is proposed for the 3.4 reference set (see sources_add). Decisions already in `reconcile` (R1–R27) are not reopened. Owner (S0) delegated the 3.4 decisions on 11 Oct 2026.",
+  "version": "3.4",
+  "sources_add": {
+    "S6": {
+      "kind": "references",
+      "title": "3.4 reference set, cloned under /home/claude/refs/ — impeccable (Apache-2.0), refero (MIT), emilkowalski skills (MIT), vercel web-interface-guidelines (MIT), lucide (ISC), motion-primitives (MIT). Adopted only where 3.3 is silent or contradicts itself; never against a 3.3 prohibition."
+    }
+  },
+  "icons": {
+    "$src": "S0",
+    "library": {
+      "value": "lucide",
+      "version": "pinned at build",
+      "stroke": 1.6,
+      "stroke_scaling": "proportional",
+      "linecap": "round",
+      "linejoin": "round",
+      "$note": "R12 confirmed. Lucide is drawn with round joins; 3.3 p50 asks square joins where the form is architectural. Known deviation, accepted until the master set exists — do not fake it with stroke-linejoin:miter on rounded geometry. absoluteStrokeWidth stays false: p50 says the stroke scales proportionally (1.6 at 24, 1.07 at 16)."
+    },
+    "sizes": {
+      "value": [16, 20, 24],
+      "$src": "S6:refero icons.md:20-23",
+      "$note": "32 removed. The only uses refero gives 28–32px (feature cards, empty-state illustration, marketing) are uses 3.3 refuses (p39, p88). An icon never illustrates."
+    },
+    "pairing": {
+      "$src": "S6:refero icons.md:73-77",
+      "rule": "icon size follows the adjacent text: 14–16px text → 16; 16–18px text or a button label → 20; a heading or a stepper number → 24",
+      "gap_px": 4,
+      "$src_gap_px": "S2:p44",
+      "align": "center, then an optical shift of up to 1px toward the point for chevrons and arrows",
+      "$src_align": "S6:refero icons.md:40-43, vercel README.md:54"
+    },
+    "a11y": {
+      "$src": "S6:refero icons.md:95-101, vercel README.md:82",
+      "decorative": "aria-hidden=true, no title",
+      "icon_only_button": "aria-label naming the action; visible text preferred",
+      "contrast_min": 3.0,
+      "hit_target": 44
+    },
+    "set": {
+      "$src": "S2:p50",
+      "$note": "HOI name → Lucide file name (verified in lucide-icons_lucide/icons/). Replaced one for one when the master set is drawn.",
+      "map": {
+        "learn": "graduation-cap",
+        "build": "blocks",
+        "lead": "compass",
+        "govern": "shield-check",
+        "assess": "gauge",
+        "roadmap": "route",
+        "portfolio": "folder-kanban",
+        "data": "database",
+        "agent": "bot",
+        "cohort": "users",
+        "module": "book-open",
+        "risk": "triangle-alert",
+        "rules": "list-checks"
+      }
+    },
+    "ui_set": {
+      "$src": "S6:lucide icons/",
+      "$note": "The interface set the website and platform need. `mirror` is the RTL flag (p103 rule: chevrons, back arrows, progress and the stepper mirror; numerals, the mark, media controls do not).",
+      "list": [
+        {"name": "menu", "use": "open the mobile navigation", "mirror": false},
+        {"name": "x", "use": "close an overlay, drawer, chip or banner", "mirror": false},
+        {"name": "chevron-down", "use": "disclosure, select, accordion (rotates 90° when open)", "mirror": false},
+        {"name": "chevron-up", "use": "sorted ascending; collapse", "mirror": false},
+        {"name": "chevron-right", "use": "breadcrumb separator; next; forward", "mirror": true},
+        {"name": "chevron-left", "use": "previous; back", "mirror": true},
+        {"name": "chevrons-right", "use": "last page", "mirror": true},
+        {"name": "chevrons-left", "use": "first page", "mirror": true},
+        {"name": "arrow-right", "use": "the tertiary button arrow", "mirror": true},
+        {"name": "arrow-left", "use": "back to a list", "mirror": true},
+        {"name": "arrow-up", "use": "sorted ascending column; back to top", "mirror": false},
+        {"name": "arrow-down", "use": "sorted descending column", "mirror": false},
+        {"name": "arrow-up-down", "use": "sortable, unsorted column", "mirror": false},
+        {"name": "external-link", "use": "a link that leaves the site or opens a new tab; always with the label", "mirror": false},
+        {"name": "download", "use": "export, download", "mirror": false},
+        {"name": "upload", "use": "file upload", "mirror": false},
+        {"name": "search", "use": "search field, palette trigger", "mirror": false},
+        {"name": "check", "use": "success, a done step, a selected option — Ink, no fill (p86)", "mirror": false},
+        {"name": "circle-alert", "use": "blocking / danger message", "mirror": false},
+        {"name": "triangle-alert", "use": "attention / warning message and the HOI risk icon", "mirror": false},
+        {"name": "info", "use": "informational inline message", "mirror": false},
+        {"name": "languages", "use": "language switch, only where space forbids the text EN · FR", "mirror": false},
+        {"name": "plus", "use": "add, map a use case", "mirror": false},
+        {"name": "pencil", "use": "edit in place", "mirror": false},
+        {"name": "trash", "use": "delete, remove a file", "mirror": false},
+        {"name": "copy", "use": "duplicate, copy to clipboard", "mirror": false},
+        {"name": "ellipsis", "use": "overflow menu, always with aria-label 'More actions'", "mirror": false},
+        {"name": "list-filter", "use": "filter bar, filter drawer trigger", "mirror": false},
+        {"name": "circle-user", "use": "user menu fallback when no initials", "mirror": false},
+        {"name": "log-out", "use": "sign out", "mirror": true},
+        {"name": "settings", "use": "settings", "mirror": false},
+        {"name": "bell", "use": "tasks and notifications (loading > 10s)", "mirror": false},
+        {"name": "file-text", "use": "a source document in the citation drawer", "mirror": false},
+        {"name": "paperclip", "use": "attach", "mirror": false},
+        {"name": "refresh-cw", "use": "try again", "mirror": false},
+        {"name": "loader-circle", "use": "the spinner, only where the shape of what arrives is unknown", "mirror": false},
+        {"name": "eye", "use": "show password", "mirror": false},
+        {"name": "eye-off", "use": "hide password", "mirror": false},
+        {"name": "lock", "use": "gated library content", "mirror": false},
+        {"name": "command", "use": "the ⌘ glyph in shortcut hints on macOS", "mirror": false},
+        {"name": "corner-down-left", "use": "the Enter key in shortcut hints", "mirror": false},
+        {"name": "keyboard", "use": "keyboard shortcuts list", "mirror": false},
+        {"name": "panel-left", "use": "collapse/expand the sidebar", "mirror": true},
+        {"name": "calendar", "use": "date field picker trigger", "mirror": false},
+        {"name": "clock", "use": "time, a running task", "mirror": false},
+        {"name": "mail", "use": "email address in contact", "mirror": false},
+        {"name": "send", "use": "send a chat message", "mirror": true},
+        {"name": "chart-scatter", "use": "the quadrant view in platform nav", "mirror": false}
+      ]
+    },
+    "never_add": {
+      "$src": "S6:refero icons.md:12,55-65 against S2:p50",
+      "list": [
+        "a solid or duotone variant for marketing (refero allows it; p50 does not)",
+        "a second library on any surface",
+        "an icon inside the website pillar block or any feature row (p39)",
+        "a flag for a language",
+        "a CSS filter on an icon or a client logo (p49)"
+      ]
+    }
+  },
+  "motion": {
+    "$src": "S2:p81",
+    "stagger_ms": {
+      "value": 40,
+      "max_total_ms": 320,
+      "$src": "S6:emil review-animations/STANDARDS.md:149-151, impeccable animate.md:48",
+      "$note": "One value, not a range. Used only where a list arrives as a list: the authored moment, and rows that arrive after a scoring run. Never on sections, never on menus."
+    },
+    "hover_gating": {
+      "value": "(hover: hover) and (pointer: fine)",
+      "$src": "S6:emil animate/SKILL.md:159-160",
+      "$note": "Amends the WO default `(hover:hover)`. Applies to every :hover rule, colour included: a tap on touch leaves a false hover on the control."
+    },
+    "frequency_rule": {
+      "$src": "S6:emil animate/SKILL.md:41-48",
+      "tiers": {
+        "always": "100+ times a day — palette, focus ring, tabs, sidebar collapse, keyboard shortcuts, sort: instant, no transition",
+        "often": "tens a day — hover, row navigation, select open: colour only, fast",
+        "occasional": "dialogs, drawers, toasts, the mobile nav: the overlay assignments on p81",
+        "rare": "first-time surfaces: no delight budget. 3.3 bans decorative animation; the one exception is the authored moment."
+      }
+    },
+    "properties": {
+      "$src": "S6:emil animation-performance/SKILL.md:33,76-80; vercel README.md:42,48",
+      "allowed": ["opacity", "transform (translate, scale ≥ .97, rotate)", "background-color", "color", "border-color", "outline-color", "stroke-dashoffset (the authored moment only)"],
+      "never": ["width", "height", "top", "left", "margin", "padding", "box-shadow", "filter", "backdrop-filter", "clip-path", "transition: all"],
+      "tooling": "CSS transitions first; CSS keyframes for the authored moment (off the main thread); WAAPI when JS must sequence; motion.dev only for the four motion-primitives components that survive the kit review. will-change only on the quadrant group while it plays, removed after.",
+      "svg": "transforms on a <g> wrapper with transform-box: fill-box; transform-origin: center",
+      "$src_svg": "S6:vercel README.md:49-50"
+    },
+    "asymmetry": {
+      "$src": "S6:refero motion.md:101-105; emil animate/SKILL.md:147; impeccable animate.md:61",
+      "rule": "Exit is one duration step shorter than enter and uses the exit curve. Exits are opacity-only; enters may add a transform. An element leaves the way it came (a drawer slides back to its edge, a toast back to block-end).",
+      "$note": "Fills the gap p81 leaves for drawers and toasts (one duration stated, no direction). Overlay enter/exit on p81 already follows this rule."
+    },
+    "skeleton_timing": {
+      "$src": "S6:vercel README.md:16; S2:p100",
+      "show_delay_ms": 300,
+      "model_show_delay_ms": 1000,
+      "min_visible_ms": 300,
+      "pulse_period_ms": 800,
+      "$note": "p100: under 1s nothing, 1–10s a skeleton. Data loads show the skeleton after 300ms (Vercel's window), model responses after 1000ms (p100). The pulse is two deliberate halves (400 + 400), so no single transition exceeds the ceiling."
+    },
+    "spinner": {
+      "period_ms": 800,
+      "easing": "linear",
+      "size_px": 16,
+      "$note": "Only where the shape of what arrives is unknown (p88). One rotation is two deliberate halves. Linear: constant motion (emil STANDARDS.md:24).",
+      "$src": "S6:emil review-animations/STANDARDS.md:24"
+    },
+    "map": {
+      "$comment": "component → [property, duration token, easing token]. 'instant' means no transition. Every row satisfies p81; rows marked S6 fill a gap.",
+      "$src": "S2:p81",
+      "button": {"background-color, color, border-color": ["fast", "standard"]},
+      "button_tertiary_arrow": {"transform translateX(2px)": ["fast", "standard"], "gated": true},
+      "input, select_closed, textarea": {"border-color": ["fast", "standard"]},
+      "focus_ring": {"outline": ["instant"], "$src": "S6:emil animate/SKILL.md:48"},
+      "checkbox": {"check opacity": ["fast", "standard"]},
+      "toggle": {"thumb transform translateX": ["fast", "standard"], "track background-color": ["fast", "standard"]},
+      "row, nav_item, link": {"background-color, color": ["fast", "standard"]},
+      "selected_edge, current_rule, stepper_current": {"all": ["instant"]},
+      "tabs": {"indicator": ["instant"], "panel opacity": ["fast", "standard"], "$src": "S6:emil animate/SKILL.md:41-48", "$note": "a shared-layout sliding indicator is banned: it animates layout and runs on the main thread during navigation"},
+      "accordion": {"chevron rotate 90deg": ["fast", "standard"], "content": ["instant"], "$note": "height is a layout property (p81). The panel appears; the chevron turns."},
+      "sidebar_collapse": {"all": ["instant"], "$note": "width is layout; keyboard-driven; tens of times a day"},
+      "menu, popover": {"enter opacity + translate 4px from the trigger side": ["base", "enter"], "exit opacity": ["fast", "exit"], "transform_origin": "the trigger", "$src_transform_origin": "S6:emil animate/SKILL.md:87"},
+      "tooltip": {"enter opacity": ["fast", "standard"], "exit opacity": ["fast", "exit"], "delay_first_ms": 100, "delay_peers_ms": 0, "$src_delay_peers_ms": "S6:vercel README.md:24"},
+      "dialog": {"scrim opacity": ["base", "enter"], "panel opacity + scale .98→1": ["base", "enter"], "exit opacity": ["fast", "exit"], "transform_origin": "center"},
+      "drawer": {"enter transform translateX(100%→0)": ["slow", "standard"], "scrim opacity": ["base", "enter"], "exit transform + opacity": ["base", "exit"], "$src_exit": "S6 asymmetry"},
+      "mobile_nav": {"same as": "drawer"},
+      "toast": {"enter opacity + translateY(100%→0)": ["base", "enter"], "exit opacity + translateY(0→100%)": ["fast", "exit"], "driver": "transition, never keyframes — toasts stack and retarget", "$src_driver": "S6:emil animate/SKILL.md:145"},
+      "banner, inline_message, consent": {"enter opacity": ["fast", "standard"], "exit": ["instant"]},
+      "skeleton": {"opacity 1→.5→1 loop": ["deliberate", "standard", "loop"]},
+      "score_meter_fill": {"transform scaleX(0→value) once on arrival": ["deliberate", "standard"], "transform_origin": "left, never mirrored (p103)"},
+      "progress_bar": {"fill transform scaleX": ["deliberate", "standard"]},
+      "quadrant_platform": {"dot arrival opacity": ["fast", "standard"], "dot move on rescore transform translate": ["base", "standard"], "draw_in": "none — Operate surface, seen daily"},
+      "quadrant_website": {"see": "authored_moment"},
+      "palette": {"all": ["instant"], "$src": "S6:emil animate/SKILL.md:41-48", "$note": "Mod+K is a keyboard shortcut used 100+ times a day. e3 scrim appears without transition."},
+      "chat_streaming": {"text": ["instant"], "stop/send swap": ["instant"]},
+      "route_change": {"all": ["instant"], "$note": "no page choreography (impeccable animate.md:10)"},
+      "header": {"scrolled hairline": ["instant"], "$note": "no shrink, no hide-on-scroll: scroll-linked movement is banned (p81)"},
+      "section_reveal": {"all": ["none"], "$note": "no in-view fades on sections or rows (p81 decorative ban; craft-floor.md:13)"},
+      "logo_wall": {"all": ["none"]},
+      "statistics": {"count_up": ["none"], "$note": "a counting number is the statistic-band default p52 rejects"}
+    },
+    "reduced_motion": {
+      "rule": "Every duration drops to 0ms except opacity, which keeps fast.",
+      "skeleton": "static, no pulse",
+      "spinner": "keeps rotating (it is the only signal that work continues)",
+      "authored_moment": "no draw-in; the whole quadrant fades in once at fast",
+      "$src": "S2:p81, S0 (R10)"
+    },
+    "authored_moment": {
+      "value": "the use-case quadrant drawing in on the Platform page",
+      "$src": "S0 (R10)",
+      "rule": "One per site, not per page. Functional motion everywhere else.",
+      "trigger": "IntersectionObserver, threshold .5, once per page view; not scroll-linked — a one-shot trigger, position never drives a frame. If already in view at load, plays after document.fonts.ready.",
+      "default_state": "visible. The hidden start state is set by a class JS adds before first paint; with JS off the quadrant is simply there (craft-floor.md:71).",
+      "driver": "CSS keyframes on a class; lines use pathLength=1, stroke-dasharray 1, stroke-dashoffset 1→0; dots are <g> groups with transform-box fill-box",
+      "interruption": "runs to completion (≤ 1.1s); never retriggered; never blocks links or scroll",
+      "timeline": [
+        {"t_ms": 0, "element": "x and y axes (1.2px Ink)", "property": "stroke-dashoffset 1→0, from the origin outward", "duration": "deliberate", "easing": "standard"},
+        {"t_ms": 120, "element": "axis titles (mono eyebrow, Slate)", "property": "opacity 0→1", "duration": "base", "easing": "enter"},
+        {"t_ms": 240, "element": "partition segment 1: readiness = 50, full height", "property": "stroke-dashoffset 1→0", "duration": "slow", "easing": "standard"},
+        {"t_ms": 280, "element": "partition segment 2: impact = 60, from readiness 50 to the right edge", "property": "stroke-dashoffset 1→0", "duration": "slow", "easing": "standard"},
+        {"t_ms": 320, "element": "partition segment 3: readiness = 65, from impact 60 to the top", "property": "stroke-dashoffset 1→0", "duration": "slow", "easing": "standard"},
+        {"t_ms": 520, "element": "zone labels: Fix foundations first · Batch or defer · Plan carefully · Start now", "property": "opacity 0→1, stagger 40 in that order", "duration": "fast", "easing": "enter"},
+        {"t_ms": 640, "element": "dots, highest score first (p52 data: 86, 74, 64, 54, 40)", "property": "opacity 0→1 and scale .9→1 in place, stagger 40", "duration": "base", "easing": "enter"},
+        {"t_ms": 800, "element": "dot labels (name, score in mono)", "property": "opacity 0→1, stagger 40", "duration": "fast", "easing": "enter"}
+      ],
+      "total_ms": 1080,
+      "per_element_max_ms": 400,
+      "reduced_motion": "all elements opacity 0→1 together, fast; no draw, no scale",
+      "$note": "Every element stays under the 400ms ceiling (p81); the sequence is a stagger, which R10 permits. Dots appear in place because the position is the product's answer (p61) — a dot that travels would say the score moved."
+    },
+    "kit": {
+      "value": "motion-primitives",
+      "$src": "S6:ibelick_motion-primitives/components/core",
+      "allowed": {
+        "dialog": "with ease/duration replaced by the brand tokens and `backdrop:backdrop-blur-xs` removed (blur is banned, p73)",
+        "transition-panel": "tab and stepper panel crossfade, opacity only, fast",
+        "in-view": "only as the trigger of the authored moment; never for section or row reveals",
+        "disclosure": "chevron and content toggle only, with the height animation removed (p81)"
+      },
+      "banned": {
+        "animated-group": "springs and blur variants",
+        "animated-number, sliding-number": "a counting statistic is the band p52 rejects; the proof line is static",
+        "accordion": "animates height",
+        "border-trail, glow-effect, spotlight, progressive-blur": "decoration; glow, blur and filters are banned (p44, p73)",
+        "carousel, infinite-slider": "a marquee is movement without a cause; the logo wall is static",
+        "cursor, magnetic, tilt": "decorative pointer effects",
+        "dock, toolbar-dynamic, toolbar-expandable": "animate layout",
+        "image-comparison": "the comparison_pair layout is two images side by side (p48), not a slider",
+        "morphing-dialog, morphing-popover": "layout animations on the main thread",
+        "scroll-progress": "scroll-linked",
+        "text-effect, text-loop, text-morph, text-roll, text-scramble, text-shimmer, text-shimmer-wave, spinning-text": "decorative text animation",
+        "ui/button, ui/input, ui/label, ui/tooltip": "the config's own components carry these"
+      }
+    }
+  },
+  "components": {
+    "$comment": "NEW and AMENDED components in the config grammar. `$src` S0 = owner-delegated 3.4 decision; the reference that informed it is in $note and in `provenance`. Keys named for paint hold references, keywords or composites only.",
+    "$src": "S0",
+    "button": {
+      "$comment": "AMENDMENT: adds the destructive variant and the on-dark secondary. Everything else unchanged.",
+      "variants": {
+        "destructive": {
+          "rest": {"bg": "{color.semantic.danger}", "fg": "{color.bg}", "border": "none"},
+          "hover": {"bg": "{color.state.danger_hover}"},
+          "active": {"bg": "{color.state.danger_hover}"},
+          "focus": "{component.focus}",
+          "disabled": {"bg": "{color.state.disabled_bg}", "fg": "{color.state.disabled_fg}"},
+          "$src": "S2:p77",
+          "$note": "p77 measures white on danger (4.68) and white on danger-hover (6.31): a filled danger control is in the ramp. Used only inside a confirm dialog, with the consequence in the label (p97). Never on a working screen, never for cancel."
+        },
+        "secondary_on_dark": {
+          "rest": {"bg": "transparent", "fg": "{color.bg}", "border": {"width": 1, "style": "solid", "color": "{color.bg}"}},
+          "hover": {"bg": {"color": "{color.bg}", "alpha": 0.08}},
+          "active": {"bg": {"color": "{color.bg}", "alpha": 0.14}},
+          "focus": "{component.focus}",
+          "$note": "The secondary button inside an Ink section (CTA band, conviction band). Primary stays Cobalt on Ink (p24)."
+        }
+      },
+      "loading_label_suffix": "…",
+      "$src_loading_label_suffix": "S6:vercel README.md:19",
+      "touch_action": "manipulation",
+      "$src_touch_action": "S6:vercel README.md:21"
+    },
+    "link": {
+      "$comment": "NEW. Inline text link. R24: inline links are underlined; tertiary buttons are not.",
+      "rest": {"fg": "{color.accent}", "decoration": "underline", "underline_offset_em": 0.15, "underline_thickness_px": 1},
+      "hover": {"fg": "{color.state.accent_hover}"},
+      "active": {"fg": "{color.state.accent_active}"},
+      "focus": "{component.focus}",
+      "on_dark": {"fg": "{color.accent_on_dark}"},
+      "external": {"icon": "external-link", "icon_px": 16, "$note": "icon after the label; rel=noopener; the label says where it goes"},
+      "$note": "Navigation is always an <a>; never a button or a div with a click handler (vercel README.md:33)."
+    },
+    "skip_link": {
+      "$comment": "NEW. First focusable element on every page, site and platform.",
+      "hidden": "visually hidden until focused",
+      "visible": "{component.button}",
+      "variant": "primary",
+      "position": "inset-block-start {space.sp-3}, inset-inline-start {space.sp-3}",
+      "target": "#main",
+      "$src": "S6:vercel README.md:84"
+    },
+    "header": {
+      "$comment": "NEW. Website header. p52 gives labels and the CTA; the rest fills a gap.",
+      "height": {"desktop": 64, "tablet": 64, "phone": 56},
+      "bg": "{color.bg}",
+      "rule": {"width": 1, "style": "solid", "color": "{color.border}"},
+      "rule_behaviour": "the hairline appears only once the page has scrolled (class toggle, no transition); at rest the header sits on the white ground with no rule",
+      "position": "sticky, block-start; never shrinks, never hides on scroll",
+      "scroll_margin": "every heading gets scroll-margin-top equal to the header height",
+      "$src_scroll_margin": "S6:vercel README.md:76",
+      "logo": {"asset": "mark", "px": 40, "label": "House of Ichigo — home", "$note": "The lockup is portrait (670/790) and its minimum is 72px high (p14): it does not fit a 64px bar. Below the minimum the rule is 'drop to the mark' — so the mark alone, at 40px, linked to Home. The lockup lives in the footer."},
+      "nav": {
+        "labels": "components.nav.web.labels",
+        "items_max": 6,
+        "item": "{component.nav}",
+        "current_edge": {"width": 2, "style": "solid", "color": "{color.accent}"},
+        "current_edge_side": "block-end",
+        "pillar_current": "on a pillar page the current item's edge may take that pillar's colour — the one place wayfinding colour appears in the header (p52: 'a pillar page takes that pillar's colour in the section rule')",
+        "type": "{type.button}",
+        "gap": "{space.sp-5}"
+      },
+      "cta": {"label": "Talk to us", "variant": "primary", "$src": "S2:p52"},
+      "language_switch": "{component.language_switch}",
+      "layout": {
+        "desktop": "mark · nav (inline-start, after a sp-6 gap) · spacer · language switch · CTA",
+        "tablet": "mark · spacer · language switch · CTA · menu button (nav moves to the mobile drawer below 1024)",
+        "phone": "mark · spacer · menu button; language switch and CTA inside the drawer"
+      },
+      "breakpoint_collapse": "desktop",
+      "focus": "{component.focus}",
+      "a11y": "<header> landmark; nav is <nav aria-label='Main'>; the current page carries aria-current=page",
+      "copy_slots": {"cta": 3, "nav_label": 1}
+    },
+    "mobile_nav": {
+      "$comment": "NEW. The drawer the menu button opens below the desktop breakpoint.",
+      "base": "{component.drawer}",
+      "width": {"phone": "100%", "tablet": 420},
+      "density": "comfortable",
+      "row_rule": {"width": 1, "style": "solid", "color": "{color.border}"},
+      "groups": ["nav.web.labels", ["Advisory", "Insights", "About", "Contact"], "language switch", "CTA full width"],
+      "trigger": {"icon": "menu", "label": "Menu", "icon_px": 20, "target": 44},
+      "close": {"icon": "x", "label": "Close menu"},
+      "behaviour": "focus trapped; Esc closes; focus returns to the menu button; body scroll locked; overscroll-behavior contain",
+      "$src_behaviour": "S2:p89-90; S6:vercel README.md:25"
+    },
+    "language_switch": {
+      "$comment": "NEW. EN · FR at launch; AR joins when the locale ships.",
+      "form": "text links, the locale code in mono eyebrow case: EN · FR",
+      "type": "{type.eyebrow}",
+      "current": {"fg": "{color.fg}", "weight": 600},
+      "other": {"fg": "{color.muted}"},
+      "hover": {"fg": "{color.fg}"},
+      "separator": "·",
+      "focus": "{component.focus}",
+      "behaviour": "each link points at the same page in the other locale (hreflang); aria-current=true on the current locale; lang attribute on each link; never a flag; never a dropdown for two options",
+      "$src_behaviour": "S6:vercel README.md:79 (language from settings, never from location)"
+    },
+    "breadcrumbs": {
+      "$comment": "NEW. Site: article and programme pages only. Platform: top bar, max 3 levels.",
+      "type": "{type.eyebrow}",
+      "item": {"fg": "{color.muted}"},
+      "item_hover": {"fg": "{color.fg}", "decoration": "underline"},
+      "current": {"fg": "{color.fg}"},
+      "separator": {"icon": "chevron-right", "icon_px": 16, "mirror": true},
+      "gap": "{space.sp-2}",
+      "on_dark": {"fg": "{color.muted_on_dark}"},
+      "truncate_ch": 32,
+      "truncate_mode": "middle",
+      "phone": "only the parent, prefixed with arrow-left",
+      "a11y": "<nav aria-label='Breadcrumb'>, an <ol>, aria-current=page on the last item"
+    },
+    "footer": {
+      "$comment": "NEW. 3.3 has none. On Cool Grey, never Ink: the CTA band above it is the Ink closing section and two Ink surfaces never touch (p45).",
+      "bg": "{color.surface}",
+      "fg": "{color.fg}",
+      "rule": {"width": 1.6, "style": "solid", "color": "{color.fg}"},
+      "padding_block": "{space.sp-7}",
+      "layout": {
+        "desktop": "12 columns: rail (3) lockup 72px + tagline; columns 4–6 Training, 7–9 Advisory, 10–12 Company; then a hairline and the legal line",
+        "tablet": "rail full width, then three columns of 8/3",
+        "phone": "stacked: lockup, three lists one under another with a hairline between, then the legal line"
+      },
+      "lockup": {"asset": "lockup", "px": 72, "$src": "S2:p14"},
+      "tagline": {"type": "{type.heading_sm}", "fg": "{color.fg}"},
+      "column_head": {"type": "{type.eyebrow}", "fg": "{color.muted}"},
+      "column_link": {"type": "{type.body}", "fg": "{color.fg}", "decoration": "none", "hover": {"decoration": "underline"}},
+      "columns": {
+        "training": ["Learn AI", "Build with AI", "Lead with AI", "Govern with AI"],
+        "advisory": ["AI Capability Plan", "Use-Case Portfolio", "AI Operating Model", "Control Set"],
+        "company": ["Platform", "Insights", "About", "Contact", "LinkedIn"]
+      },
+      "legal_line": {
+        "type": "{type.mono}",
+        "size": 12,
+        "fg": "{color.muted}",
+        "rule": {"width": 1, "style": "solid", "color": "{color.border}"},
+        "content": "House of Ichigo SAS · Auxerre, France · the four legal links · language switch · © year",
+        "$note": "The registered entity and the URL, never an individual's details (p66). No social icons (p67): LinkedIn is a text link."
+      },
+      "never": ["a newsletter form (the library gate is the only sign-up)", "social icons", "an Ink footer", "a back-to-top button"]
+    },
+    "hero": {
+      "$comment": "AMENDMENT of patterns.web.hero, as a component. R23: hero 88px, lead 18px.",
+      "grid": "12 columns; text in 1–7; the product screenshot starts at column 8 and bleeds past the container's inline-end edge, cropped like the mark (p52)",
+      "h1": {"type": "{type.display_xl}", "accent_word": 1, "max_words": 6, "wrap": "balance"},
+      "lead": {"type": "{type.body_lg}", "max_words": 24},
+      "ctas": {"primary": "Book a scoping call", "secondary": "See the catalogue", "gap": "{space.sp-3}", "$src": "S2:p52, ABOUT_US §5"},
+      "proof": {"type": "{type.mono}", "fg": "{color.muted}", "position": "under the screenshot, one line", "format": "4,000+ professionals · 500+ companies · Europe, the Gulf and Africa", "$src": "S2:p52"},
+      "screenshot": {"layout": "screenshot_frame", "source": "the platform at 2x, real data or the p52 illustrative set", "alt": "required, names the screen", "dimensions": "explicit width and height to prevent layout shift", "$src_dimensions": "S6:vercel README.md:122"},
+      "motion": "none; content visible at first paint",
+      "responsive": {
+        "phone": "text full width; screenshot below at 100vw + 10% bleed to the inline-end, height 240; proof line under it",
+        "tablet": "text 8/8; screenshot below at full width with bleed",
+        "desktop": "as grid"
+      },
+      "never": ["a headline and a void", "a statistic band", "an entrance animation", "a background image or gradient"]
+    },
+    "pillar_block": {
+      "$comment": "NEW. The four pillars on Home and Training. Rules and the rail, no cards, no icons (p39, S1:layout.prohibited).",
+      "layout": {
+        "desktop": "four columns of 3/12 in one row (the 4-per-row ceiling, p46)",
+        "tablet": "2 × 2, each 4/8",
+        "phone": "stacked rows, hairline between"
+      },
+      "column": {
+        "rule": {"width": 2.4, "style": "solid", "color": "{color.pillar.learn}"},
+        "rule_side": "block-start",
+        "rule_note": "{color.pillar.<pillar>} per column — the only coloured rule (S1:layout.rules.pillar)",
+        "eyebrow": {"type": "{type.eyebrow}", "fg": "{color.muted}", "content": "the framework name"},
+        "title": {"type": "{type.heading_md}", "fg": "{color.fg}", "content": "the pillar name, exactly as p40; Build with AI carries 'your team builds' as a second line in {type.caption}"},
+        "body": {"type": "{type.body}", "max_words": 18},
+        "link": {"variant": "tertiary", "label": "the pillar name"},
+        "bg": "none",
+        "border": "none",
+        "pad_block": "{space.sp-4}"
+      },
+      "states": {"hover": "nothing on the column; the tertiary link carries the hover", "focus": "{component.focus}"},
+      "a11y": "a <ul> of four <li>; the pillar colour always appears with the pillar name (p25)",
+      "never": ["icons", "a card border or fill", "a fifth column", "equal-height boxes"]
+    },
+    "programme_list": {
+      "$comment": "NEW. The three tiers of one pillar. A list, not cards. No duration, no price (S1:catalogue.no_menu).",
+      "head_rule": {"width": 2.4, "style": "solid", "color": "{color.pillar.learn}"},
+      "head_rule_note": "the page's pillar colour",
+      "delivery_line": {"type": "{type.caption}", "fg": "{color.muted}", "content": "In person, virtual or hybrid · English and French · groups of 6–20", "$note": "group size is allowed; duration and price are not"},
+      "row": {
+        "rule": {"width": 1, "style": "solid", "color": "{color.border}"},
+        "layout_desktop": "tier label in the rail (3/12), programme in 4–12",
+        "layout_phone": "tier label above the programme",
+        "tier": {"type": "{type.eyebrow}", "fg": "{color.muted}", "values": ["Briefing", "Core programme", "Applied"]},
+        "title": {"type": "{type.heading_sm}", "fg": "{color.fg}"},
+        "body": {"type": "{type.body}", "max_words": 22},
+        "audience": {"type": "{type.caption}", "fg": "{color.muted}", "max_words": 10},
+        "link": {"variant": "tertiary", "label": "Book a scoping call"},
+        "pad_block": "{space.sp-4}"
+      },
+      "programmes_block": {"$note": "The AI Enablement Program, AI Transformation Consultant Programme and Corporate AI Academy use the same row, under a heading 'Programmes', on the Training page only"},
+      "never": ["a duration column", "a price", "a comparison table with ticks", "a 'most popular' badge"]
+    },
+    "framework_block": {
+      "$comment": "NEW. One framework (Advisory). On a pillar page: one; on Advisory: four stacked.",
+      "rule": {"width": 2.4, "style": "solid", "color": "{color.pillar.learn}"},
+      "rule_note": "the framework's pillar colour",
+      "layout_desktop": "rail (3/12): eyebrow 'Advisory · <pillar>' and the framework name as {type.heading_lg}; body (4–12): two lists",
+      "layout_phone": "stacked",
+      "eyebrow": {"type": "{type.eyebrow}", "fg": "{color.muted}"},
+      "title": {"type": "{type.heading_lg}", "fg": "{color.fg}", "$note": "a proper noun (p40): no accent word inside it"},
+      "lists": {
+        "covers": {"head": "Covers", "items_max": 4, "words_per_item": 8},
+        "receives": {"head": "What you receive", "items_max": 5, "words_per_item": 12}
+      },
+      "list_head": {"type": "{type.eyebrow}", "fg": "{color.muted}"},
+      "list_item": {"type": "{type.body}", "rule": {"width": 1, "style": "solid", "color": "{color.border}"}},
+      "terms_line": {"type": "{type.caption}", "fg": "{color.muted}", "content": "Fixed scope, fixed output, priced per engagement, never per day."},
+      "link": {"variant": "tertiary", "label": "Book a scoping call"},
+      "stack_rule": {"width": 1, "style": "solid", "color": "{color.border}"}
+    },
+    "stage_strip": {
+      "$comment": "NEW. The platform's six stages in display form (Platform page). The stepper without a current state.",
+      "stages": "voice.naming.platform_stages",
+      "count": 6,
+      "layout": {"desktop": "six columns of 2/12", "tablet": "3 × 2", "phone": "a vertical list"},
+      "number": {"type": "{type.eyebrow}", "fg": "{color.accent}", "format": "01–06"},
+      "label": {"type": "{type.heading_sm}", "fg": "{color.fg}"},
+      "line": {"type": "{type.caption}", "fg": "{color.muted}", "max_words": 14, "content": "what the platform produces at that stage (p98 'The platform' column)"},
+      "rule": {"width": 1, "style": "solid", "color": "{color.border}"},
+      "rule_side": "block-start on desktop and tablet; inline-start on phone",
+      "never": ["a progress bar", "a percentage", "fewer or more than six", "the curriculum phases"]
+    },
+    "proof_line": {
+      "$comment": "NEW as a component (p52 pattern).",
+      "type": "{type.mono}",
+      "fg": "{color.muted}",
+      "separator": "·",
+      "items": ["4,000+ professionals", "500+ companies", "Europe, the Gulf and Africa"],
+      "numerals": "static; never counted up",
+      "phone": "wraps to three lines, separators dropped"
+    },
+    "logo_wall": {
+      "$comment": "NEW. Client logos, with written permission each (ABOUT_US §5). Omitted entirely until supplied: a placeholder is worse than nothing (p49).",
+      "caption": {"type": "{type.eyebrow}", "fg": "{color.muted}", "max_words": 6},
+      "logo": {"height_px": 32, "treatment": "as supplied, one colour where the client provides one", "filter": "none"},
+      "gap": "{space.sp-5}",
+      "layout": "one wrapping row, left-ranged; never a marquee, never a carousel",
+      "states": {"hover": "none", "focus": "only when a logo links"},
+      "never": ["CSS grayscale or opacity on a logo (p49: no filter; p77: no opacity)", "a border around each logo", "more than 12"]
+    },
+    "conviction_band": {
+      "$comment": "NEW. The Ink pull-quote block (p45). One per page at most, never adjacent to the CTA band.",
+      "bg": "{color.fg}",
+      "fg": "{color.bg}",
+      "statement": {"type": "{type.display_md}", "accent_word": 1, "accent_fg": "{color.accent_on_dark}", "max_words": 14, "wrap": "balance"},
+      "source": {"type": "{type.mono}", "fg": "{color.muted_on_dark}", "optional": true},
+      "layout": "rail empty; statement in columns 4–11, left-ranged (p46 asymmetry)",
+      "padding_block": "{space.sp-7}",
+      "focus": "{component.focus}",
+      "focus_note": "on_dark ring",
+      "never": ["a photograph behind it", "a statistic", "two statements"]
+    },
+    "cta_band": {
+      "$comment": "NEW. The closing Ink section (p45). Last section before the footer on every page except legal and 404.",
+      "bg": "{color.fg}",
+      "fg": "{color.bg}",
+      "heading": {"type": "{type.display_lg}", "accent_word": 1, "accent_fg": "{color.accent_on_dark}", "max_words": 8, "wrap": "balance"},
+      "line": {"type": "{type.body_lg}", "fg": "{color.bg}", "max_words": 18},
+      "primary": {"variant": "primary", "label": "Book a scoping call"},
+      "secondary": {"variant": "secondary_on_dark", "label": "See the catalogue"},
+      "layout": "heading and line in columns 1–7; buttons under the line; desktop padding-block sp-7, phone sp-6",
+      "focus": "{component.focus}",
+      "never": ["a form inside it", "a third button", "an image"]
+    },
+    "article_list": {
+      "$comment": "NEW. Insights index. Rows, not cards.",
+      "row": {
+        "rule": {"width": 1, "style": "solid", "color": "{color.border}"},
+        "eyebrow": {"type": "{type.eyebrow}", "fg": "{color.muted}", "content": "pillar · date"},
+        "title": {"type": "{type.heading_md}", "fg": "{color.fg}", "link": "the whole title is the link; underline on hover"},
+        "standfirst": {"type": "{type.body}", "max_words": 30, "line_clamp": 2},
+        "link": {"variant": "tertiary", "label": "Read"},
+        "pad_block": "{space.sp-4}",
+        "hover": {"bg": "none"},
+        "image": "none by default; the first row may use split_46_54 with a real session photograph"
+      },
+      "filter": {"form": "a row of pillar links above the list, current one with the 2px Cobalt rule of {component.tabs}; state in the URL (?pillar=)", "$src": "S6:vercel README.md:17,30"},
+      "pagination": "{component.pagination}",
+      "gate": "{component.library_gate}",
+      "gate_position": "after the third row, and at the foot",
+      "date_format": "day month year, locale-aware (Intl.DateTimeFormat, long month), set in mono",
+      "$note": "p92's DD/MM/YYYY governs the interface; the editorial surface takes the written month. Recorded here so it is a rule, not drift."
+    },
+    "article": {
+      "$comment": "NEW. Article page. type.setting applies: 45–75ch measure, left-ranged.",
+      "layout_desktop": "rail (3/12): eyebrow, date, author, reading time, breadcrumbs; body (4–11): prose at 75ch max",
+      "layout_phone": "rail content above the title, then the prose",
+      "title": {"type": "{type.display_lg}", "accent_word": 1, "wrap": "balance"},
+      "standfirst": {"type": "{type.body_lg}"},
+      "prose": {"type": "{type.body_lg}", "h2": "{type.heading_lg}", "h3": "{type.heading_md}", "pull_quote": "{type.display_md}", "measure_ch": 75, "wrap": "pretty"},
+      "images": "one of the five image layouts, with a mono caption below (S1:images.captions); real sessions only",
+      "code_or_data": {"type": "{type.mono}"},
+      "end": ["the library gate panel", "three related rows from {component.article_list}"],
+      "share": "none — no social buttons",
+      "schema": "Article"
+    },
+    "library_gate": {
+      "$comment": "NEW. The Discover library sign-up: the lead magnet. An e1 panel on Insights, at the end of each article, and the whole /library page.",
+      "elevation": "{elevation.e1}",
+      "padding": "{space.sp-5}",
+      "bg": "{color.bg}",
+      "icon": {"name": "lock", "px": 20, "position": "beside the eyebrow"},
+      "eyebrow": {"type": "{type.eyebrow}", "fg": "{color.muted}", "content": "The Discover library"},
+      "title": {"type": "{type.heading_lg}", "max_words": 8},
+      "line": {"type": "{type.body}", "max_words": 24},
+      "form": {
+        "density": "comfortable",
+        "fields": [
+          {"name": "name", "label": "Name", "autocomplete": "name", "width_ch": 32},
+          {"name": "email", "label": "Work email", "type": "email", "autocomplete": "email", "inputmode": "email", "spellcheck": false, "width_ch": 32, "help": "The access link goes here."},
+          {"name": "company", "label": "Company", "optional": true, "autocomplete": "organization", "width_ch": 32}
+        ],
+        "consent": {"control": "checkbox", "applies": "on submit", "required": true},
+        "honeypot": true,
+        "submit": {"variant": "primary", "label": "Create an account"},
+        "validate": "on blur; on submit focus the first error",
+        "$src_validate": "S2:p82; S6:vercel README.md:99",
+        "layout": "fields stacked on phone; name and company side by side on tablet and desktop, email full width"
+      },
+      "success": {"form": "inline message replaces the form: what was sent, where, what to do next", "live": "polite"},
+      "error": {"form": "{component.inline_message}", "field": "{component.input}"},
+      "never": ["a modal that interrupts reading", "a timed pop-up", "a newsletter checkbox pre-ticked", "'Subscribe'"]
+    },
+    "contact_form": {
+      "$comment": "NEW. Contact page. A form plus the faster route beside it.",
+      "layout_desktop": "form in columns 1–7; the rail at 9–12 holds email, address and the scoping-call link",
+      "layout_phone": "rail content first, then the form",
+      "density": "comfortable",
+      "fields": [
+        {"name": "name", "label": "Name", "autocomplete": "name", "width_ch": 32},
+        {"name": "email", "label": "Work email", "type": "email", "autocomplete": "email", "inputmode": "email", "spellcheck": false, "width_ch": 32},
+        {"name": "organisation", "label": "Organisation", "autocomplete": "organization", "width_ch": 32},
+        {"name": "topic", "label": "This is about", "control": "select", "options": ["Training", "Advisory", "The platform", "Something else"], "width_ch": 24},
+        {"name": "message", "label": "Message", "control": "textarea", "rows": 6, "max_chars": 2000, "help": "What you want to run, and by when."}
+      ],
+      "submit": {"variant": "primary", "label": "Send"},
+      "submit_behaviour": "enabled until the request starts; then disabled with the label 'Sending…'; Ctrl/⌘+Enter submits from the textarea",
+      "$src_submit_behaviour": "S6:vercel README.md:91-95",
+      "rail": {"email": "a mailto link with the mail icon", "address": "House of Ichigo SAS, Auxerre, France", "scoping": {"variant": "tertiary", "label": "Book a scoping call"}},
+      "success": {"form": "inline, replaces the form", "live": "polite"},
+      "unsaved_guard": true
+    },
+    "consent": {
+      "$comment": "NEW. Cookie notice. Shown only if non-essential cookies exist; with server-side or cookieless analytics it is not rendered at all.",
+      "elevation": "{elevation.e2}",
+      "bg": "{color.bg}",
+      "position": "block-end inline-start",
+      "width": {"phone": "100%", "tablet": 480, "desktop": 480},
+      "margin": "{space.sp-3}",
+      "padding": "{space.sp-4}",
+      "text": {"type": "{type.caption}", "max_words": 40},
+      "link": {"label": "Cookie policy", "component": "{component.link}"},
+      "actions": {"accept": {"variant": "primary", "label": "Accept analytics"}, "refuse": {"variant": "secondary", "label": "Refuse"}},
+      "$note_actions": "refusing is one click, the same weight and the same row as accepting; no 'manage' maze; not dismissed by scrolling; no X",
+      "role": "region aria-label='Cookie notice'; not a dialog, focus is not trapped",
+      "remember": "choice stored for 6 months; a link in the footer legal line reopens it",
+      "never": ["'We value your privacy'", "a scrim", "a banner that blocks the hero"]
+    },
+    "not_found": {
+      "$comment": "NEW. 404, site and platform. S1:ux.errors.absent: what was expected here and the nearest way back.",
+      "status": 404,
+      "layout": "rail empty; title and links in columns 4–10",
+      "title": {"type": "{type.display_lg}", "max_words": 8},
+      "line": {"type": "{type.body_lg}", "max_words": 24},
+      "links": {"form": "three tertiary links in a column", "site": ["Home", "Training", "Contact"], "platform": ["Dashboard", "Use cases", "Contact support"]},
+      "never": ["an illustration", "a search box the site does not have", "a bare 404", "a joke"]
+    },
+    "section": {
+      "$comment": "NEW. The page section wrapper that enforces the dark rhythm.",
+      "padding_block": {"phone": "{space.sp-6}", "tablet": "{space.sp-7}", "desktop": "{space.sp-8}"},
+      "heading": {"type": "{type.display_lg}", "accent_word": 1, "heavy_rule": {"width": 1.6, "style": "solid", "color": "{color.fg}"}, "heavy_rule_side": "block-start, rail width"},
+      "surfaces": {"white": {"bg": "{color.bg}", "fg": "{color.fg}"}, "ink": {"bg": "{color.fg}", "fg": "{color.bg}"}},
+      "cadence": "one Ink section per two or three white; never two adjacent; the CTA band is the last section (p45)",
+      "a11y": "each section has one h2; headings in order; id for anchors with scroll-margin-top"
+    },
+    "pagination": {
+      "$comment": "NEW. Site lists and platform tables.",
+      "summary": {"type": "{type.mono}", "fg": "{color.muted}", "format": "Showing 1–25 of 312"},
+      "prev_next": {"variant": "secondary", "icons": ["chevron-left", "chevron-right"], "label_visible": true, "mirror": true},
+      "pages": {"max_visible": 7, "ellipsis": "…", "current": {"fg": "{color.fg}", "rule": {"width": 2, "style": "solid", "color": "{color.accent}"}}, "other": {"fg": "{color.muted}"}},
+      "page_size": {"options": [25, 50, 100], "default": 25, "control": "select", "platform_only": true},
+      "state": "in the URL (?page=, ?size=); Back restores scroll",
+      "$src_state": "S6:vercel README.md:17,27",
+      "a11y": "<nav aria-label='Pagination'>; aria-current=page; disabled prev/next are aria-disabled and remain focusable",
+      "phone": "summary line, prev and next only"
+    },
+    "top_bar": {
+      "$comment": "NEW. Platform top bar. Ink, like the sidebar (p45 'platform chrome').",
+      "height": 56,
+      "bg": "{color.fg}",
+      "fg": "{color.bg}",
+      "layout": "sidebar toggle (panel-left, 1024+) · breadcrumbs · spacer · search trigger · tasks · user menu",
+      "breadcrumbs": "{component.breadcrumbs}",
+      "search_trigger": {"form": "a secondary_on_dark button: search icon, 'Search', then the shortcut in a kbd", "shortcut": "Mod+K"},
+      "tasks": "{component.task_tray}",
+      "user_menu": "{component.user_menu}",
+      "focus": "{component.focus}",
+      "focus_note": "on_dark ring",
+      "phone": "mark 32px · screen title · user menu; the bottom bar carries navigation (p104)"
+    },
+    "bottom_bar": {
+      "$comment": "NEW. Below 600px the sidebar becomes a bottom bar (p104).",
+      "height": 56,
+      "bg": "{color.fg}",
+      "items_max": 5,
+      "item": {"icon_px": 20, "label": {"type": "{type.eyebrow}", "size": 11}, "rest": {"color": "{color.bg}", "alpha": 0.6}, "current": {"fg": "{color.bg}", "edge": {"width": 2, "style": "solid", "color": "{color.accent}"}}, "edge_side": "block-start", "target": 44},
+      "safe_area": "padding-block-end env(safe-area-inset-bottom)",
+      "$src_safe_area": "S6:vercel README.md:58",
+      "overflow": "a fifth item 'More' opens the remaining screens in a drawer; nothing is removed (p104 'never hiding a control without moving it somewhere reachable')"
+    },
+    "side_panel": {
+      "$comment": "NEW. The non-modal detail panel at 1440+ (p104 'sidebar, working column and a detail drawer, all at once'). A drawer without a scrim.",
+      "width": 420,
+      "side": "inline-end",
+      "bg": "{color.bg}",
+      "edge": {"width": 1, "style": "solid", "color": "{color.border}"},
+      "scrim": "none",
+      "focus": "not trapped; opening moves focus to the panel heading; closing returns it",
+      "below_wide": "becomes {component.drawer}",
+      "header": {"title": {"type": "{type.heading_sm}"}, "close": {"icon": "x", "label": "Close"}}
+    },
+    "filter_bar": {
+      "$comment": "NEW. Fills patterns.dashboard.filter_bar. Sits above a table at compact density.",
+      "density": "compact",
+      "gap": "{space.sp-2}",
+      "search": {"base": "{component.input}", "icon": "search", "icon_px": 16, "icon_side": "inline-start", "width_ch": 24, "placeholder": "Search use cases…", "shortcut": "/", "autocomplete": "off"},
+      "filter": {"base": "{component.select}", "label_inline": "the field name as a prefix inside the control: 'Function: All'", "multi": "chips inside, count on overflow"},
+      "active_count": {"type": "{type.eyebrow}", "fg": "{color.accent}"},
+      "clear": {"variant": "tertiary", "label": "Clear filters", "icon": "none", "shown": "only when a filter is active"},
+      "persistence": "in the URL and remembered per screen (p97 'filters persist')",
+      "$src_persistence": "S2:p97; S6:vercel README.md:17",
+      "phone": "search stays; filters collapse into a 'Filters' button that opens a drawer, with the active count in the label",
+      "never": ["a filled chip", "a filter icon without a label", "auto-apply that re-sorts under the pointer"]
+    },
+    "table": {
+      "$comment": "AMENDMENT. Adds sort indicators, truncation, selection bar, and the column rules the book leaves implicit.",
+      "sort": {"unsorted_icon": "arrow-up-down", "asc_icon": "arrow-up", "desc_icon": "arrow-down", "icon_px": 16, "one_column": true, "aria": "aria-sort on the th", "state": "in the URL"},
+      "truncation": {"text": "end, with the full value in title and in the row's detail panel", "identifier": "middle, keeping the extension", "min_width_ch": 12, "max_width_ch": 40, "wrap": "never in compact or dense; cells keep the row height"},
+      "selection_bar": {"appears": "when one or more rows are selected; replaces the filter bar row, same height", "bg": "{color.state.selected}", "fg": "{color.fg}", "content": "'3 selected' · actions as secondary buttons · Clear"},
+      "long_text": "overflow-wrap anywhere on emails and URLs; flex children min-width 0",
+      "$src_long_text": "S6:vercel AGENTS.md (Content Handling); emil break-ui/CATALOG.md:36-37",
+      "virtualise_from_rows": 100,
+      "$src_virtualise_from_rows": "S6:vercel README.md:120"
+    },
+    "kpi": {
+      "$comment": "NEW. The one hero metric (p61). Never three tinted cards.",
+      "numeral": {"type": "{type.display_lg}", "family": "display", "tabular": true, "fg": "{color.fg}"},
+      "label": {"type": "{type.eyebrow}", "fg": "{color.muted}", "position": "below the numeral"},
+      "secondary": {"type": "{type.mono}", "fg": "{color.muted}", "format": "7 in build · 3 live", "max_items": 3},
+      "action": {"variant": "primary", "position": "inline-end of the row", "example": "Add use case"},
+      "per_screen_max": 1,
+      "bg": "none",
+      "border": "none",
+      "loading": "a skeleton 4ch wide at the numeral's height; the label stays",
+      "empty": "the numeral reads 0 and the label stays; the empty state below says what to do",
+      "live": "polite when the numeral changes"
+    },
+    "quadrant": {
+      "$comment": "NEW as a component (patterns.quadrant holds the cuts). The signature of the product (p61). One series; never four equal boxes.",
+      "axes": {"x": "Delivery readiness", "y": "Business impact", "rule": {"width": 1.2, "style": "solid", "color": "{color.fg}"}, "title": {"type": "{type.eyebrow}", "fg": "{color.muted}"}, "ticks": "none; the cuts are the only marks"},
+      "partition": {"rule": {"width": 1, "style": "solid", "color": "{color.fg}"}, "segments": "readiness 50 full height; impact 60 from readiness 50 to the right; readiness 65 from impact 60 to the top", "cuts": "patterns.quadrant.cuts"},
+      "zones": {"fill": "none", "label": {"type": "{type.eyebrow}", "fg": "{color.muted}", "position": "the outer corner of each zone"}, "labels": "patterns.quadrant.labels"},
+      "dot": {"size": 8, "fill": "{color.accent}", "$note_pillar_fill": "fill takes {color.pillar.<x>} once, on that pillar's own screen (p85)", "hover": {"size": 10}, "selected": {"outline": {"width": 2, "style": "solid", "color": "{color.accent}", "offset": 2}}, "focus": "{component.focus}", "blocked": {"fill": "{color.semantic.danger}", "$note": "a governance-blocked use case is the one semantic exception; the badge beside the label says why"}},
+      "label": {"type": "{type.mono}", "fg": "{color.fg}", "direct_up_to": 12, "beyond": "label on hover and focus; the list beside carries the names", "score": "mono, after the name"},
+      "interaction": "dots are buttons; arrow keys move between dots in score order; Enter opens the use case in the side panel; the list beside is linked both ways",
+      "layout": {"desktop": "chart 7/12, list 5/12", "tablet": "chart full width, min-height 360, list below", "phone": "not drawn: the list sorted by score with the zone word per row (p104 'the scorecard becomes a list')"},
+      "states": {"loading": "axes and partition drawn, no dots, no labels", "empty": "axes drawn; the empty copy and 'Map a use case' sit in the Start now zone", "error": "{component.inline_message}"},
+      "rtl": "does not mirror: readiness increases left to right in both directions, as the score meter does (p103); labels translate",
+      "motion": "motion.map.quadrant_platform on the platform; motion.authored_moment on the website"
+    },
+    "file_upload": {
+      "$comment": "NEW. Documents for the governance check and the registry.",
+      "density": "comfortable",
+      "dropzone": {"border": {"width": 1, "style": "dashed", "color": "{color.border_input}"}, "radius": "{radius.control}", "bg": "{color.bg}", "hover": {"border": {"width": 1, "style": "dashed", "color": "{color.fg}"}}, "dragover": {"border": {"width": 1, "style": "solid", "color": "{color.accent}"}, "bg": "{color.state.selected}"}, "focus": "{component.focus}", "padding": "{space.sp-5}"},
+      "control": {"variant": "secondary", "label": "Choose a file", "icon": "upload", "input": "a real <input type=file>, the button is its label"},
+      "help": {"position": "above the dropzone, like a field's help (p82)", "content": "accepted types and the size limit, with a space before the unit: 20 MB"},
+      "file_row": {"rule": {"width": 1, "style": "solid", "color": "{color.border}"}, "name": "middle-truncated, extension kept", "size": "mono", "progress": {"track": {"width": 2, "style": "solid", "color": "{color.border}"}, "fill": "{color.accent}", "readout": "mono percentage beside it"}, "remove": {"icon": "trash", "label": "Remove"}, "error": "{component.inline_message}", "retry": {"variant": "tertiary", "label": "Try again"}},
+      "never": ["a cloud icon", "a progress ring", "an upload that loses the queue on a failed file"]
+    },
+    "user_menu": {
+      "$comment": "NEW. Avatar and account menu in the top bar.",
+      "avatar": {"size": 32, "radius": "{radius.floating}", "shape": "square — the circle is reserved for the mark and the spinner (shape.circle)", "bg": {"color": "{color.bg}", "alpha": 0.12}, "fg": "{color.bg}", "type": "{type.eyebrow}", "initials": "first letter of the first and last name; one letter if one name; the circle-user icon if neither", "photo": "none"},
+      "trigger": {"label": "Account menu", "target": 44},
+      "menu": {"base": "{component.menu}", "head": {"name": "{type.body}", "email": "mono, middle-truncated at 28ch"}, "items": ["Settings", "Keyboard shortcuts", "Sign out"], "sign_out_icon": "log-out"},
+      "org_switcher": "only when the person belongs to more than one organisation; a sub-list under the head",
+      "$src_initials": "S6:emil break-ui/CATALOG.md:13-28"
+    },
+    "task_tray": {
+      "$comment": "NEW. Where work longer than 10s lives (p100: a named task the person can leave and return to).",
+      "trigger": {"icon": "bell", "label": "Tasks", "count": {"type": "{type.eyebrow}", "bg": "{color.accent}", "fg": "{color.accent_on}", "radius": "{radius.floating}"}},
+      "panel": "{component.popover}",
+      "row": {"name": "{type.body}", "status": {"type": "{type.mono}", "fg": "{color.muted}", "format": "on Invoice extraction · 4 of 12"}, "progress": "words and numerals, never a bar alone (p83)", "done": "check in Ink and the word; a link to the result"},
+      "live": "polite; a toast when a task finishes while the person is on another screen",
+      "never": ["a global spinner", "a percentage alone"]
+    },
+    "kbd": {
+      "$comment": "NEW. A key in a shortcut hint.",
+      "type": "{type.mono}",
+      "size": 12,
+      "bg": "{color.surface}",
+      "fg": "{color.fg}",
+      "border": {"width": 1, "style": "solid", "color": "{color.border}"},
+      "radius": "{radius.control}",
+      "pad_x": 6,
+      "on_dark": {"bg": {"color": "{color.bg}", "alpha": 0.12}, "fg": "{color.bg}", "border": "none"},
+      "platform_symbols": "⌘ on macOS, Ctrl elsewhere; joined with a narrow no-break space",
+      "$src_platform_symbols": "S6:vercel README.md:35,87"
+    },
+    "shortcuts": {
+      "$comment": "NEW. The keyboard shortcuts list. A dialog opened by ? and from the user menu.",
+      "base": "{component.modal}",
+      "width": 640,
+      "table": {"header": "{component.table}", "columns": ["Action", "Keys"], "keys": "{component.kbd}"},
+      "list": [
+        {"keys": "Mod+K", "action": "Open the command palette"},
+        {"keys": "/", "action": "Focus search"},
+        {"keys": "?", "action": "Keyboard shortcuts"},
+        {"keys": "[", "action": "Collapse or expand the sidebar"},
+        {"keys": "Esc", "action": "Close the topmost overlay"},
+        {"keys": "Enter", "action": "Open the focused row"},
+        {"keys": "Mod+Enter", "action": "Submit from a text area"},
+        {"keys": "Arrow keys", "action": "Move between rows, dots and menu items"},
+        {"keys": "Home / End", "action": "First and last item"}
+      ],
+      "motion": "instant",
+      "never": ["a shortcut that fires while typing in a field", "single-letter shortcuts without a modifier beyond / and ?"]
+    },
+    "confirm": {
+      "$comment": "NEW. The destructive confirmation (p89 example, p97 rule).",
+      "base": "{component.modal}",
+      "width": 480,
+      "title": "names the object: 'Discard this blueprint?'",
+      "body": "names the consequence and what cannot be undone, ≤ 30 words",
+      "actions": {"confirm": {"variant": "destructive", "label": "the consequence as a verb phrase: 'Discard eight components'"}, "cancel": {"variant": "secondary", "label": "Keep editing"}},
+      "focus": "opens on the cancel action",
+      "never": ["'Are you sure?'", "OK / Cancel", "a danger fill on the dialog", "an Undo toast in place of the dialog"]
+    },
+    "empty_state": {
+      "$comment": "NEW as a component (p88 rules). Copy per screen in copy.<lang>.platform.empty.",
+      "layout": "left-ranged in the working column, top-aligned, max-width 48ch",
+      "title": {"type": "{type.heading_md}", "max_words": 8},
+      "line": {"type": "{type.body}", "max_words": 28},
+      "action": {"variant": "primary", "max_words": 4},
+      "icon": "none",
+      "bg": "none",
+      "border": "none",
+      "never": ["an illustration", "'No data'", "a shrug", "a centred layout"]
+    },
+    "error_recovery": {
+      "$comment": "NEW. The six classes of p99 as components.",
+      "input": {"where": "{component.input}", "message": "under the field, names the rule and a correct example"},
+      "permission": {"where": "in place of the control", "form": "{type.caption} in {color.muted}: who can, and how to ask", "control": "not rendered"},
+      "absent": "{component.not_found}",
+      "conflict": {"where": "{component.modal}", "width": 480, "body": "what changed, who changed it, when", "actions": {"mine": {"variant": "primary", "label": "Keep my version"}, "theirs": {"variant": "secondary", "label": "Use <name>'s version"}}, "never": "silently overwriting either"},
+      "transient": {"where": "{component.inline_message}", "retry": {"variant": "secondary", "label": "Try again", "icon": "refresh-cw"}, "input_kept": true, "message": "that the work is saved, then the retry"},
+      "model": {"where": "in the answer, per claim", "form": "{component.citation} ungrounded chip", "refusal": "what it will not do and what the person can do instead"},
+      "offline": {"where": "{component.banner}", "message": "You're offline. Changes save when you reconnect.", "dismissible": false}
+    },
+    "optimistic": {
+      "$comment": "NEW. Where the interface may update before the server answers (vercel README.md:18), bounded by p97 'nothing generated is applied without a human'.",
+      "allowed": ["reorder in Prioritisation (the person's reorder is kept, p98)", "rename", "a toggle setting", "filters and sort", "marking a task done"],
+      "never": ["a score", "a gate (Gate 1, Gate 2)", "a governance flag", "an export", "a delete", "any generated field"],
+      "failure": "revert in place and an inline message at the row; never a toast for the failure; the person's input is kept",
+      "pending": "no spinner on the row; the change simply shows; if the request exceeds 1s the row shows a 'Saving…' mono caption"
+    },
+    "focus_route": {
+      "$comment": "NEW. Focus and announcement on route change.",
+      "on_navigate": "focus moves to the screen's h1 (tabindex -1); scroll to top; document.title updates; the aria-live polite region stays silent (the title change is the announcement)",
+      "on_back": "scroll position restored (vercel README.md:27)",
+      "title_pattern": {"site": "<page> · House of Ichigo", "platform": "<screen> · <organisation> · AI Transformation Platform"},
+      "live_regions": {"polite": "one, at the app root: scores, toasts, task completion", "assertive": "one, at the app root: a failure that stops work", "$src": "S2:p101"},
+      "unsaved_guard": "warn before leaving a form with changes (beforeunload and router guard)",
+      "$src_unsaved_guard": "S6:vercel README.md:105"
+    },
+    "format": {
+      "$comment": "NEW. Number and date formatting per locale. p92 gives the date; the thousands separator is read from the book's own tables (p84: 1 248, 1 090).",
+      "date_ui": "DD/MM/YYYY in both locales",
+      "date_export": "YYYY-MM-DD",
+      "time": "HH:MM, 24-hour",
+      "relative": "today 14:32 · yesterday · then DD/MM/YYYY; never '3 weeks ago'",
+      "week": "W12",
+      "thousands": "narrow no-break space (U+202F) in both locales",
+      "decimal": {"en": ".", "fr": ","},
+      "score": "one decimal: 4.2 / 4,2",
+      "percent": {"en": "42%", "fr": "42 %", "fr_note": "narrow no-break space before the sign"},
+      "currency": {"en": "€1 250 000", "fr": "1 250 000 €", "decimals": "0 or 2, never mixed in one view"},
+      "units": "a narrow no-break space before the unit: 20 MB",
+      "numerals": "mono tabular in data; display tabular in statistics (R5)",
+      "implementation": "Intl.NumberFormat and Intl.DateTimeFormat with the group separator replaced; never a hand-built string",
+      "$src_implementation": "S6:vercel README.md:78; emil break-ui/CATALOG.md:99"
+    },
+    "truncation": {
+      "$comment": "NEW. Long-text rules, site and platform.",
+      "single_line": "end-truncate with the ellipsis character; full text in title and reachable on focus",
+      "identifiers_and_files": "middle-truncate, keep the extension and the last 6 characters",
+      "breadcrumb_ch": 32,
+      "email_ch": 28,
+      "list_description_lines": 2,
+      "textarea_max_chars": 2000,
+      "unbreakable": "overflow-wrap anywhere on emails, URLs and identifiers; flex children min-width 0",
+      "tags": "a row shows 3, then '+8'",
+      "names": "never computed initials from a single character of a multi-byte string",
+      "$src": "S6:emil break-ui/CATALOG.md; vercel AGENTS.md Content Handling"
+    },
+    "long_loading": {
+      "$comment": "NEW. The over-10s pattern (p100).",
+      "under_1s": "nothing",
+      "1_to_10s": "{component.skeleton}",
+      "over_10s": "a named task in {component.task_tray}; the screen says what it is doing and that the person can leave; a notification when it lands",
+      "button": "label stays, spinner replaces nothing, width unchanged (p76); label gains an ellipsis: 'Scoring…'",
+      "never": ["a full-screen spinner", "a modal progress bar", "a percentage for the six stages"]
+    },
+    "skeleton": {
+      "$comment": "NEW as a component.",
+      "bg": "{color.surface}",
+      "radius": "{radius.surface}",
+      "shape": "the shape of what arrives: rows at the row's height, a numeral at 4ch, a paragraph at three lines of decreasing width",
+      "timing": "motion.skeleton_timing",
+      "a11y": "aria-busy on the region; no text"
+    },
+    "settings_form": {
+      "$comment": "NEW. Fills patterns.dashboard.settings_form.",
+      "density": "comfortable",
+      "max_width": 560,
+      "layout": "one column; sections with a {type.heading_sm} head and a hairline; the field is the width of its answer (p82)",
+      "section_rule": {"width": 1, "style": "solid", "color": "{color.border}"},
+      "controls": "toggles apply immediately; checkboxes and fields apply on Save (p95)",
+      "save": {"variant": "primary", "label": "Save changes", "position": "block-end of the form, not sticky", "state": "enabled always; disabled only while the request runs"},
+      "unsaved_guard": true,
+      "success": "a toast: 'Settings saved.'"
+    },
+    "tooltip": {
+      "$comment": "AMENDMENT: peers.",
+      "delay_ms": 100,
+      "delay_peers_ms": 0,
+      "$src_delay_peers_ms": "S6:vercel README.md:24",
+      "$note": "The first tooltip in a toolbar waits 100ms; while one is open, moving to a sibling shows the next with no delay."
+    },
+    "input": {
+      "$comment": "AMENDMENT: attributes the book leaves implicit.",
+      "mobile_font_min_px": 16,
+      "placeholder_suffix": "…",
+      "attributes": "autocomplete and name on every field; type and inputmode match the answer; spellcheck off for emails, codes and names; paste never blocked; typing never blocked (validate after)",
+      "$src_attributes": "S6:vercel README.md:96-107",
+      "$src_mobile_font_min_px": "S6:vercel README.md:11"
+    },
+    "focus": {
+      "$comment": "AMENDMENT: grouped controls and sticky chrome.",
+      "within": ":focus-within on a compound control (search field with icon, the chip field) shows the input's focus border",
+      "sticky": "sticky headers, the bottom bar and banners never cover the focused element: scroll-padding equals their height",
+      "$src": "S6:vercel README.md:8; refero craft-details.md:43-55"
+    }
+  },
+  "patterns": {
+    "web": {
+      "$src": "S0",
+      "pages": {
+        "$comment": "Section sequence per page, with the surface. w = white, i = Ink. The cadence rule (p45) is enforced: never two i adjacent, at most one i per two or three w, the cta_band last.",
+        "home": ["hero w", "pillar_block w", "conviction_band i", "framework_block (Advisory, four in one row of names + one line each, link to Advisory) w", "platform teaser: stage_strip + screenshot_frame w", "proof_line + logo_wall w", "article_list (3 rows, no gate) w", "cta_band i"],
+        "pillar": ["hero (pillar colour in the section rule, CTA Cobalt; screenshot of that pillar's platform screen) w", "programme_list w", "conviction_band i", "framework_block (that pillar's) w", "boundary statement as a section with the heavy rule w", "cta_band i"],
+        "advisory": ["hero (screenshot: the roadmap screen) w", "framework_block ×4 w", "conviction_band i", "how an engagement runs: stage_strip reused with the stages the frameworks draw on w", "cta_band i"],
+        "platform": ["hero (screenshot: the dashboard; secondary CTA 'See the six stages' anchors down) w", "stage_strip w", "quadrant — the authored moment, with the p52 illustrative data w", "conviction_band i", "what each framework draws from it: four rows w", "licence and white-label: one paragraph + cta inline w", "cta_band i"],
+        "insights": ["page head w", "article_list with filter and gate w", "cta_band i"],
+        "article": ["article w", "library_gate w", "related rows w", "cta_band i"],
+        "about": ["hero (photograph via full_bleed_scrim, a real session) w", "who we are: prose at 75ch w", "credentials line + affiliations w", "conviction_band i", "boundary statement w", "cta_band i"],
+        "contact": ["page head w", "contact_form w"],
+        "legal": ["page head w", "prose at 75ch with an in-page contents list in the rail w"],
+        "not_found": ["not_found w"]
+      },
+      "footer": "{component.footer}",
+      "contact": "{component.contact_form}",
+      "legal": {"layout": "article prose, no accent word, no CTA band, last-updated date in the rail", "pages": 4},
+      "article": "{component.article}",
+      "cookie": "{component.consent}",
+      "not_found": "{component.not_found}",
+      "scroll": "no scroll-driven effects; anchors use scroll-margin-top; back/forward restores position",
+      "meta": {"theme_color": "the bg hex, emitted by the generator", "$src": "S6:vercel README.md:139"},
+      "performance": {"fonts": "preload the three variable files, font-display swap, latin subset only at launch", "images": "explicit dimensions; lazy below the fold; the hero screenshot preloaded", "$src": "S6:vercel README.md:121-125"}
+    },
+    "dashboard": {
+      "$src": "S0",
+      "filter_bar": "{component.filter_bar}",
+      "pagination": "{component.pagination}",
+      "kpi": "{component.kpi}",
+      "quadrant": "{component.quadrant}",
+      "top_bar": "{component.top_bar}",
+      "bottom_bar": "{component.bottom_bar}",
+      "side_panel": "{component.side_panel}",
+      "settings_form": "{component.settings_form}",
+      "screens": {
+        "$comment": "The six navigation screens (p87) with their empty state and hero metric.",
+        "dashboard": {"kpi": "use cases scored", "signature": "the quadrant", "empty": "platform.empty.dashboard"},
+        "use_cases": {"kpi": "none — the table is the screen", "filter_bar": true, "empty": "platform.empty.use_cases"},
+        "scorecard": {"kpi": "the overall score with its band word", "empty": "platform.empty.scorecard"},
+        "governance": {"kpi": "use cases cleared", "empty": "platform.empty.governance"},
+        "roadmap": {"kpi": "use cases sequenced", "empty": "platform.empty.roadmap"},
+        "blueprints": {"kpi": "blueprints exported", "empty": "platform.empty.blueprints"}
+      },
+      "shortcuts": "{component.shortcuts}",
+      "routing": "{component.focus_route}",
+      "format": "{component.format}",
+      "truncation": "{component.truncation}",
+      "loading": "{component.long_loading}",
+      "errors": "{component.error_recovery}",
+      "optimistic": "{component.optimistic}"
+    }
+  },
+  "copy": {
+    "$comment": "UI strings. EN en-GB, FR vous, « » with U+202F inside. Short, declarative, no banned word, no exclamation mark. Placeholders in braces are substituted by the app, not token references.",
+    "en": {
+      "nav": {"learn": "Learn", "build": "Build", "lead": "Lead", "govern": "Govern", "platform": "Platform", "advisory": "Advisory", "insights": "Insights", "about": "About", "contact": "Contact", "menu": "Menu", "close_menu": "Close menu", "skip": "Skip to content", "home": "House of Ichigo — home", "main_nav": "Main", "breadcrumb": "Breadcrumb"},
+      "lang": {"en": "EN", "fr": "FR", "switch_to_fr": "Lire en français"},
+      "cta": {"primary": "Book a scoping call", "catalogue": "See the catalogue", "talk": "Talk to us", "account": "Create an account", "read": "Read", "stages": "See the six stages", "send": "Send", "sending": "Sending…"},
+      "hero": {"h1": "Equipped to run.", "lead": "Four pillars, two ways in, one platform. We train your team and we advise your leadership — then you run it without us.", "proof": "4,000+ professionals · 500+ companies · Europe, the Gulf and Africa"},
+      "pillars": {"tier": {"briefing": "Briefing", "core": "Core programme", "applied": "Applied"}, "delivery": "In person, virtual or hybrid · English and French · groups of 6–20", "build_subtitle": "your team builds"},
+      "framework": {"eyebrow": "Advisory · {pillar}", "covers": "Covers", "receives": "What you receive", "terms": "Fixed scope, fixed output, priced per engagement, never per day."},
+      "stages": {"eyebrow": "The six stages", "never": "Six stages, always in this order."},
+      "footer": {"training": "Training", "advisory": "Advisory", "company": "Company", "linkedin": "LinkedIn", "entity": "House of Ichigo SAS · Auxerre, France", "legal": {"notice": "Legal notice", "privacy": "Privacy", "terms": "Terms", "cookies": "Cookies"}, "cookie_settings": "Cookie choices"},
+      "library": {"eyebrow": "The Discover library", "title": "Read the full library.", "line": "Create an account and every article, prompt and SOP in the Discover library is yours to use.", "name": "Name", "email": "Work email", "email_help": "The access link goes here.", "company": "Company", "optional": "optional", "consent": "You agree to receive the access email. Nothing else is sent unless you ask for it.", "submit": "Create an account", "success_title": "Check your inbox.", "success_line": "The access link is on its way to {email}. It stays valid for 24 hours."},
+      "contact": {"title": "Talk to us.", "line": "Tell us what you want to run. We reply within two working days.", "name": "Name", "email": "Work email", "organisation": "Organisation", "topic": "This is about", "topics": ["Training", "Advisory", "The platform", "Something else"], "message": "Message", "message_help": "What you want to run, and by when.", "submit": "Send", "success_title": "Sent.", "success_line": "We reply to {email} within two working days.", "faster": "Faster: book a scoping call.", "address": "House of Ichigo SAS, Auxerre, France"},
+      "form_errors": {"required": "Enter your {field}.", "email": "Enter a work email, like name@company.com.", "email_personal": "Use a work address. Personal addresses do not receive the library.", "max": "Keep it under {max} characters. You are at {count}.", "consent": "Tick the box to receive the access email.", "generic": "The message did not send. Your text is kept. Try again.", "focus_first": "Fix the first field to continue."},
+      "cookie": {"text": "This site uses one analytics cookie to count visits. Refusing changes nothing you can see.", "accept": "Accept analytics", "refuse": "Refuse", "policy": "Cookie policy", "region": "Cookie notice"},
+      "not_found": {"title": "There is no page at this address.", "line": "The link may be old, or the address mistyped. The nearest ways back are below.", "links": {"home": "Home", "training": "Training", "contact": "Contact"}},
+      "platform": {
+        "nav": {"dashboard": "Dashboard", "use_cases": "Use cases", "scorecard": "Scorecard", "governance": "Governance", "roadmap": "Roadmap", "blueprints": "Blueprints", "more": "More", "collapse": "Collapse sidebar", "expand": "Expand sidebar"},
+        "top_bar": {"search": "Search", "tasks": "Tasks", "account": "Account menu", "settings": "Settings", "shortcuts": "Keyboard shortcuts", "sign_out": "Sign out"},
+        "filter": {"search_placeholder": "Search use cases…", "filters": "Filters", "clear": "Clear filters", "active": "{n} active", "all": "All", "function": "Function", "flag": "Flag", "stage": "Stage"},
+        "table": {"sort_by": "Sort by {column}", "selected": "{n} selected", "clear_selection": "Clear", "empty_cell": "–"},
+        "pagination": {"summary": "Showing {from}–{to} of {total}", "prev": "Previous", "next": "Next", "first": "First page", "last": "Last page", "per_page": "Rows per page", "label": "Pagination"},
+        "upload": {"drop": "Drop files here, or", "choose": "Choose a file", "help": "PDF, DOCX or XLSX, up to 20 MB each.", "uploading": "Uploading…", "remove": "Remove", "retry": "Try again", "too_large": "{name} is over 20 MB. Split it or export a smaller version.", "wrong_type": "{name} is not a PDF, DOCX or XLSX.", "failed": "{name} did not upload. The other files are unaffected."},
+        "kpi": {"scored": "use cases scored", "in_build": "{n} in build", "live": "{n} live", "cleared": "use cases cleared", "sequenced": "use cases sequenced", "exported": "blueprints exported", "add": "Add use case"},
+        "quadrant": {"x": "Delivery readiness", "y": "Business impact", "zones": {"quick-wins": "Start now", "strategic-projects": "Plan carefully", "tactical-improvements": "Batch or defer", "foundational-rebuilds": "Fix foundations first"}, "list": "Use cases by score", "open": "Open {name}"},
+        "empty": {
+          "dashboard": {"title": "Nothing scored yet.", "line": "The dashboard fills in as use cases are mapped and scored. Start with the process that takes the most hours.", "action": "Map a use case"},
+          "use_cases": {"title": "No use cases mapped yet.", "line": "Mapping turns a process into something the scoring engine can read. Start with the one that takes the most hours.", "action": "Map a use case"},
+          "scorecard": {"title": "No scorecard yet.", "line": "The scorecard appears once the onboarding questionnaire is complete. It takes about twenty minutes.", "action": "Continue the questionnaire"},
+          "governance": {"title": "No governance check run yet.", "line": "The check reads every mapped use case and raises a flag with the rule it comes from.", "action": "Run the governance check"},
+          "roadmap": {"title": "Nothing sequenced yet.", "line": "The roadmap sequences cleared use cases and names the capability each one needs. Clear at least one first.", "action": "Go to Governance"},
+          "blueprints": {"title": "No blueprints exported yet.", "line": "A blueprint is the full specification of one use case, ready for your own stack. Export the first from the roadmap.", "action": "Go to Roadmap"},
+          "search": {"title": "Nothing matches “{query}”.", "line": "Search covers use-case names, functions and owners.", "action": "Clear search"},
+          "filters": {"title": "No use cases match these filters.", "line": "{n} use cases are hidden by the filters.", "action": "Clear filters"},
+          "palette": "Search actions, use cases and programmes"
+        },
+        "loading": {"skeleton": "Loading", "scoring": "Scoring…", "scoring_on": "Scoring {total} use cases · on {name} ({i} of {total})", "leave": "You can leave this screen. We notify you when it lands.", "exporting": "Exporting…", "saving": "Saving…"},
+        "tasks": {"title": "Tasks", "none": "No tasks running.", "done": "Done", "open_result": "Open the result", "finished": "{task} finished."},
+        "errors": {
+          "transient": {"title": "The scoring engine did not return.", "line": "Your answers are saved. Nothing has been lost and nothing has been scored. This usually clears within a minute.", "retry": "Try again"},
+          "permission": "Only an owner can {action}. Ask {owner}.",
+          "conflict": {"title": "{name} changed while you were editing.", "line": "{who} saved a new version at {time}. Keep yours or use theirs — nothing is overwritten until you choose.", "mine": "Keep my version", "theirs": "Use {who}’s version"},
+          "offline": "You’re offline. Changes save when you reconnect.",
+          "model_refusal": "The platform does not score this field. {what_instead}",
+          "ungrounded": "UNGROUNDED",
+          "not_found": {"title": "This use case no longer exists.", "line": "It was deleted or moved. The list has the current set.", "action": "Back to use cases"},
+          "unsaved": "You have unsaved changes. Leave and lose them, or stay and save."
+        },
+        "confirm": {"discard_title": "Discard this blueprint?", "discard_line": "{n} components are configured. This cannot be undone.", "discard": "Discard {n} components", "keep": "Keep editing", "delete_title": "Delete {name}?", "delete_line": "Its scores, flags and roadmap position go with it. This cannot be undone.", "delete": "Delete {name}"},
+        "success": {"saved": "Saved.", "settings": "Settings saved.", "exported": "{name} exported.", "sent": "Sent."},
+        "shortcuts": {"title": "Keyboard shortcuts", "action": "Action", "keys": "Keys", "palette": "Open the command palette", "search": "Focus search", "list": "Keyboard shortcuts", "sidebar": "Collapse or expand the sidebar", "esc": "Close the topmost overlay", "open": "Open the focused row", "submit": "Submit from a text area", "arrows": "Move between rows, dots and menu items", "home_end": "First and last item"},
+        "settings": {"title": "Settings", "save": "Save changes", "language": "Language", "date_format": "Dates are shown as DD/MM/YYYY and exported as YYYY-MM-DD."},
+        "not_found": {"title": "There is no screen at this address.", "line": "The link may be old. The nearest ways back are below.", "links": {"dashboard": "Dashboard", "use_cases": "Use cases", "support": "Contact support"}}
+      }
+    },
+    "fr": {
+      "nav": {"learn": "Learn", "build": "Build", "lead": "Lead", "govern": "Govern", "platform": "Plateforme", "advisory": "Conseil", "insights": "Insights", "about": "À propos", "contact": "Contact", "menu": "Menu", "close_menu": "Fermer le menu", "skip": "Aller au contenu", "home": "House of Ichigo — accueil", "main_nav": "Principale", "breadcrumb": "Fil d’Ariane", "$note": "Pillar labels are proper nouns and stay in English (p40). Only Platform and Advisory translate."},
+      "lang": {"en": "EN", "fr": "FR", "switch_to_en": "Read in English"},
+      "cta": {"primary": "Réserver un appel de cadrage", "catalogue": "Voir le catalogue", "talk": "Parlons-en", "account": "Créer un compte", "read": "Lire", "stages": "Voir les six étapes", "send": "Envoyer", "sending": "Envoi…"},
+      "hero": {"h1": "Équipés pour avancer.", "lead": "Quatre piliers, deux portes d’entrée, une plateforme. Nous formons vos équipes et nous conseillons votre direction — puis vous avancez sans nous.", "proof": "4 000+ professionnels · 500+ entreprises · Europe, Golfe et Afrique"},
+      "pillars": {"tier": {"briefing": "Briefing", "core": "Programme cœur", "applied": "Appliqué"}, "delivery": "En présentiel, à distance ou hybride · français et anglais · groupes de 6 à 20", "build_subtitle": "votre équipe construit"},
+      "framework": {"eyebrow": "Conseil · {pillar}", "covers": "Couvre", "receives": "Ce que vous recevez", "terms": "Périmètre fixe, livrable fixe, prix par mission, jamais à la journée."},
+      "stages": {"eyebrow": "Les six étapes", "never": "Six étapes, toujours dans cet ordre."},
+      "footer": {"training": "Formation", "advisory": "Conseil", "company": "La maison", "linkedin": "LinkedIn", "entity": "House of Ichigo SAS · Auxerre, France", "legal": {"notice": "Mentions légales", "privacy": "Confidentialité", "terms": "CGV", "cookies": "Cookies"}, "cookie_settings": "Choix des cookies"},
+      "library": {"eyebrow": "La bibliothèque Discover", "title": "Lisez toute la bibliothèque.", "line": "Créez un compte : chaque article, prompt et procédure de la bibliothèque Discover est à vous.", "name": "Nom", "email": "E-mail professionnel", "email_help": "Le lien d’accès arrive ici.", "company": "Entreprise", "optional": "facultatif", "consent": "Vous acceptez de recevoir l’e-mail d’accès. Rien d’autre n’est envoyé sans votre demande.", "submit": "Créer un compte", "success_title": "Regardez votre boîte de réception.", "success_line": "Le lien d’accès part vers {email}. Il reste valable 24 heures."},
+      "contact": {"title": "Parlons-en.", "line": "Dites-nous ce que vous voulez faire tourner. Nous répondons sous deux jours ouvrés.", "name": "Nom", "email": "E-mail professionnel", "organisation": "Organisation", "topic": "Votre demande concerne", "topics": ["La formation", "Le conseil", "La plateforme", "Autre chose"], "message": "Message", "message_help": "Ce que vous voulez faire tourner, et pour quand.", "submit": "Envoyer", "success_title": "Envoyé.", "success_line": "Nous répondons à {email} sous deux jours ouvrés.", "faster": "Plus rapide : réservez un appel de cadrage.", "address": "House of Ichigo SAS, Auxerre, France"},
+      "form_errors": {"required": "Indiquez votre {field}.", "email": "Indiquez un e-mail professionnel, par exemple prenom@entreprise.com.", "email_personal": "Utilisez une adresse professionnelle. Les adresses personnelles ne reçoivent pas la bibliothèque.", "max": "Restez sous {max} caractères. Vous êtes à {count}.", "consent": "Cochez la case pour recevoir l’e-mail d’accès.", "generic": "Le message n’est pas parti. Votre texte est conservé. Réessayez.", "focus_first": "Corrigez le premier champ pour continuer."},
+      "cookie": {"text": "Ce site utilise un cookie de mesure d’audience pour compter les visites. Refuser ne change rien à ce que vous voyez.", "accept": "Accepter la mesure d’audience", "refuse": "Refuser", "policy": "Politique cookies", "region": "Information cookies"},
+      "not_found": {"title": "Il n’y a pas de page à cette adresse.", "line": "Le lien est peut-être ancien, ou l’adresse mal saisie. Les chemins les plus proches sont ci-dessous.", "links": {"home": "Accueil", "training": "Formation", "contact": "Contact"}},
+      "platform": {
+        "nav": {"dashboard": "Tableau de bord", "use_cases": "Cas d’usage", "scorecard": "Scorecard", "governance": "Gouvernance", "roadmap": "Feuille de route", "blueprints": "Blueprints", "more": "Plus", "collapse": "Réduire la barre latérale", "expand": "Déployer la barre latérale"},
+        "top_bar": {"search": "Rechercher", "tasks": "Tâches", "account": "Menu du compte", "settings": "Paramètres", "shortcuts": "Raccourcis clavier", "sign_out": "Se déconnecter"},
+        "filter": {"search_placeholder": "Rechercher un cas d’usage…", "filters": "Filtres", "clear": "Effacer les filtres", "active": "{n} actif(s)", "all": "Tous", "function": "Fonction", "flag": "Indicateur", "stage": "Étape"},
+        "table": {"sort_by": "Trier par {column}", "selected": "{n} sélectionné(s)", "clear_selection": "Effacer", "empty_cell": "–"},
+        "pagination": {"summary": "{from}–{to} sur {total}", "prev": "Précédent", "next": "Suivant", "first": "Première page", "last": "Dernière page", "per_page": "Lignes par page", "label": "Pagination"},
+        "upload": {"drop": "Déposez vos fichiers ici, ou", "choose": "Choisir un fichier", "help": "PDF, DOCX ou XLSX, jusqu’à 20 Mo chacun.", "uploading": "Envoi…", "remove": "Retirer", "retry": "Réessayer", "too_large": "{name} dépasse 20 Mo. Découpez-le ou exportez une version plus légère.", "wrong_type": "{name} n’est ni un PDF, ni un DOCX, ni un XLSX.", "failed": "{name} n’a pas été envoyé. Les autres fichiers ne sont pas concernés."},
+        "kpi": {"scored": "cas d’usage scorés", "in_build": "{n} en construction", "live": "{n} en production", "cleared": "cas d’usage validés", "sequenced": "cas d’usage séquencés", "exported": "blueprints exportés", "add": "Ajouter un cas d’usage"},
+        "quadrant": {"x": "Capacité de mise en œuvre", "y": "Impact métier", "zones": {"quick-wins": "Lancer maintenant", "strategic-projects": "Planifier avec soin", "tactical-improvements": "Regrouper ou différer", "foundational-rebuilds": "Corriger les fondations d’abord"}, "list": "Cas d’usage par score", "open": "Ouvrir {name}"},
+        "empty": {
+          "dashboard": {"title": "Rien n’est encore scoré.", "line": "Le tableau de bord se remplit à mesure que les cas d’usage sont cartographiés et scorés. Commencez par le processus qui prend le plus d’heures.", "action": "Cartographier un cas d’usage"},
+          "use_cases": {"title": "Aucun cas d’usage cartographié.", "line": "La cartographie transforme un processus en quelque chose que le moteur de scoring peut lire. Commencez par celui qui prend le plus d’heures.", "action": "Cartographier un cas d’usage"},
+          "scorecard": {"title": "Pas encore de scorecard.", "line": "La scorecard apparaît une fois le questionnaire d’onboarding terminé. Comptez vingt minutes.", "action": "Reprendre le questionnaire"},
+          "governance": {"title": "Aucun contrôle de gouvernance lancé.", "line": "Le contrôle lit chaque cas d’usage cartographié et lève un indicateur avec la règle dont il provient.", "action": "Lancer le contrôle de gouvernance"},
+          "roadmap": {"title": "Rien n’est encore séquencé.", "line": "La feuille de route séquence les cas d’usage validés et nomme la compétence que chacun exige. Validez-en au moins un d’abord.", "action": "Aller à Gouvernance"},
+          "blueprints": {"title": "Aucun blueprint exporté.", "line": "Un blueprint est la spécification complète d’un cas d’usage, prête pour votre propre environnement. Exportez le premier depuis la feuille de route.", "action": "Aller à la feuille de route"},
+          "search": {"title": "Rien ne correspond à « {query} ».", "line": "La recherche couvre les noms de cas d’usage, les fonctions et les responsables.", "action": "Effacer la recherche"},
+          "filters": {"title": "Aucun cas d’usage ne correspond à ces filtres.", "line": "{n} cas d’usage sont masqués par les filtres.", "action": "Effacer les filtres"},
+          "palette": "Rechercher des actions, des cas d’usage et des programmes"
+        },
+        "loading": {"skeleton": "Chargement", "scoring": "Scoring…", "scoring_on": "Scoring de {total} cas d’usage · sur {name} ({i} sur {total})", "leave": "Vous pouvez quitter cet écran. Nous vous prévenons quand c’est prêt.", "exporting": "Export…", "saving": "Enregistrement…"},
+        "tasks": {"title": "Tâches", "none": "Aucune tâche en cours.", "done": "Terminé", "open_result": "Ouvrir le résultat", "finished": "{task} terminé."},
+        "errors": {
+          "transient": {"title": "Le moteur de scoring n’a pas répondu.", "line": "Vos réponses sont enregistrées. Rien n’est perdu et rien n’est scoré. Cela se règle en général en moins d’une minute.", "retry": "Réessayer"},
+          "permission": "Seul un propriétaire peut {action}. Demandez à {owner}.",
+          "conflict": {"title": "{name} a changé pendant votre édition.", "line": "{who} a enregistré une nouvelle version à {time}. Gardez la vôtre ou prenez la sienne — rien n’est écrasé tant que vous n’avez pas choisi.", "mine": "Garder ma version", "theirs": "Prendre la version de {who}"},
+          "offline": "Vous êtes hors ligne. Les modifications s’enregistrent à la reconnexion.",
+          "model_refusal": "La plateforme ne score pas ce champ. {what_instead}",
+          "ungrounded": "NON SOURCÉ",
+          "not_found": {"title": "Ce cas d’usage n’existe plus.", "line": "Il a été supprimé ou déplacé. La liste contient l’ensemble actuel.", "action": "Retour aux cas d’usage"},
+          "unsaved": "Vous avez des modifications non enregistrées. Quittez et perdez-les, ou restez et enregistrez."
+        },
+        "confirm": {"discard_title": "Abandonner ce blueprint ?", "discard_line": "{n} composants sont configurés. Cette action est irréversible.", "discard": "Abandonner {n} composants", "keep": "Continuer l’édition", "delete_title": "Supprimer {name} ?", "delete_line": "Ses scores, ses indicateurs et sa position dans la feuille de route disparaissent avec lui. Cette action est irréversible.", "delete": "Supprimer {name}"},
+        "success": {"saved": "Enregistré.", "settings": "Paramètres enregistrés.", "exported": "{name} exporté.", "sent": "Envoyé."},
+        "shortcuts": {"title": "Raccourcis clavier", "action": "Action", "keys": "Touches", "palette": "Ouvrir la palette de commandes", "search": "Aller à la recherche", "list": "Raccourcis clavier", "sidebar": "Réduire ou déployer la barre latérale", "esc": "Fermer la fenêtre du dessus", "open": "Ouvrir la ligne sélectionnée", "submit": "Envoyer depuis une zone de texte", "arrows": "Se déplacer entre les lignes, les points et les éléments de menu", "home_end": "Premier et dernier élément"},
+        "settings": {"title": "Paramètres", "save": "Enregistrer les modifications", "language": "Langue", "date_format": "Les dates s’affichent en JJ/MM/AAAA et s’exportent en AAAA-MM-JJ."},
+        "not_found": {"title": "Il n’y a pas d’écran à cette adresse.", "line": "Le lien est peut-être ancien. Les chemins les plus proches sont ci-dessous.", "links": {"dashboard": "Tableau de bord", "use_cases": "Cas d’usage", "support": "Contacter le support"}}
+      }
+    }
+  },
+  "provenance": {
+    "P-ICO-01": "lucide-icons_lucide/icons/*.svg (names verified); S2:p50",
+    "P-ICO-02": "lucide-icons_lucide/icons/*.svg; S2:p103 (mirror list)",
+    "P-ICO-03": "referodesign_refero_skill/skills/refero-design/references/icons.md:20-23,73-77; S2:p44",
+    "P-ICO-04": "referodesign_refero_skill/skills/refero-design/references/icons.md:40-48,95-101; vercel-labs_web-interface-guidelines/README.md:54,82",
+    "P-ICO-05": "S2:p50 (proportional stroke); lucide-icons_lucide/icons/chart-scatter.svg (round joins)",
+    "P-ICO-06": "referodesign_refero_skill/skills/refero-design/references/icons.md:12,55-65 rejected against S2:p50",
+    "P-MOT-01": "S2:p81; emilkowalski_skills/skills/animate/SKILL.md:41-48,83-96; referodesign_refero_skill/skills/refero-design/references/motion.md:240-247",
+    "P-MOT-02": "referodesign_refero_skill/skills/refero-design/references/motion.md:101-105; emilkowalski_skills/skills/animate/SKILL.md:147; pbakaus_impeccable/cursor-plugin/skills/impeccable/reference/animate.md:61",
+    "P-MOT-03": "emilkowalski_skills/skills/review-animations/STANDARDS.md:149-151; pbakaus_impeccable/cursor-plugin/skills/impeccable/reference/animate.md:48",
+    "P-MOT-04": "emilkowalski_skills/skills/animate/SKILL.md:159-160",
+    "P-MOT-05": "emilkowalski_skills/skills/animate/SKILL.md:41-50; emilkowalski_skills/skills/review-animations/STANDARDS.md:7-14",
+    "P-MOT-06": "emilkowalski_skills/skills/animation-performance/SKILL.md:33,76-80; vercel-labs_web-interface-guidelines/README.md:40-50",
+    "P-MOT-07": "S2:p81; S0 (R10); vercel-labs_web-interface-guidelines/README.md:16",
+    "P-MOT-08": "S0 (R10); S2:p52,p57,p61; pbakaus_impeccable/cursor-plugin/skills/impeccable/reference/craft-floor.md:13; vercel-labs_web-interface-guidelines/README.md:49-50",
+    "P-MOT-09": "ibelick_motion-primitives/components/core/*.tsx (dialog.tsx:37-38,235; animated-group.tsx:53-93; progressive-blur.tsx:54)",
+    "P-WEB-01": "S2:p52,p14; vercel-labs_web-interface-guidelines/README.md:8,76",
+    "P-WEB-02": "S2:p89-90; vercel-labs_web-interface-guidelines/README.md:25",
+    "P-WEB-03": "vercel-labs_web-interface-guidelines/README.md:79",
+    "P-WEB-04": "S2:p45,p66,p67; S2:p14",
+    "P-WEB-05": "S2:p52; S0 (R23); vercel-labs_web-interface-guidelines/README.md:122",
+    "P-WEB-06": "S2:p39,p46,p25; S1:layout.rules.pillar; referodesign_refero_skill/skills/refero-design/references/anti-ai-slop.md:23-31,91-98",
+    "P-WEB-07": "S1:catalogue.no_menu; S2:p53",
+    "P-WEB-08": "S2:p40,p61; ABOUT_US.md §3",
+    "P-WEB-09": "S2:p86,p98",
+    "P-WEB-10": "S2:p52,p49,p77; ABOUT_US.md §5",
+    "P-WEB-11": "S2:p45",
+    "P-WEB-12": "S2:p45,p24",
+    "P-WEB-13": "S1:type.setting; S1:images.captions; vercel-labs_web-interface-guidelines/README.md:17,30,78",
+    "P-WEB-14": "ABOUT_US.md §3; S2:p82; vercel-labs_web-interface-guidelines/README.md:91-107",
+    "P-WEB-15": "S2:p82; vercel-labs_web-interface-guidelines/README.md:91-105",
+    "P-WEB-16": "S1:ui.overlays.message; CNIL/GDPR refusal parity; referodesign_refero_skill/skills/refero-design/references/anti-ai-slop.md:258-276 (copy test)",
+    "P-WEB-17": "S1:ux.errors.absent; S2:p99",
+    "P-WEB-18": "vercel-labs_web-interface-guidelines/README.md:84; referodesign_refero_skill/skills/refero-design/references/craft-details.md:11-55",
+    "P-WEB-19": "S2:p45; S2:p46",
+    "P-PLT-01": "S2:p97; vercel-labs_web-interface-guidelines/README.md:17,30",
+    "P-PLT-02": "vercel-labs_web-interface-guidelines/README.md:17,27; emilkowalski_skills/skills/break-ui/CATALOG.md:79-85",
+    "P-PLT-03": "S2:p80,p82; vercel-labs_web-interface-guidelines/README.md:87",
+    "P-PLT-04": "S2:p61; S1:ui.components.score",
+    "P-PLT-05": "S1:quadrant; S2:p57,p61,p85,p103,p104",
+    "P-PLT-06": "S2:p45,p104; vercel-labs_web-interface-guidelines/README.md:58",
+    "P-PLT-07": "S1:ui.radius (circle); emilkowalski_skills/skills/break-ui/CATALOG.md:13-28",
+    "P-PLT-08": "S2:p88; S1:ui.components.triad.empty",
+    "P-PLT-09": "S2:p99; vercel-labs_web-interface-guidelines/README.md:67",
+    "P-PLT-10": "vercel-labs_web-interface-guidelines/README.md:18 bounded by S2:p97",
+    "P-PLT-11": "emilkowalski_skills/skills/animate/SKILL.md:41-48; vercel-labs_web-interface-guidelines/README.md:35,87",
+    "P-PLT-12": "vercel-labs_web-interface-guidelines/README.md:27,66,105; S2:p101",
+    "P-PLT-13": "S2:p84,p92; vercel-labs_web-interface-guidelines/README.md:78; emilkowalski_skills/skills/break-ui/CATALOG.md:63-99",
+    "P-PLT-14": "emilkowalski_skills/skills/break-ui/CATALOG.md:32-59; vercel-labs_web-interface-guidelines/AGENTS.md (Content Handling)",
+    "P-PLT-15": "S2:p100,p76,p88; vercel-labs_web-interface-guidelines/README.md:15-16",
+    "P-PLT-16": "S2:p77,p89,p97",
+    "P-PLT-17": "S2:p104; S1:ui.overlays.overlay.drawer",
+    "P-PLT-18": "S2:p82,p95; vercel-labs_web-interface-guidelines/README.md:95,105",
+    "P-PLT-19": "vercel-labs_web-interface-guidelines/README.md:24; S1:ui.overlays.overlay.tooltip",
+    "P-PLT-20": "vercel-labs_web-interface-guidelines/README.md:11,96-107; referodesign_refero_skill/skills/refero-design/references/craft-details.md:61-145"
+  }
+}

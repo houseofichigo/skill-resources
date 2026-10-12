@@ -1,0 +1,38 @@
+{
+  "platform": "zapier",
+  "profiles": ["workflow", "agent"],
+  "requiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Zap trigger and action map",
+    "Filters, paths and field mappings",
+    "Connected accounts",
+    "Error handling and run review"
+  ],
+  "requiredArtifacts": [
+    "Markdown Zap build brief",
+    "Trigger, action and field-mapping table",
+    "Connected-account and permission requirements without secret values",
+    "Filter, path and error-handling plan",
+    "Step-test and handover plan"
+  ],
+  "platformRules": [
+    "Define exactly one grounded trigger followed by ordered actions; identify every source field and required destination field without inventing app events or fields.",
+    "Use a Filter when a non-match should stop the Zap and Paths when distinct outcomes need separate branches; record AND, OR, fallback and always-run semantics explicitly.",
+    "For every required field, identify its upstream value, a justified fallback or a filter/path guard so missing input cannot silently trigger an incorrect action.",
+    "List connected app accounts, scopes and ownership as placeholders only; never include credentials or claim an account is connected.",
+    "Add a bounded error-handling and run-history review plan for fallible actions, noting plan-dependent capabilities and replay limitations instead of assuming they are available.",
+    "Require explicit human approval before consequential actions and preserve the existing HOI approval boundary; a Zapier step or AI decision never grants authorization.",
+    "Produce a reviewable brief only. Do not run SDK or CLI commands, publish a Zap, connect an account or mutate Zapier."
+  ],
+  "forbidden": [
+    "credentials",
+    "automatic external deployment",
+    "unapproved process changes",
+    "uncited provider assertions"
+  ]
+}

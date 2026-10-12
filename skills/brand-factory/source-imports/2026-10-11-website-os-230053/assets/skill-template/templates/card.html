@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<title>{{brand}} — business card</title>
+<link rel="stylesheet" href="../references/tokens.css">
+<style>
+  /* 85 x 55mm, the ISO 7810 ID-1 card size used everywhere outside North
+     America. For US cards change .card to 88.9 x 50.8mm (3.5 x 2in) and
+     re-check that nothing crosses the bleed.
+
+     Print geometry, stated because it is the part people get wrong:
+       trim     85 x 55mm      what the guillotine cuts to
+       bleed    +3mm each side what the press needs — 91 x 61mm artwork
+       safety   4mm inside trim nothing important closer than this
+     The dashed guides below are for proofing on screen. DELETE the
+     .guides class before sending to print. */
+  body{background:var(--muted);margin:0;padding:10mm;display:flex;
+    flex-wrap:wrap;gap:8mm}
+  .card{width:85mm;height:55mm;background:var(--ground);padding:7mm;
+    display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .card.dark{background:var(--ink);color:var(--ground)}
+  .guides::after{content:'';position:absolute;inset:4mm;
+    border:1px dashed var(--brand);pointer-events:none}
+  .mark{font-family:var(--display);font-weight:800;font-size:15pt;
+    letter-spacing:var(--track-md)}
+  .card.dark .mark{color:var(--ground)}
+  .rule{border-top:1.4px solid var(--ink);margin:4mm 0 0;width:14mm}
+  .card.dark .rule{border-color:var(--brand-on-dark)}
+  .who{margin-top:auto}
+  .name{font-family:var(--display);font-weight:700;font-size:11pt;
+    letter-spacing:var(--track-sm)}
+  .role{font-size:8.5pt;color:var(--muted);margin-top:.6mm}
+  .card.dark .role{color:var(--brand-on-dark)}
+  /* Contact detail is metadata, so it is mono — and mono at 7pt is the
+     smallest type on any {{brand}} surface. Do not go below it: 7pt is
+     already at the edge of what a 300dpi press holds cleanly. */
+  .meta{font-family:var(--mono);font-size:7pt;line-height:1.55;
+    margin-top:3mm;letter-spacing:.02em}
+  .card.dark .meta{color:var(--ground)}
+  .back{align-items:flex-start;justify-content:center}
+  .back .claim{font-family:var(--display);font-size:13pt;line-height:1.15;
+    letter-spacing:var(--track-md);max-width:52mm}
+  @media print{body{background:#fff;padding:0;gap:0}
+    .card{page-break-after:always}
+    .guides::after{display:none}}
+</style></head>
+<body>
+
+<!-- front -->
+<section class="card guides">
+  <div class="mark">{{brand}}</div>
+  <div class="rule"></div>
+  <div class="who">
+    <div class="name">FULL NAME</div>
+    <div class="role">ROLE</div>
+    <div class="meta">
+      name@example.com<br>+00 0 00 00 00 00<br>example.com
+    </div>
+  </div>
+</section>
+
+<!-- back -->
+<section class="card dark back guides">
+  <div class="claim">THE POSITIONING LINE, <span class="accent">SHORT</span>.</div>
+</section>
+
+</body></html>

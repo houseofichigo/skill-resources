@@ -22,6 +22,10 @@
 2. Bind each session and tool call to the authorized organization and actor; recheck source access after resume.
 3. Specify permission decisions, hooks, explicit consequential-action approval, deadlines, turn/cost limits and interruption recovery. Hooks and model output never grant authority.
 4. Produce reviewed source/configuration guidance only; do not run an SDK, install dependencies or deploy.
+5. Use official documentation as factual reference only. This HOI-authored package includes no Anthropic repository code or skill content and grants no SDK redistribution rights.
+6. Describe API-key authentication without secret values; do not offer consumer Claude login or subscription limits as authentication for a third-party application.
+7. Keep permission rules explicit and route consequential tool use through application-owned approval; never choose a bypass mode to make an example work.
+8. Treat resumed session identifiers as private, actor-scoped state. Record resume or fork intent and recheck process and source access before continuing.
 
 ## Result
 

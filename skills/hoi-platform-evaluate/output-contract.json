@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0-draft.2",
+  "allowedRoles": [
+    "client_admin",
+    "platform_admin"
+  ],
+  "required": [
+    "sourceReferences",
+    "unknowns",
+    "outcomes",
+    "limitations"
+  ],
+  "forbidden": [
+    "credentials",
+    "implicit authorization",
+    "automatic external deployment",
+    "invented citations",
+    "unconfirmed validation"
+  ],
+  "confirmationRequired": true,
+  "externalExecution": "unverified"
+}

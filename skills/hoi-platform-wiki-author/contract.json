@@ -1,0 +1,41 @@
+{
+  "version": "1.0.0-draft.2",
+  "status": "unpublished",
+  "roles": [
+    "client_admin"
+  ],
+  "allowedOperations": [
+    "read_knowledge_page",
+    "save_knowledge_sections"
+  ],
+  "knowledgeAdminRequired": true,
+  "operationsAreNotGrants": true,
+  "confirmationRequired": true,
+  "mutationClass": "explicitly_confirmed_platform_operations",
+  "input": {
+    "organizationId": "authorized UUID",
+    "source": "canonical ID; never title match",
+    "expectedVersion": "positive integer on mutation",
+    "idempotencyKey": "UUID on mutation"
+  },
+  "output": {
+    "kind": "source_referenced_draft_or_sanitized_review",
+    "unknowns": "explicit",
+    "externalExecution": "unverified"
+  },
+  "timeoutMs": 10000,
+  "failure": "report unavailable; no mutation or permission fallback",
+  "unavailable": [
+    "connectors",
+    "desktop CLI",
+    "semantic search",
+    "background crawling",
+    "automatic publication"
+  ],
+  "activationRequirements": [
+    "matching_disposable_security_evidence",
+    "managed_contract_verified",
+    "reviewed_release_published",
+    "role_binding_published"
+  ]
+}

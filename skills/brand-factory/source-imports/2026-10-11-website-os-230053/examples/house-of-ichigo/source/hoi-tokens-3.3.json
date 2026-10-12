@@ -1,0 +1,1486 @@
+{
+  "brand": "House of Ichigo",
+  "version": "3.3",
+  "date": "September 2026",
+  "supersedes": "3.2",
+  "positioning": {
+    "tagline": "Equipped to run.",
+    "tagline_fr": "Équipés pour avancer.",
+    "architecture": "Four pillars. Two ways in. One platform.",
+    "boundary": "We don't build or operate systems for clients. Your team builds. The platform holds the work. We make sure both are pointed at the right thing.",
+    "core_verb": "equip / equipped / equipping",
+    "what_it_is": "Capacity building, not a training course. Hands-on workshops where participants apply AI to their own processes, then learn to build what their work needs.",
+    "credentials": {
+      "professionals": "4,000+",
+      "companies": "500+",
+      "years": "10",
+      "regions": "Europe, the Gulf and Africa",
+      "affiliations": "Active teaching roles at HEC and ESCP; scientific director of an ESCP × Bpifrance accelerator; referenced AI consultant to BPI France"
+    }
+  },
+  "color": {
+    "core": {
+      "white": {
+        "hex": "#FFFFFF",
+        "token": "--white",
+        "role": "The ground. Never a warm off-white."
+      },
+      "ink": {
+        "hex": "#0A0E27",
+        "token": "--ink",
+        "role": "All text, dark surfaces, the Govern pillar.",
+        "on_white": 19.0
+      },
+      "cobalt": {
+        "hex": "#1231D6",
+        "token": "--cobalt",
+        "role": "The brand. Every CTA, link, focus state, the italic accent, the logo fill.",
+        "on_white": 8.62,
+        "white_on": 8.62
+      },
+      "slate": {
+        "hex": "#5A6478",
+        "token": "--slate",
+        "role": "Secondary text and captions. LIGHT SURFACES ONLY.",
+        "on_white": 5.95
+      },
+      "grey": {
+        "hex": "#F2F5F8",
+        "token": "--grey",
+        "role": "Panel and secondary surface fill."
+      },
+      "line": {
+        "hex": "#E3E8EF",
+        "token": "--line",
+        "role": "Hairline rules and borders. 1px only."
+      },
+      "cobalt_light": {
+        "hex": "#7FA0FF",
+        "token": "--cobalt-light",
+        "role": "The italic accent on Ink surfaces only. Cobalt at full strength is 2.1:1 on Ink.",
+        "on_ink": 7.24
+      }
+    },
+    "pillars": {
+      "learn": {
+        "hex": "#0089A8",
+        "token": "--learn",
+        "label": "Learn AI",
+        "framework": "AI Capability Plan",
+        "on_white": 4.08,
+        "tint_8": "#EBF6F8"
+      },
+      "build": {
+        "hex": "#008558",
+        "token": "--build",
+        "label": "Build with AI",
+        "framework": "Use-Case Portfolio",
+        "on_white": 4.67,
+        "tint_8": "#EBF5F2",
+        "subtitle": "your team builds"
+      },
+      "lead": {
+        "hex": "#E2006D",
+        "token": "--lead",
+        "label": "Lead with AI",
+        "framework": "AI Operating Model",
+        "on_white": 4.71,
+        "tint_8": "#FDEBF3"
+      },
+      "govern": {
+        "hex": "#0A0E27",
+        "token": "--govern",
+        "label": "Govern with AI",
+        "framework": "Control Set",
+        "on_white": 19.0,
+        "note": "Govern uses Ink. No fourth hue."
+      }
+    },
+    "semantic": {
+      "warning": {
+        "hex": "#FFC411",
+        "token": "--warn",
+        "use": "FILL ONLY, Ink text on it.",
+        "ink_on": 11.91,
+        "white_on": 1.6
+      },
+      "danger": {
+        "hex": "#E51919",
+        "token": "--danger",
+        "on_white": 4.68
+      },
+      "success": {
+        "hex": null,
+        "retired": true,
+        "note": "identical to the Build pillar (#008558). One hex cannot mean both 'the Build pillar owns this' and 'this passed' on a screen that shows both. Success is Ink text and the word, with a check mark in Ink. It takes no fill. Nothing in this system needs a colour to announce that it is fine."
+      }
+    },
+    "retired": {
+      "terracotta": "#CF5B2B",
+      "warm_paper": "#FAFAF7",
+      "old_navy": "#1E2B4D",
+      "tailwind": [
+        "#3B82F6",
+        "#F59E0B",
+        "#DC2626",
+        "#0891B2"
+      ],
+      "rule": "None may appear in 3.x output."
+    },
+    "proportion": {
+      "default": "70/22/8",
+      "training": "72/22/6",
+      "advisory_rfp": "78/20/2",
+      "rule": "One accent per surface. Buttons are ALWAYS Cobalt."
+    },
+    "prohibited_pairings": [
+      {
+        "pair": "white on Warning",
+        "ratio": 1.6
+      },
+      {
+        "pair": "Slate on Ink",
+        "ratio": 3.19,
+        "instead": "white at 55-60% opacity"
+      },
+      {
+        "pair": "two pillar colours at full strength on one surface",
+        "exception": "platform navigation only"
+      },
+      {
+        "pair": "a pillar colour on a button",
+        "instead": "Cobalt"
+      },
+      {
+        "pair": "body copy in Cobalt or a pillar colour",
+        "instead": "Ink"
+      }
+    ],
+    "tint_rule": "Base mixed with white. 8% panels, 4% table banding, 22-70% chart ranges only."
+  },
+  "type": {
+    "display": {
+      "family": "Manrope",
+      "fallback": "system-ui, -apple-system, sans-serif",
+      "weights": [
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800
+      ],
+      "source": "self-hosted woff2 (build/out/fonts). Never a CDN link.",
+      "italic": false,
+      "use": "Display, all headings, and every interface surface. Set at 600 by default so the 800 accent reads as a jump.",
+      "tracking": "REQUIRED negative tracking at display sizes: -.035em at 64px and above, -.02em from 24-42px, 0 below 24px. This reverses the 3.1 prohibition, which existed only because Fraunces breaks under negative tracking. Manrope needs it."
+    },
+    "sans": {
+      "family": "Inter Tight",
+      "fallback": "system-ui, -apple-system, sans-serif",
+      "weights": [
+        300,
+        400,
+        500,
+        600,
+        700,
+        800
+      ],
+      "source": "self-hosted woff2 (build/out/fonts). Never a CDN link.",
+      "italic": true,
+      "use": "Body and long-form text only. Never above 20px, so the pairing never reads as a pairing.",
+      "italic_rule": "Inter Tight italic is the ONLY italic in the system. Permitted for titles of works, foreign terms and French typographic convention. PROHIBITED for emphasis - emphasis is weight 600/700."
+    },
+    "mono": {
+      "family": "JetBrains Mono",
+      "fallback": "ui-monospace, monospace",
+      "weights": [
+        400,
+        500,
+        600
+      ],
+      "source": "self-hosted woff2 (build/out/fonts). Never a CDN link.",
+      "use": "Eyebrows, section numbers, metadata, folios, code, ALL numerals."
+    },
+    "scale_px": {
+      "display_xl": 88,
+      "display_lg": 64,
+      "display_md": 42,
+      "heading_lg": 36,
+      "heading_md": 24,
+      "heading_sm": 18,
+      "body_lg": 18,
+      "body": 16,
+      "caption": 14,
+      "eyebrow": 12
+    },
+    "scale_pt_print": {
+      "cover": [
+        46,
+        44
+      ],
+      "section": [
+        32,
+        32
+      ],
+      "page_title": [
+        27,
+        28
+      ],
+      "heading": [
+        13,
+        16
+      ],
+      "subheading": [
+        10,
+        14
+      ],
+      "lede": [
+        10.4,
+        15
+      ],
+      "body": [
+        9.2,
+        14
+      ],
+      "table": [
+        7.4,
+        11
+      ],
+      "caption": [
+        6.9,
+        10
+      ]
+    },
+    "scale_pt_slide": {
+      "cover": 66,
+      "divider": 54,
+      "title": 44,
+      "body_l1": 20,
+      "body_l2": 16,
+      "caption": 11
+    },
+    "eyebrow": {
+      "case": "uppercase",
+      "tracking": "0.18-0.20em",
+      "colour": "Cobalt or the pillar colour",
+      "rule": "Always directly above a heading. Max six words. No full stop."
+    },
+    "setting": {
+      "alignment": "left-ranged, never justified",
+      "measure": "45-75 characters",
+      "tracking": "see type.display.tracking - negative tracking is now REQUIRED on Manrope display, not prohibited",
+      "case": "sentence case; ALL CAPS only for mono labels",
+      "emphasis": "weight 600/700, or the 800 Cobalt accent word. Never synthesised italic.",
+      "numerals": "always JetBrains Mono, tabular",
+      "synthesis": "font-synthesis-weight:none and font-synthesis-style:none on body. Manrope has no italic; without this the browser slants the roman and it ships."
+    },
+    "accent_word": {
+      "rule": "Exactly one word per display heading, weight 800 in Cobalt, against a 600 display line. Never italic - Manrope has no italic and a synthesised slant is prohibited.",
+      "replaces": "3.1 italic_accent (Fraunces italic). Retired with Fraunces.",
+      "on_ink": "Use --cobalt-light #7FA0FF, never --cobalt.",
+      "by_family": {
+        "website": "every H1/H2",
+        "catalogue": "one per spread",
+        "bd_sales": "one per major heading",
+        "training": "cover and outro only",
+        "advisory": "cover title only",
+        "rfp": "none",
+        "platform_ui": "none"
+      }
+    },
+    "weights_named": {
+      "display": 600,
+      "accent": 800,
+      "heading": 600,
+      "body": 400,
+      "label": 500
+    }
+  },
+  "logo": {
+    "files": {
+      "lockup": "assets/logos/hoi_lockup_cobalt_rgb.png",
+      "mark": "assets/logos/hoi_mark_cobalt_rgb.png",
+      "lockup_mono": "assets/logos/hoi_lockup_ink_rgb.png",
+      "mark_mono": "assets/logos/hoi_mark_ink_rgb.png",
+      "mark_vector": "assets/logos/hoi-mark.svg"
+    },
+    "aspect": {
+      "lockup": "670/790",
+      "mark": "670/669"
+    },
+    "required_css": "img{width:auto;max-width:100%;align-self:flex-start;flex:0 0 auto} .logo-lockup{aspect-ratio:670/790} .logo-mark{aspect-ratio:1/1}",
+    "critical": "Logo images are flex children on most surfaces. align-items:stretch OVERRIDES width:auto and distorts the mark. Always set align-self AND aspect-ratio. The circle is a true circle - if it reads as an oval the logo is broken.",
+    "clear_space": "1R on all sides, R = the circle radius. 0.5R absolute floor.",
+    "minimum": {
+      "lockup_mm": 18,
+      "lockup_px": 72,
+      "mark_mm": 8,
+      "mark_px": 32
+    },
+    "grounds": "The cobalt-circle lockup works on white AND Ink - one artwork, both grounds.",
+    "never": [
+      "recolour",
+      "rotate",
+      "stretch",
+      "crop",
+      "re-set the character in a font",
+      "shadow, glow, ring or keyline",
+      "place on a pattern or unscrimmed photograph",
+      "a pillar colour as fill",
+      "source from a screenshot"
+    ],
+    "vector": {
+      "file": "assets/logos/hoi-mark.svg",
+      "source": "hoi_mark_cobalt_rgb.png",
+      "method": "traced by build/trace_mark.py, corners kept",
+      "fidelity_iou": 0.995,
+      "note": "A reproduction of the only artwork that exists. Replace it if the original vector is found."
+    },
+    "landscape": {
+      "status": "proposed in 3.3, needs brand-owner sign-off",
+      "amends": "clear space (1R) and 'the mark appears on the cover and close only'",
+      "where": [
+        "close",
+        "cover",
+        "divider"
+      ],
+      "clear_space": "exempt as artwork; never exempt from the 24px text clearance",
+      "never": [
+        "floating mid-slide fully inside the canvas",
+        "text over the strokes",
+        "more than one per slide",
+        "a ghost or watermark behind content",
+        "rotated, outlined, recoloured outside the three colourways, or the PNG scaled past 670px"
+      ]
+    }
+  },
+  "layout": {
+    "rail": {
+      "a4_landscape": "46mm + 14mm gap",
+      "a4_portrait": "42mm + 10mm gap",
+      "web": "3 of 12 columns",
+      "rule": "Rail holds marginalia, main column holds the argument. Rail may be empty. Slides do NOT use the rail."
+    },
+    "vertical": {
+      "structure": "head (fixed) / body (flex:1) / foot (one line)",
+      "body_modes": [
+        "centred",
+        "top",
+        "spread"
+      ],
+      "critical": "Content stacked at the top with a void beneath is ALWAYS a missing flex rule on the body."
+    },
+    "grids": {
+      "web_desktop": "12 col, 24px gutter, 64px margin, 1280 max",
+      "slide": "1280x720, 72px side, 56 top, 72 foot",
+      "a4_portrait": "20mm side, 25mm foot",
+      "a4_landscape": "19/22/15mm"
+    },
+    "radius": {
+      "panels": 0,
+      "buttons": 2,
+      "rule": "There are no 8px cards. Use rules and the rail."
+    },
+    "rules": {
+      "heavy": "1.6px Ink above a section heading",
+      "hairline": "1px Line",
+      "pillar": "2.4px, the only coloured rule"
+    },
+    "spacing": [
+      4,
+      8,
+      16,
+      24,
+      40,
+      64,
+      96,
+      128
+    ],
+    "prohibited": [
+      "gradients",
+      "box-shadow",
+      "border-radius above 2px",
+      "card grids",
+      "decorative animation"
+    ],
+    "density": {
+      "bullets_per_slide": 5,
+      "words_per_bullet": 12,
+      "cards_per_row": 4,
+      "table_columns": 6,
+      "chart_series": 4,
+      "nav_items": 6,
+      "deck_length": "10-16"
+    }
+  },
+  "images": {
+    "layouts": [
+      "full_bleed_scrim",
+      "split_46_54",
+      "screenshot_frame",
+      "video_holding_frame",
+      "comparison_pair"
+    ],
+    "scrim": "flat rgba(10,14,39,.78). NEVER a gradient, never a blur.",
+    "captions": "mono, 11px/6.9pt, Slate, BELOW the image",
+    "sizes": {
+      "full_bleed": "2560x1440",
+      "split_portrait": "1200x1440",
+      "screenshot": "2x native",
+      "video_frame": "1920x1080",
+      "comparison": "1200x900 each"
+    },
+    "never": [
+      "neural networks",
+      "glowing brains",
+      "robot hands",
+      "blue tech aurora",
+      "particle fields",
+      "cherry blossoms",
+      "torii gates",
+      "calligraphy ornament",
+      "handshake over cityscape",
+      "AI-generated people on client-facing surfaces",
+      "blue-tinted grading",
+      "stock photography of any kind",
+      "generated imagery of any kind on any surface",
+      "isometric or 3D illustration",
+      "duotone, colour grading or any filter"
+    ],
+    "art_direction": {
+      "subject": "people at work in real HOI sessions",
+      "light": "as found",
+      "treatment": "none",
+      "source": "HOI sessions only",
+      "consent": "written, each identifiable person; confirm what may be published with the client, and locally for Gulf and Africa sessions",
+      "until_shot": "every image slot is a labelled frame; no image beats a wrong one"
+    }
+  },
+  "icons": {
+    "style": "outline only",
+    "stroke": 1.6,
+    "grid": 24,
+    "min_px": 16,
+    "colour": "Ink by default, white on Ink, pillar colour on pillar-owned surfaces",
+    "never": [
+      "filled",
+      "two-tone",
+      "mixed stroke weights",
+      "emoji as substitute",
+      "the mark as an icon"
+    ]
+  },
+  "slides": {
+    "canvas": "1280x720",
+    "margin_px": 72,
+    "live_area": "1136x576",
+    "layouts": [
+      "cover",
+      "agenda",
+      "divider",
+      "two_column",
+      "list",
+      "table",
+      "chart",
+      "screenshot",
+      "split_image",
+      "statistic",
+      "conviction",
+      "close"
+    ],
+    "diagram_kit": [
+      "gates",
+      "stages",
+      "pillars",
+      "dots"
+    ],
+    "layers": {
+      "brushwork": "The mark as landscape. Cover, divider and close only.",
+      "scale": "Statements and statistics. Type is the picture; nothing is ever clipped.",
+      "diagram": "Content slides draw HOI's own frameworks instead of listing them."
+    },
+    "type_floor_px": {
+      "body": 24,
+      "secondary": 20,
+      "label": 18,
+      "furniture": 16
+    },
+    "body_copy_run_chars": 60,
+    "type_scale_px": {
+      "statement": "80-124",
+      "numeral": "up to 330",
+      "title": "56-64",
+      "list_item": 36,
+      "body": "24-28",
+      "label": 18,
+      "footer": 16
+    },
+    "mark": {
+      "carried_by": [
+        "close",
+        "cover",
+        "divider"
+      ],
+      "per_slide": 1,
+      "colourways": [
+        "white on cobalt",
+        "cobalt on ink",
+        "ink on cobalt"
+      ],
+      "min_diameter_px": 800,
+      "min_crop": "25% of the disc off the canvas",
+      "text_clearance_px": 24
+    },
+    "accent_phrase": "at most one per slide and one per five slides",
+    "contrast": {
+      "normal_text": 4.5,
+      "large_text_24px": 3.0
+    },
+    "furniture": "One footer line: house name, pillar and format, number. No corner mark.",
+    "rhythm": "Brushwork cover, agenda, white content, brushwork divider every five to seven, one conviction, close on the action. Ten to sixteen slides.",
+    "retired": [
+      "an eyebrow above every slide title",
+      "12px labels",
+      "8% tinted statistic cards",
+      "three ruled columns as the default content slide",
+      "an accent phrase on every slide",
+      "grey wireframes as layout documentation"
+    ],
+    "gate": "scripts/slide_gate.js",
+    "template": "templates/deck.html"
+  },
+  "voice": {
+    "principles": [
+      "short declarative sentences, 12 words average",
+      "present tense for capabilities",
+      "evidence-led",
+      "no hedging",
+      "end with a next action"
+    ],
+    "verbs_use": [
+      "deploy",
+      "build",
+      "ship",
+      "execute",
+      "run",
+      "govern",
+      "equip",
+      "scope",
+      "validate",
+      "evaluate",
+      "monitor"
+    ],
+    "verbs_avoid": [
+      "discover",
+      "explore",
+      "unlock",
+      "transform"
+    ],
+    "phrases": [
+      "equipped to run",
+      "ready to run",
+      "harder to replace"
+    ],
+    "banned": [
+      "transformative",
+      "revolutionary",
+      "cutting-edge",
+      "unlock",
+      "empower",
+      "enable",
+      "upskill",
+      "seamless",
+      "leverage",
+      "synergy",
+      "journey",
+      "best-in-class",
+      "next-generation",
+      "game-changing"
+    ],
+    "never": [
+      "emoji",
+      "exclamation marks on corporate surfaces",
+      "first-person singular"
+    ],
+    "naming": {
+      "house": "House of Ichigo - title case, lowercase 'of'. Never HOI externally.",
+      "pillars": "Learn AI / Build with AI / Lead with AI / Govern with AI - never abbreviated",
+      "ai": "two capitals, no periods",
+      "curriculum_phases": [
+        "Scope",
+        "Build",
+        "Govern",
+        "Scale"
+      ],
+      "platform_stages": [
+        "Onboarding",
+        "Use-case mapping",
+        "Prioritisation",
+        "Governance check",
+        "AI roadmap",
+        "Blueprint export"
+      ],
+      "critical": "Curriculum phases (Scope/Build/Govern/Scale) and platform stages are different sequences. Never mix them. The platform has SIX stages."
+    }
+  },
+  "catalogue": {
+    "structure": "Four pillars × three programme tiers = twelve programmes. There is NO depth ladder and NO published duration.",
+    "tiers": {
+      "briefing": "Awareness / demo-led, before commitment",
+      "core": "The flagship workshop for that pillar",
+      "applied": "The core spine rebuilt for a function, or taken further"
+    },
+    "no_menu": "There is no menu to choose from. HOI recommends the programme after a scoping call; the client does not pick from a list. Never publish a price list or a duration grid.",
+    "programmes": {
+      "learn": [
+        {
+          "tier": "briefing",
+          "name": "AI Discovery Briefing",
+          "for": "any team or leadership group exploring where to start",
+          "outcome": "a shared vocabulary and a clear, unhyped view of where AI is worth applying"
+        },
+        {
+          "tier": "core",
+          "name": "AI for Business",
+          "modules": [
+            "LLM fundamentals",
+            "data & knowledge bases",
+            "prompt-led automation",
+            "AI assistants",
+            "AI agents",
+            "prototyping"
+          ],
+          "for": "business professionals and cross-functional teams. No prerequisite",
+          "outcome": "a configured assistant built on their own work, plus a personal action list"
+        },
+        {
+          "tier": "applied",
+          "name": "AI for Your Function",
+          "variants": [
+            "HR",
+            "Finance",
+            "Marketing & Sales",
+            "Operations & Supply Chain"
+          ],
+          "outcome": "a working assistant for a genuine task in that function"
+        }
+      ],
+      "build": [
+        {
+          "tier": "briefing",
+          "name": "See AI Build",
+          "for": "sponsors and decision-makers ahead of a team programme"
+        },
+        {
+          "tier": "core",
+          "name": "Build with AI",
+          "modules": [
+            "prompt contracts",
+            "reusable skills",
+            "AI assistants",
+            "grounding & retrieval",
+            "agents & workflows",
+            "vibe coding & prototyping",
+            "the three governance gates"
+          ],
+          "outcome": "a working Assistant, an Agent, a demonstrable prototype, and a documented architecture decision"
+        },
+        {
+          "tier": "applied",
+          "name": "Advanced AI Systems",
+          "modules": [
+            "grounding & RAG depth",
+            "permissions & access",
+            "evaluation against a baseline",
+            "monitoring & drift",
+            "error handling",
+            "architecture decisions"
+          ]
+        }
+      ],
+      "lead": [
+        {
+          "tier": "briefing",
+          "name": "AI for Executives"
+        },
+        {
+          "tier": "core",
+          "name": "AI Decision Lab",
+          "modules": [
+            "AI maturity assessment",
+            "process mapping",
+            "opportunity identification",
+            "prioritisation scoring",
+            "governance flags",
+            "roadmap generation"
+          ],
+          "outcome": "a maturity read on their own organisation and a ranked opportunity portfolio they built themselves"
+        },
+        {
+          "tier": "applied",
+          "name": "AI Strategy & Operating Model"
+        }
+      ],
+      "govern": [
+        {
+          "tier": "briefing",
+          "name": "AI Risk Briefing"
+        },
+        {
+          "tier": "core",
+          "name": "AI Governance Lab",
+          "outcome": "a completed vendor scorecard, a working tool register, and a due-diligence checklist"
+        },
+        {
+          "tier": "applied",
+          "name": "Vendor & Architecture Review"
+        }
+      ]
+    },
+    "delivery": {
+      "learn": {
+        "group": "8–20",
+        "format": "in-person, virtual or hybrid",
+        "need": "a laptop and access to your AI platform",
+        "platform": "agnostic"
+      },
+      "build": {
+        "group": "8–16",
+        "format": "in-person preferred",
+        "need": "a laptop, an AI account, and a real problem",
+        "platform": "adaptable — platform-specific labs"
+      },
+      "lead": {
+        "group": "6–15",
+        "format": "in-person, virtual or hybrid",
+        "need": "no technical setup",
+        "platform": "agnostic"
+      },
+      "govern": {
+        "group": "6–18",
+        "format": "in-person preferred",
+        "need": "your current AI policy, if one exists",
+        "platform": "agnostic by design"
+      }
+    },
+    "languages": "English and French, Arabic on request",
+    "premium": {
+      "consultant_programme": {
+        "name": "AI Transformation Consultant Programme",
+        "type": "channel",
+        "stages": [
+          "AI Foundations",
+          "Methodology",
+          "Platform",
+          "New Business"
+        ],
+        "commercial": "Per-seat licensing and re-certification — a recurring relationship, not a one-time training fee"
+      },
+      "corporate_academy": {
+        "name": "Corporate AI Academy",
+        "type": "enterprise",
+        "paths": [
+          "Build Internal Capability",
+          "AI Champions Cohort",
+          "Sell AI Training Yourself (white-label)"
+        ],
+        "tracks": [
+          "Executive Track",
+          "Leader Track",
+          "Team Track"
+        ],
+        "commercial": "Scoped as an engagement, not a day-rate booking"
+      }
+    },
+    "closing_lines": {
+      "learn": "Start where you *are*.",
+      "build": "Built in the room. *Yours* to keep.",
+      "lead": "Decide with *clarity*.",
+      "govern": "Move fast, *governed*.",
+      "platform": "The work outlives the workshop.",
+      "advisory": "Evidence. Decisions. Capability.",
+      "consultant": "Their *clients*. Your methodology.",
+      "corporate": "Capability you *keep*."
+    }
+  },
+  "frameworks": {
+    "governance_gates": [
+      "Gate 1 — is it safe to build? (assistant stage)",
+      "Gate 2 — safe to deploy? (pilot, measured against a baseline)",
+      "Gate 3 — stable enough to scale? (monitoring)"
+    ],
+    "six_governance_criteria": [
+      "data residency & privacy",
+      "training opt-out",
+      "human oversight & accountability",
+      "vendor due diligence",
+      "governance flags",
+      "EU AI Act tiering"
+    ],
+    "blueprint_export": [
+      "process definition, step by step",
+      "prompts and system instructions",
+      "knowledge sources and grounding",
+      "tool and integration configuration",
+      "guardrails and human checkpoints",
+      "test cases and success criteria",
+      "governance flags and risk tier",
+      "gap report — what is still missing"
+    ],
+    "blueprint_targets": [
+      "ChatGPT",
+      "Claude",
+      "Gemini",
+      "Mistral",
+      "n8n",
+      "Zapier",
+      "Make"
+    ]
+  },
+  "ui": {
+    "ramp": {
+      "cobalt-hover": "#112BB6",
+      "cobalt-press": "#0F259A",
+      "cobalt-sel-hover": "#D9DEF8",
+      "ink-hover": "#191C34",
+      "ink-press": "#272B41",
+      "surface-press": "#E6E9EE",
+      "disabled-fg": "#A4AAB5",
+      "danger-hover": "#BE171C",
+      "danger-subtle": "#FDEFEF"
+    },
+    "reused": {
+      "surface-hover": "#F2F5F8",
+      "selected": "#E7EAFB",
+      "input-border": "#5A6478",
+      "disabled-bg": "#F2F5F8"
+    },
+    "measured_contrast": {
+      "white on cobalt": 8.62,
+      "white on cobalt-hover": 10.27,
+      "white on cobalt-press": 11.99,
+      "ink on selected": 15.89,
+      "cobalt on selected": 7.21,
+      "ink on sel-hover": 14.26,
+      "ink on surface-hover": 17.37,
+      "input border on white": 5.95,
+      "input border on grey": 5.44,
+      "focus ring on white": 8.62,
+      "focus ring on ink": 7.58,
+      "white on danger": 4.68,
+      "white on danger-hover": 6.31,
+      "ink on warn": 11.91,
+      "disabled-fg on grey": 2.13
+    },
+    "states": [
+      "rest",
+      "hover",
+      "pressed",
+      "focused",
+      "selected",
+      "disabled",
+      "loading"
+    ],
+    "state_matrix": {
+      "button-primary": {
+        "rest": "bg #1231D6 · fg #FFFFFF",
+        "hover": "bg #112BB6",
+        "pressed": "bg #0F259A · no transform",
+        "focused": "outline 2px #1231D6 · offset 2px",
+        "selected": "n/a — a button is not selectable",
+        "disabled": "bg #F2F5F8 · fg #A4AAB5 · cursor not-allowed",
+        "loading": "label stays, spinner replaces nothing — width must not change"
+      },
+      "button-secondary": {
+        "rest": "bg transparent · fg #0A0E27 · border 1px #0A0E27",
+        "hover": "bg #F2F5F8",
+        "pressed": "bg #E6E9EE",
+        "focused": "outline 2px #1231D6 · offset 2px",
+        "selected": "n/a",
+        "disabled": "fg #A4AAB5 · border 1px #E3E8EF",
+        "loading": "same as primary"
+      },
+      "button-tertiary": {
+        "rest": "fg #1231D6 · no fill, no border",
+        "hover": "fg #112BB6 · underline",
+        "pressed": "fg #0F259A",
+        "focused": "outline 2px #1231D6 · offset 2px",
+        "selected": "n/a",
+        "disabled": "fg #A4AAB5",
+        "loading": "same as primary"
+      },
+      "input": {
+        "rest": "bg #FFFFFF · border 1px #5A6478",
+        "hover": "border 1px #0A0E27",
+        "pressed": "n/a",
+        "focused": "border 1px #1231D6 · outline 2px #1231D6 · offset 0",
+        "selected": "n/a",
+        "disabled": "bg #F2F5F8 · fg #A4AAB5 · border 1px #E3E8EF",
+        "loading": "skeleton bar, never a spinner inside a field"
+      },
+      "row / list item": {
+        "rest": "bg #FFFFFF · rule-bottom 1px #E3E8EF",
+        "hover": "bg #F2F5F8",
+        "pressed": "bg #E6E9EE",
+        "focused": "outline 2px #1231D6 · offset -2px (inset, so it is not clipped)",
+        "selected": "bg #E7EAFB · 2px #1231D6 left edge",
+        "disabled": "fg #A4AAB5 · no hover",
+        "loading": "skeleton rows at the row's own height"
+      },
+      "nav item": {
+        "rest": "fg #5A6478",
+        "hover": "fg #0A0E27",
+        "pressed": "fg #0A0E27",
+        "focused": "outline 2px #1231D6 · offset 2px",
+        "selected": "fg #0A0E27 · 2px #1231D6 edge on the leading side",
+        "disabled": "fg #A4AAB5",
+        "loading": "n/a"
+      }
+    },
+    "elevation": {
+      "e0 · ground": {
+        "use": "the page itself, and anything sitting flat on it",
+        "surface": "#FFFFFF",
+        "border": "none",
+        "scrim": "none"
+      },
+      "e1 · raised": {
+        "use": "panels, cards-that-are-not-cards, a section that needs edges",
+        "surface": "#FFFFFF",
+        "border": "1px #E3E8EF",
+        "scrim": "none"
+      },
+      "e2 · overlay": {
+        "use": "menus, popovers, dropdowns, tooltips, the command palette",
+        "surface": "#FFFFFF",
+        "border": "1px #0A0E27",
+        "scrim": "none",
+        "note": "An Ink hairline is 19:1 against white — it separates harder than any soft shadow, and it stays crisp in print and at 1x."
+      },
+      "e3 · modal": {
+        "use": "dialogs, sheets, anything that takes the whole screen hostage",
+        "surface": "#FFFFFF",
+        "border": "1.6px #0A0E27",
+        "scrim": "rgba(10,14,39,.55) over the page"
+      }
+    },
+    "density": {
+      "comfortable": {
+        "row": 48,
+        "pad_y": 13,
+        "pad_x": 16,
+        "text": 16,
+        "label": 14,
+        "line_height": 1.4,
+        "computed_row": 48.4,
+        "use": "marketing surfaces, forms, questionnaires, onboarding, anything a first-time user meets"
+      },
+      "compact": {
+        "row": 36,
+        "pad_y": 8,
+        "pad_x": 12,
+        "text": 14,
+        "label": 12,
+        "line_height": 1.4,
+        "computed_row": 35.6,
+        "use": "the platform's working screens — the default inside the product"
+      },
+      "dense": {
+        "row": 28,
+        "pad_y": 5,
+        "pad_x": 8,
+        "text": 13,
+        "label": 11,
+        "line_height": 1.4,
+        "computed_row": 28.2,
+        "use": "DATA TABLES ONLY, at 25 rows or more. Never for a form, never for navigation."
+      }
+    },
+    "motion": {
+      "duration_ms": {
+        "instant": 0,
+        "fast": 120,
+        "base": 180,
+        "slow": 260,
+        "deliberate": 400
+      },
+      "easing": {
+        "standard": "cubic-bezier(.2,0,0,1)",
+        "enter": "cubic-bezier(0,0,0,1)",
+        "exit": "cubic-bezier(.3,0,1,1)"
+      },
+      "assignments": {
+        "colour and opacity": "fast",
+        "overlay enter": "base, enter",
+        "overlay exit": "fast, exit",
+        "panel or drawer": "slow",
+        "progress and skeleton": "deliberate, looping"
+      },
+      "prohibited": [
+        "anything over 400ms",
+        "bounce, spring, overshoot or elastic easing",
+        "parallax, and movement tied to scroll position",
+        "transform on press — a button does not shrink",
+        "animating layout properties (width, height, top, left); use opacity and transform"
+      ],
+      "reduced_motion": "@media (prefers-reduced-motion:reduce) — every duration drops to 0ms except opacity, which keeps `fast`. This is not optional and it is not a nicety."
+    },
+    "focus": {
+      "ring": "2px solid #1231D6",
+      "offset": "2px outside, -2px inset where the element is clipped by a scroll container",
+      "on_ink": "#7FA0FF — 7.58:1 against Ink",
+      "on_cobalt": "#FFFFFF — 8.62:1",
+      "rule": "`:focus-visible`, never `:focus`. `outline:none` without a replacement ring is a defect, not a style choice.",
+      "target_min_px": 44,
+      "target_rule": "44x44 minimum hit area (WCAG 2.5.5 AA). A 28px dense table row is legal because the row is not the target; the control inside it still needs 44x44, reached with padding or a pseudo-element, not by growing the row."
+    },
+    "radius": {
+      "surface": 0,
+      "button": 2,
+      "input": 2,
+      "overlay": 4,
+      "chip": 4,
+      "badge": 4,
+      "max": 4,
+      "rule": "0 for anything that holds content. 2px for anything you press or type into. 4px for anything that floats. Nothing above 4."
+    },
+    "components": {
+      "retired": {
+        "--success": {
+          "was": "#008558",
+          "why": "identical to the Build pillar (#008558). One hex cannot mean both 'the Build pillar owns this' and 'this passed' on a screen that shows both.",
+          "instead": "Success is Ink text and the word, with a check mark in Ink. It takes no fill. Nothing in this system needs a colour to announce that it is fine."
+        }
+      },
+      "semantic": {
+        "attention": {
+          "fill": "#FFC411",
+          "text": "#0A0E27",
+          "contrast": 11.91,
+          "use": "a governance flag that needs a human decision; a value outside an expected range"
+        },
+        "blocking": {
+          "fill": "#E51919",
+          "text": "#FFFFFF",
+          "contrast": 4.68,
+          "use": "a hard stop — a failed gate, an unacceptable-risk tier, a destructive action"
+        },
+        "clear": {
+          "fill": "none",
+          "text": "#0A0E27",
+          "contrast": 19.0,
+          "use": "everything that passed. Ink text, a mark, no fill"
+        }
+      },
+      "score": {
+        "track": "#F2F5F8",
+        "fill": "#1231D6",
+        "text": "#0A0E27",
+        "rule": "Cobalt on a grey track, at every value. The number is Manrope, tabular. The band is a WORD, never a colour.",
+        "why_not_ryg": "A red/amber/green scale would import a traffic-light language the brand does not have, collide with the pillar colours, and make a low maturity score look like a fault when it is a starting position. A client at 2.1 is not failing; they are at the beginning.",
+        "bands": {
+          "Initial": "0.0-1.4",
+          "Emerging": "1.5-2.4",
+          "Defined": "2.5-3.4",
+          "Managed": "3.5-4.4",
+          "Optimising": "4.5-5.0"
+        },
+        "pillar_variant": "On a pillar-owned screen the fill may take the pillar colour, once, for that pillar's own score. Never two pillar colours in one chart — that is a legend, and a legend means the chart failed."
+      },
+      "badge": {
+        "shape": "4px radius, 11px mono label, uppercase, .1em tracking",
+        "default": "outline 1px #E3E8EF, text #0A0E27, no fill",
+        "rule": "Fill is earned, not decorative. A badge takes a fill only when it needs a human to act.",
+        "eu_ai_act": {
+          "Unacceptable": "blocking",
+          "High": "attention",
+          "Limited": "clear",
+          "Minimal": "clear"
+        },
+        "governance_flag": {
+          "Blocked": "blocking",
+          "Review": "attention",
+          "Cleared": "clear"
+        }
+      },
+      "stepper": {
+        "stages": [
+          "Onboarding",
+          "Use-case mapping",
+          "Prioritisation",
+          "Governance check",
+          "AI roadmap",
+          "Blueprint export"
+        ],
+        "rule": "Six, always. Never shortened, never merged, and never confused with the curriculum phases (Scope · Build · Govern · Scale).",
+        "states": {
+          "done": "Ink rule, Ink label, a mark",
+          "current": "2px #1231D6 rule, Ink label at 600",
+          "todo": "1px #E3E8EF rule, #5A6478 label"
+        },
+        "never": "Never a percentage — six discrete stages are not 43% complete, and a bar cannot say which one you are in."
+      },
+      "table": {
+        "header": "mono, 11px, uppercase, .14em, Slate, 1.2px Ink rule beneath",
+        "rows": "1px Line rule between. No zebra striping — the rule is the separator, and stripes fight the rail.",
+        "numerals": "JetBrains Mono, tabular, right-aligned. Always.",
+        "text_align": "left, never centred; a centred column has no edge to scan",
+        "density": "compact by default; dense at 25 rows or more",
+        "sticky_header": "required above 15 rows",
+        "sort": "one column at a time, indicated on the header cell itself",
+        "selection": "checkbox in a 44px target; the row tint follows ui.state_matrix",
+        "empty_cell": "an en dash, never a blank and never 'N/A'"
+      },
+      "form": {
+        "label": "above the field, always. Never a placeholder as a label — it disappears the moment someone types and takes the question with it.",
+        "placeholder": "an example of the answer, or nothing",
+        "help": "below the label, above the field, Slate 13px. It is read before the mistake, not after.",
+        "required": "mark the OPTIONAL ones. If most fields are required, a required marker is noise on every row.",
+        "error": "below the field, danger text, and it says what to do — not 'invalid input'. The field also gets aria-invalid and a danger border.",
+        "validation_timing": "on blur, never on keystroke. Telling someone their email is wrong while they are typing it is a sentence read aloud before it is finished.",
+        "width": "the field is the width of its answer. A postcode field the width of the page is a question you are asking badly.",
+        "group": "fieldset + legend for radio and checkbox groups. Not a div."
+      },
+      "questionnaire": {
+        "item": "one question per row: number, question, scale. The number is mono, the question is body text, the scale is the control.",
+        "scale": "5 points, labelled at both ends and in the middle. An unlabelled 5-point scale collects noise.",
+        "progress": "'Question 7 of 24', in words and numerals. Never a bar alone — a bar hides how much is left.",
+        "save": "every answer, on change. A questionnaire that loses answers is a questionnaire nobody finishes.",
+        "density": "comfortable. This is the surface a first-time user meets."
+      },
+      "triad": {
+        "empty": {
+          "rule": "Say what goes here and give the action that puts it there.",
+          "never": "an illustration, a shrug, or 'No data'.",
+          "shape": "one line of Ink at 18px, one line of Slate, one primary button"
+        },
+        "loading": {
+          "rule": "A skeleton at the shape of what is arriving.",
+          "never": "a spinner where the shape is known; a blank screen; a layout that jumps when content lands",
+          "shape": "skeleton rows at the container's own density"
+        },
+        "error": {
+          "rule": "What failed, what it means, what to do next. In that order.",
+          "never": "an error code alone, an apology without a next step, or a danger fill on a whole panel",
+          "shape": "danger rule on the leading edge, Ink text, one action"
+        }
+      },
+      "nav": {
+        "sidebar": "Ink ground, #E7EAFB is never used here; the working area beside it stays white",
+        "item_rest": "white at 60%",
+        "item_current": "white at 100%, 2px #1231D6 leading edge",
+        "contrast_rest": 19.0,
+        "rule": "The sidebar is the only large Ink area in the product. It anchors the screen; everything else is white so the content carries the weight.",
+        "width": "232px expanded, 64px collapsed. No intermediate state."
+      }
+    },
+    "overlays": {
+      "overlay": {
+        "menu": {
+          "elevation": "e2",
+          "width": "trigger width or 240px, whichever is larger",
+          "dismiss": "Esc, click outside, or choosing an item",
+          "focus": "roving, not trapped"
+        },
+        "popover": {
+          "elevation": "e2",
+          "width": "max 360px",
+          "dismiss": "Esc or click outside",
+          "focus": "moves in, returns to the trigger on close"
+        },
+        "tooltip": {
+          "elevation": "e2",
+          "width": "max 280px",
+          "dismiss": "blur or pointer leave, after 100ms",
+          "focus": "never takes focus — it is not interactive"
+        },
+        "dialog": {
+          "elevation": "e3 + scrim",
+          "width": "480 / 640 / 800px",
+          "dismiss": "Esc, the close control, or the cancel action. NOT click-outside when there are unsaved changes",
+          "focus": "trapped, first focusable on open, returns to the trigger on close"
+        },
+        "drawer": {
+          "elevation": "e3 + scrim",
+          "width": "420px, right side",
+          "dismiss": "Esc or click outside",
+          "focus": "trapped while open"
+        }
+      },
+      "overlay_rules": [
+        "One overlay at a time, with one exception: a confirm dialog may open over a drawer. Nothing else stacks.",
+        "Focus returns to the element that opened it. Losing focus to the page body is the most common keyboard bug in a product like this.",
+        "An overlay never holds the only copy of something. A dialog that disappears with unsaved work in it is a data-loss bug wearing a dismiss button.",
+        "No shadow at any level — see Section 08, elevation. A menu is a white surface with an Ink hairline.",
+        "Position by the trigger, flipping to stay on screen. Never centred except a dialog."
+      ],
+      "keyboard": {
+        "Esc": "closes the topmost overlay, and only the topmost",
+        "Tab": "stays inside a dialog or drawer; leaves a menu or popover",
+        "Arrow keys": "move between items in a menu, a select or the palette",
+        "Enter": "activates the focused item",
+        "Home / End": "first and last item in a list",
+        "typing": "type-ahead in a select; a query in the palette"
+      },
+      "select": {
+        "closed": "looks exactly like a text field — same height, same border, same focus ring. A control that acts like a field must look like one.",
+        "open": "e2 list, max 8 items visible, scroll beyond",
+        "search": "appears at 10 options or more, automatically",
+        "multi": "chips inside the field, each removable, count when it overflows one line",
+        "never": "a native <select> styled to look custom, then missing keyboard behaviour the native one had for free"
+      },
+      "palette": {
+        "open": "Cmd/Ctrl + K, from anywhere",
+        "shape": "e3 + scrim, 640px, anchored 20% from the top, never centred vertically",
+        "sections": [
+          "Actions",
+          "Use cases",
+          "Programmes",
+          "Recent"
+        ],
+        "rule": "Results are grouped and labelled; an ungrouped flat list of mixed result types is a search box, not a palette.",
+        "empty": "names what can be searched, rather than saying 'no results'"
+      },
+      "calendar": {
+        "week_start": "Monday. The company is French and sells across Europe and the Gulf; a Sunday-first calendar is a US default nobody here chose.",
+        "date_format": "DD/MM/YYYY in the interface, ISO 8601 (YYYY-MM-DD) in every export, file name and API payload.",
+        "week_numbers": "shown in the gutter — training is scheduled by week, and 'W12' is how clients talk about it",
+        "today": "2px #1231D6 rule beneath the numeral. Not a filled circle: the shape rules cap radius at 4px, and a filled circle would read as selected.",
+        "selected": "#1231D6 fill, white numeral",
+        "range": "#E7EAFB fill between the two ends",
+        "outside_month": "disabled-fg, still clickable",
+        "input": "a text field first, a picker second. Typing 14/03/2027 must work without ever opening the calendar."
+      },
+      "chat": {
+        "alignment": "right-aligned is prohibited. Both sides are left-aligned on the same measure; the speaker is named in mono above the message. Alternating alignment halves the reading measure and turns a transcript into a chat toy.",
+        "person_label": "mono, 11px, uppercase, Slate",
+        "ai_label": "mono, 11px, uppercase, Cobalt",
+        "surface": "no bubbles. A hairline rule between turns, the same rail as everywhere else. Bubbles are a consumer-messaging idiom and this is a working record.",
+        "input": "a field that grows to 6 lines then scrolls; Enter sends, Shift+Enter breaks the line, and the rule is written next to the control rather than assumed",
+        "streaming": "text appears progressively; the send control is disabled and a stop control replaces it"
+      },
+      "citation": {
+        "why": "Section 04 says no promise without a measurable outcome. A platform that states AI-generated conclusions without showing where they came from contradicts the brand in the one place a client checks it.",
+        "chip": "mono superscript numeral in Cobalt, a 4px-radius outline chip on hover, opening the source panel on click",
+        "rule": "Every generated claim about the client's own material carries a chip. A statement with no source is labelled as ungrounded, in words, rather than shipped bare.",
+        "ungrounded": "an outline chip reading UNGROUNDED, #5A6478 — never a colour fill, because it is not an error, it is a disclosure",
+        "panel": "opens as a drawer, not a tooltip: a source needs a title, a location and a quotable extract, which does not fit a hover",
+        "never": "a footnote list at the bottom with no link back to the sentence; a chip that opens a page that does not contain the quoted text"
+      },
+      "message": {
+        "toast": {
+          "use": "confirmation that something finished — saved, exported, sent",
+          "shape": "e2, bottom-left, one line, 5 seconds, dismissible",
+          "never": "an error that needs action. If the person must do something, it belongs where the thing is, not in a box that leaves on its own."
+        },
+        "inline": {
+          "use": "anything the person must act on — a failed field, a blocked gate, an expired token",
+          "shape": "danger rule on the leading edge, next to what it concerns",
+          "never": "a page-wide danger fill"
+        },
+        "banner": {
+          "use": "a condition affecting the whole screen — read-only mode, a scheduled outage, a trial ending",
+          "shape": "full width, attention fill, Ink text, one action, dismissible only if it is not blocking",
+          "never": "more than one at a time"
+        }
+      },
+      "disclosure": {
+        "tabs": "for peer views of the same object. Never for steps — that is the stepper. The current tab carries a 2px Cobalt bottom rule and aria-selected.",
+        "accordion": "hairline rows, chevron rotating 90 degrees over var(--dur-fast). No card, no fill, no shadow. Several may be open at once unless the content is mutually exclusive.",
+        "slider": "a 2px Line track, Cobalt fill to the left of the thumb, a 20px Ink thumb at 4px radius. The value is always shown as a numeral beside it — a slider without a readout is a guess.",
+        "toggle": "for a setting that applies immediately. A checkbox is for something that applies when the form is submitted. The two are not interchangeable and picking the wrong one is how a product gets a 'save' button nobody trusts."
+      },
+      "measured_contrast": {
+        "overlay border on white": 19.0,
+        "scrim over white": 0,
+        "citation chip on white": 8.62,
+        "ungrounded chip on white": 5.95,
+        "ai label on white": 8.62,
+        "person label on white": 5.95,
+        "today rule on white": 8.62,
+        "selected day, white on cobalt": 8.62,
+        "range fill, ink on cobalt-8": 15.89,
+        "banner, ink on warn": 11.91
+      }
+    }
+  },
+  "ux": {
+    "principles": {
+      "The work is the evidence": "Every screen ends in something a client can show their board: a score with its inputs, a blueprint, a flag with a reason. A screen that only informs is a screen that gets closed.",
+      "Say what will happen before it happens": "Destructive and irreversible actions name their consequence in the button, not in a dialog title. 'Discard eight components' beats 'Are you sure?'",
+      "The person is never the one who has to remember": "Answers save on change, filters persist, a half-finished assessment resumes where it stopped. Nothing asks twice for something already given.",
+      "Progress is stated, not implied": "Six named stages, 'question 7 of 24', a scoring run that says which use case it is on. A spinner is the absence of this.",
+      "Nothing generated is applied without a human": "The platform proposes; a person commits. This is the product promise and the governance position at once.",
+      "Slow is acceptable, silent is not": "A scoring run may take a minute. It may not take a minute without saying what it is doing and letting the person leave and come back."
+    },
+    "stages": {
+      "01 Onboarding": {
+        "person": "answers questions about the company, in comfortable density, often on a phone, usually once",
+        "platform": "builds the company profile and the first maturity read",
+        "exit": "a profile complete enough to map against",
+        "risk": "abandonment. This is the only stage with no prior investment to lose, so it is the one that must never feel like data entry."
+      },
+      "02 Use-case mapping": {
+        "person": "describes processes, one at a time",
+        "platform": "structures each into steps, owners and data touched",
+        "exit": "a set of use cases the scoring engine can read",
+        "risk": "the person describes an outcome rather than a process. The form asks for steps, not for goals."
+      },
+      "03 Prioritisation": {
+        "person": "reviews scores and reorders by judgement",
+        "platform": "scores six criteria, explains each, flags conflicts",
+        "exit": "an agreed order, with the disagreements recorded",
+        "risk": "the score is read as a verdict. It is an input; the screen says so, and the person's reorder is kept."
+      },
+      "04 Governance check": {
+        "person": "confirms owners, risk tier and retention",
+        "platform": "raises flags with the rule each one comes from",
+        "exit": "every use case cleared, in review, or blocked",
+        "risk": "a flag with no cited rule reads as an opinion. Every flag carries its source."
+      },
+      "05 AI roadmap": {
+        "person": "sets the horizon and the constraints",
+        "platform": "sequences the cleared use cases and names the capability each one needs",
+        "exit": "a dated plan that names the training behind it",
+        "risk": "a roadmap that does not name what the team must learn is a wish list."
+      },
+      "06 Blueprint export": {
+        "person": "reviews and exports",
+        "platform": "produces the full specification per use case",
+        "exit": "working configuration for the client's own stack",
+        "risk": "an export that needs a consultant to interpret. It must run."
+      }
+    },
+    "errors": {
+      "input": {
+        "cause": "the person typed something the system cannot accept",
+        "where": "under the field",
+        "says": "what is wrong and what a correct answer looks like",
+        "never": "'Invalid input'. Name the rule."
+      },
+      "permission": {
+        "cause": "the person is not allowed to do this",
+        "where": "in place of the control, not after pressing it",
+        "says": "who can, and how to ask them",
+        "never": "showing a control that always fails"
+      },
+      "absent": {
+        "cause": "the thing does not exist, or no longer does",
+        "where": "the whole panel",
+        "says": "what was expected here and the nearest way back",
+        "never": "a bare 404"
+      },
+      "conflict": {
+        "cause": "someone else changed it first",
+        "where": "a dialog, because it needs a decision",
+        "says": "what changed, who changed it, and the two options",
+        "never": "silently overwriting either version"
+      },
+      "transient": {
+        "cause": "the system failed and will probably work shortly",
+        "where": "inline, next to what failed",
+        "says": "that the work is saved, and offers a retry",
+        "never": "losing the input. The retry must not require retyping."
+      },
+      "model": {
+        "cause": "the model could not answer, or answered without grounds",
+        "where": "in the answer itself",
+        "says": "which part is ungrounded and what would ground it",
+        "never": "a confident sentence with nothing behind it"
+      }
+    },
+    "ai": {
+      "uncertainty": "Shown per claim, not per screen. A chip, or the word ungrounded. Never a global confidence percentage — a single number over a mixed answer is a number about nothing.",
+      "latency": "Under 1s: nothing. 1-10s: a skeleton at the shape of the result. Over 10s: a named task the person can leave and return to, with a notification when it lands.",
+      "checkpoint": "Gate 1 before build, Gate 2 before deploy — the two gates in the offering, rendered as an explicit step a named person completes. The platform never crosses either on its own.",
+      "correction": "Every generated field is editable in place, and an edit is recorded as the person's, not the model's. The distinction survives into the export.",
+      "refusal": "When the model will not answer, the screen says what it will not do and what the person can do instead. A blank response is a defect.",
+      "attribution": "Generated content is labelled where it appears and in the export. A client presenting a board paper must be able to say which sentences came from where."
+    },
+    "accessibility": {
+      "target": "WCAG 2.2 level AA, and it is a commitment, not an aspiration — European public-sector buyers ask for it in writing.",
+      "tested": [
+        "keyboard only, no mouse, every flow end to end",
+        "a screen reader on the questionnaire and the scorecard",
+        "200% browser zoom with no horizontal scroll",
+        "contrast, measured, against the tokens rather than by eye",
+        "prefers-reduced-motion honoured"
+      ],
+      "structure": "one h1 per screen, headings in order, landmarks named, every control labelled — a placeholder is not a label",
+      "status": "aria-live polite for a score that arrives, assertive for a failure that stops work; never both on one region",
+      "motion": "every duration drops to 0ms under prefers-reduced-motion except opacity",
+      "not_claimed": "Level AAA. Several AAA criteria conflict with a dense data product, and claiming what is not tested is worse than claiming less."
+    },
+    "rtl": {
+      "face": "IBM Plex Sans Arabic",
+      "measured": {
+        "IBM Plex Sans Arabic": {
+          "line_box": 151,
+          "vs_manrope": "+10%",
+          "ink": 76
+        },
+        "Cairo": {
+          "line_box": 187,
+          "vs_manrope": "+36%",
+          "ink": 73
+        },
+        "Noto Sans Arabic": {
+          "line_box": 211,
+          "vs_manrope": "+54%",
+          "ink": 78
+        }
+      },
+      "why": "Manrope's line box at 100px is 137. Plex Arabic is 151, Cairo 187, Noto 211. The density contract fixes rows at 28 / 36 / 48px; a face 54% taller breaks every one of them the moment the locale switches. Plex is the only candidate inside 10%.",
+      "not_cairo": "SEVEN uses Cairo. That is right for SEVEN and wrong here: their type is set large and loose, ours is set in 28px table rows.",
+      "size": "Arabic runs set at 0.95em of the Latin size — measured ink height is 76 against Manrope's cap of 72 — with line-height raised by 0.1.",
+      "density": "RTL locales add 10% to every row height in the density contract. A 28px dense row becomes 31px. This is a locale variable, not a redesign.",
+      "properties": "Logical properties everywhere: margin-inline-start, padding-inline, border-inline-start, inset-inline. A single margin-left in a shared component is a bug that only appears in Arabic.",
+      "mirrors": [
+        "layout and reading order",
+        "the rail (side column moves right)",
+        "nav edges and selection edges",
+        "progress and the stepper",
+        "chevrons and back arrows"
+      ],
+      "does_not_mirror": [
+        "the 会 mark — it is calligraphy, not an icon",
+        "numerals and the score meter fill (numbers read left to right in both)",
+        "charts with a time axis",
+        "logos and wordmarks of any kind",
+        "media controls"
+      ],
+      "not_a_layer": "Arabic is a locale, not a translation pass. Copy is written in Arabic, not translated from English at the end, and the questionnaire is reviewed by someone who works in the language."
+    },
+    "responsive": {
+      "stance": "The platform is desktop-first: it is a working tool used beside other windows. The questionnaire is mobile-first: it is met once, often on a phone, often by someone who will never open the platform again. They are different products and are built to different defaults.",
+      "breakpoints": {
+        "<600px": "questionnaire and reading only. The scorecard becomes a list, the table becomes rows, the sidebar becomes a bottom bar.",
+        "600-1023px": "single working column, sidebar collapsed to 64px",
+        "1024-1439px": "sidebar plus one working column",
+        "1440px+": "sidebar, working column and a detail drawer, all at once"
+      },
+      "rule": "Every breakpoint is `@media screen and (...)`. A bare media query fires during PDF export and collapses every column.",
+      "never": "hiding a control on small screens without moving it somewhere reachable. A feature that disappears on a phone has not been made responsive, it has been removed."
+    }
+  },
+  "quadrant": {
+    "axes": {
+      "x": "delivery readiness",
+      "y": "business impact"
+    },
+    "cuts": {
+      "readiness_foundations": 50,
+      "readiness_start": 65,
+      "impact": 60
+    },
+    "labels": {
+      "quick-wins": "Start now",
+      "strategic-projects": "Plan carefully",
+      "tactical-improvements": "Batch or defer",
+      "foundational-rebuilds": "Fix foundations first"
+    },
+    "rule": "Readiness under 50 is Fix foundations first at any impact. Impact 60 or more is Plan carefully until readiness reaches 65, then Start now. Otherwise Batch or defer. Never draw this as four equal boxes."
+  }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<title>{{brand}} — brief</title>
+<link rel="stylesheet" href="../references/tokens.css">
+<style>
+  /* One page. A brief that runs to two pages is a document, and a brief
+     nobody can hold in their head does not constrain the work.
+
+     The fields are in decision order: what we are making, for whom, what
+     would make it wrong, and who says yes. The "what would make this
+     wrong" field is the one people skip and the one that saves the
+     project. */
+  body{background:var(--muted);margin:0}
+  .page{width:210mm;min-height:297mm;background:var(--ground);
+    margin:0 auto 6mm;padding:22mm;display:flex;flex-direction:column}
+  .eyebrow{font-family:var(--mono);font-size:8pt;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--brand)}
+  h1{font-size:26pt;line-height:1.05;letter-spacing:var(--track-lg);
+    margin:4mm 0 0}
+  .hr{border-top:1.4px solid var(--ink);margin:6mm 0}
+  .field{display:grid;grid-template-columns:42mm 1fr;gap:8mm;
+    padding:4mm 0;border-bottom:1px solid var(--line)}
+  .label{font-family:var(--mono);font-size:8pt;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted);padding-top:.8mm}
+  .value{font-size:10.5pt;line-height:1.55}
+  .value.strong{font-family:var(--display);font-weight:600;font-size:12pt;
+    line-height:1.35}
+  ul{margin:0 0 0 5mm}
+  li{font-size:10.5pt;line-height:1.55;margin-top:1.5mm}
+  .warn{border-left:2px solid var(--attention);padding-left:5mm;
+    margin-top:6mm}
+  .warn p{font-size:10pt;line-height:1.55;margin:0}
+  .foot{margin-top:auto;border-top:1px solid var(--line);padding-top:4mm;
+    font-family:var(--mono);font-size:8pt;color:var(--muted);
+    display:flex;justify-content:space-between}
+  @media print{body{background:#fff}.page{margin:0}}
+</style></head>
+<body>
+<section class="page">
+  <div class="eyebrow">BRIEF</div>
+  <h1>WHAT WE ARE MAKING, IN <span class="accent">FIVE WORDS</span>.</h1>
+  <div class="hr"></div>
+
+  <div class="field"><div class="label">The one job</div>
+    <div class="value strong">ONE SENTENCE. IF IT NEEDS "AND", IT IS TWO
+      BRIEFS.</div></div>
+
+  <div class="field"><div class="label">Audience</div>
+    <div class="value">WHO READS IT, AND WHAT THEY KNOW ALREADY. "EVERYONE"
+      IS NOT AN AUDIENCE.</div></div>
+
+  <div class="field"><div class="label">What it must do</div>
+    <div class="value"><ul><li>ONE THING.</li><li>ANOTHER.</li></ul></div></div>
+
+  <div class="field"><div class="label">What would make it wrong</div>
+    <div class="value">THE FAILURE CONDITION, NAMED. THIS FIELD IS WHY THE
+      BRIEF EXISTS — IT IS THE ONLY ONE THAT CAN BE CHECKED AGAINST THE
+      FINISHED WORK.</div></div>
+
+  <div class="field"><div class="label">Format &amp; length</div>
+    <div class="value">SURFACE, PAGE OR SLIDE COUNT, AND THE TEMPLATE IT
+      STARTS FROM.</div></div>
+
+  <div class="field"><div class="label">Constraints</div>
+    <div class="value">DEADLINE · BUDGET · ANYTHING FIXED.</div></div>
+
+  <div class="field"><div class="label">Who says yes</div>
+    <div class="value">A NAME. NOT A TEAM.</div></div>
+
+  <div class="field"><div class="label">Sources</div>
+    <div class="value">WHERE THE FACTS COME FROM. NOTHING IN THE FINISHED
+      WORK MAY COME FROM ANYWHERE ELSE.</div></div>
+
+  <div class="warn"><p>Everything above is decided before production starts.
+    A brief filled in after the work exists is a description, and it
+    constrains nothing.</p></div>
+
+  <div class="foot"><span>{{brand}}</span><span>DATE · AUTHOR</span></div>
+</section>
+</body></html>
