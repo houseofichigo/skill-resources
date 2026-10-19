@@ -1,0 +1,7 @@
+interface:
+  display_name: "Newsjacking"
+  short_description: "Find responsible, timely news angles"
+  default_prompt: "Use $newsjacking to find current news we can responsibly respond to."
+
+policy:
+  allow_implicit_invocation: true

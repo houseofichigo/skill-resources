@@ -1,0 +1,7 @@
+interface:
+  display_name: "Competitor Scan"
+  short_description: "Scan competitor content and find white space"
+  default_prompt: "Use $competitor-scan to compare our competitors' recent content and identify opportunities."
+
+policy:
+  allow_implicit_invocation: true

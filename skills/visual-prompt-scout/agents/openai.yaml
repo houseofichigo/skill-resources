@@ -1,0 +1,5 @@
+interface:
+  display_name: "Visual Prompt Scout"
+  short_description: "Find and harden live visual prompts"
+  brand_color: "#1231D6"
+  default_prompt: "Use $visual-prompt-scout to find and improve a safe, sourced visual-generation prompt."

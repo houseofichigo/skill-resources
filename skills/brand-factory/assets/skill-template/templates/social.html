@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<title>{{brand}} — social</title>
+<link rel="stylesheet" href="../references/tokens.css">
+<style>
+  /* Three sizes, the ones that actually get used:
+       1200 x 1200  square — LinkedIn, Instagram feed
+       1200 x 628   landscape — link preview, X
+       1080 x 1350  portrait — Instagram, the largest feed footprint
+     Rendered at 1:1 px here so a screenshot at 100% is the asset. Export
+     with a headless browser at deviceScaleFactor 2 for retina.
+
+     Type is set LARGE because these are read at thumbnail size in a feed.
+     If the headline does not survive being 200px wide, it is too long —
+     that is a copy problem, not a size problem, so cut words rather than
+     shrinking type. */
+  body{background:var(--muted);margin:0;padding:24px;display:flex;
+    flex-wrap:wrap;gap:24px;align-items:flex-start}
+  .tile{background:var(--ground);padding:72px;display:flex;
+    flex-direction:column;position:relative;overflow:hidden}
+  .sq{width:1200px;height:1200px}
+  .ls{width:1200px;height:628px;padding:56px 64px}
+  .pt{width:1080px;height:1350px}
+  .tile.dark{background:var(--ink);color:var(--ground)}
+  .tile.brand{background:var(--brand);color:var(--ground)}
+  .mark{font-family:var(--display);font-weight:800;font-size:28px;
+    letter-spacing:var(--track-md)}
+  .ls .mark{font-size:22px}
+  h2{font-size:84px;line-height:1.02;letter-spacing:var(--track-xl);
+    margin-top:56px;max-width:20ch}
+  .ls h2{font-size:56px;margin-top:28px}
+  .kicker{font-family:var(--mono);font-size:18px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--brand);margin-top:40px}
+  .tile.dark .kicker{color:var(--brand-on-dark)}
+  .tile.brand .kicker{color:var(--ground)}
+  .foot{margin-top:auto;font-family:var(--mono);font-size:20px;
+    letter-spacing:.1em;text-transform:uppercase;display:flex;
+    justify-content:space-between;align-items:baseline}
+  .ls .foot{font-size:16px}
+  /* A quote card carries the speaker, or it is just a sentence in a box. */
+  .quote{font-family:var(--display);font-weight:600;font-size:62px;
+    line-height:1.14;letter-spacing:var(--track-lg);margin-top:48px}
+  .who{font-family:var(--mono);font-size:20px;line-height:1.5;
+    margin-top:36px;color:var(--brand-on-dark)}
+</style></head>
+<body>
+
+<!-- square · statement -->
+<section class="tile sq dark">
+  <div class="mark">{{brand}}</div>
+  <div class="kicker">TOPIC</div>
+  <h2>ONE CLAIM, SHORT ENOUGH TO <span class="accent">READ AT THUMBNAIL
+    SIZE</span>.</h2>
+  <div class="foot"><span>example.com</span><span>01</span></div>
+</section>
+
+<!-- landscape · link preview -->
+<section class="tile ls">
+  <div class="mark">{{brand}}</div>
+  <h2>HEADLINE, TWELVE WORDS AT MOST.</h2>
+  <div class="foot"><span>example.com</span><span>READ MORE</span></div>
+</section>
+
+<!-- portrait · quote -->
+<section class="tile pt dark">
+  <div class="mark">{{brand}}</div>
+  <div class="quote">"A SENTENCE SOMEONE ACTUALLY SAID, NOT A SENTENCE
+    WRITTEN TO BE QUOTED."</div>
+  <div class="who">NAME<br>ROLE, COMPANY</div>
+  <div class="foot"><span>example.com</span><span>02</span></div>
+</section>
+
+<!-- square · brand ground, used sparingly -->
+<section class="tile sq brand">
+  <div class="mark">{{brand}}</div>
+  <div class="kicker">ANNOUNCEMENT</div>
+  <h2>SAVE THE FULL BRAND GROUND FOR THE POST THAT MATTERS.</h2>
+  <div class="foot"><span>example.com</span><span>03</span></div>
+</section>
+
+</body></html>

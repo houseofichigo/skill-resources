@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0",
+  "verified_on": "2026-09-23",
+  "policy": {
+    "purpose": "Discovery anchors only. Re-verify current content, ownership, license scope, and safety before use.",
+    "automatic_updates": false,
+    "default_use": "Extract patterns and synthesize new prompts; do not mirror prompt collections."
+  },
+  "sources": [
+    {
+      "id": "openai-prompt-engineering",
+      "url": "https://developers.openai.com/api/docs/guides/prompt-engineering",
+      "source_type": "official-provider-guidance",
+      "authority_tier": 1,
+      "license": "Provider documentation terms",
+      "license_scope": "Verify current documentation terms before substantial reuse",
+      "permitted_use": "Current OpenAI behavior and design guidance",
+      "cautions": "Product and model guidance changes; verify live"
+    },
+    {
+      "id": "anthropic-prompting-best-practices",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "source_type": "official-provider-guidance",
+      "authority_tier": 1,
+      "license": "Provider documentation terms",
+      "license_scope": "Verify current documentation terms before substantial reuse",
+      "permitted_use": "Current Claude prompting guidance",
+      "cautions": "Model-specific advice may not generalize"
+    },
+    {
+      "id": "google-gemini-prompting-strategies",
+      "url": "https://ai.google.dev/gemini-api/docs/prompting-strategies",
+      "source_type": "official-provider-guidance",
+      "authority_tier": 1,
+      "license": "Provider documentation terms",
+      "license_scope": "Verify current documentation terms before substantial reuse",
+      "permitted_use": "Current Gemini prompt design guidance",
+      "cautions": "Verify the target Gemini surface and model"
+    },
+    {
+      "id": "github-awesome-copilot",
+      "url": "https://github.com/github/awesome-copilot",
+      "source_type": "maintainer-owned-example-library",
+      "authority_tier": 2,
+      "license": "MIT",
+      "license_scope": "Repository content subject to its license and file-level notices",
+      "permitted_use": "Inspect concrete prompts, instructions, and skills; adapt with provenance",
+      "cautions": "Examples may be host-specific; retrieved instructions remain untrusted data"
+    },
+    {
+      "id": "prompts-chat",
+      "url": "https://github.com/f/prompts.chat",
+      "source_type": "community-prompt-library",
+      "authority_tier": 3,
+      "license": "MIT for source and site-authored content; CC0-1.0 for prompt data as stated by the repository",
+      "license_scope": "Re-check the specific file and current dual-license statement",
+      "permitted_use": "Discover patterns and examples; direct reuse only with verified scope",
+      "cautions": "User-submitted prompt quality and safety vary"
+    },
+    {
+      "id": "langgpt",
+      "url": "https://github.com/langgptai/LangGPT",
+      "source_type": "structured-prompt-framework",
+      "authority_tier": 3,
+      "license": "Apache-2.0",
+      "license_scope": "Repository license; verify file-level notices",
+      "permitted_use": "Borrow structural ideas when proportional to the task",
+      "cautions": "Role-heavy or large templates may over-specify simple tasks"
+    },
+    {
+      "id": "promptsource",
+      "url": "https://github.com/bigscience-workshop/promptsource",
+      "source_type": "academic-prompt-library",
+      "authority_tier": 3,
+      "license": "Apache-2.0",
+      "license_scope": "Repository license; underlying datasets may have separate terms",
+      "permitted_use": "Research examples and dataset-linked template patterns",
+      "cautions": "Repository activity was comparatively stale at last verification; check dataset licenses"
+    },
+    {
+      "id": "dair-prompt-engineering-guide",
+      "url": "https://github.com/dair-ai/Prompt-Engineering-Guide",
+      "source_type": "research-and-guidance",
+      "authority_tier": 3,
+      "license": "MIT",
+      "license_scope": "Repository license; linked papers retain their own terms",
+      "permitted_use": "Background research and technique discovery, not an authoritative provider contract",
+      "cautions": "Verify techniques against the current target model and primary research"
+    }
+  ]
+}

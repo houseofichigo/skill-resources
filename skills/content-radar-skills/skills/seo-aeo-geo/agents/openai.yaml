@@ -1,0 +1,7 @@
+interface:
+  display_name: "SEO AEO GEO"
+  short_description: "Build content for SEO, AEO, and GEO"
+  default_prompt: "Use $seo-aeo-geo to create an answer-first page for this query."
+
+policy:
+  allow_implicit_invocation: true

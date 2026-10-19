@@ -1,0 +1,244 @@
+{
+  "$comment": "The ONLY file you edit by hand. Everything else is generated from it. Replace the values, run `python3 build/all.py`, and read what it tells you. See docs/02-intake.md for where these values come from.",
+  "brand": "Your Company",
+  "slug": "your-company",
+  "version": "1.0",
+  "date": "Month Year",
+  "supersedes": "nothing",
+  "positioning": "One sentence. What you do, for whom, and the thing you will not do.",
+  "locales": [
+    "en"
+  ],
+  "$locales_note": "Add 'ar' to switch on the RTL layer and the Arabic face. Add 'fr', 'de' etc. for copy locales that need no script change.",
+  "color": {
+    "ground": {
+      "hex": "#FFFFFF",
+      "role": "the page. Everything sits on this."
+    },
+    "ink": {
+      "hex": "#111111",
+      "role": "all body text, and the dark surface"
+    },
+    "brand": {
+      "hex": "#1231D6",
+      "role": "the one brand colour. Every CTA, link, focus ring."
+    },
+    "brand_on_dark": {
+      "hex": "#7FA0FF",
+      "role": "the brand colour where it must sit on ink"
+    },
+    "muted": {
+      "hex": "#5A6478",
+      "role": "secondary text on LIGHT surfaces only"
+    },
+    "surface": {
+      "hex": "#F2F5F8",
+      "role": "hover, disabled, quiet fills"
+    },
+    "line": {
+      "hex": "#E3E8EF",
+      "role": "hairlines"
+    },
+    "accents": {
+      "$comment": "Wayfinding only — never a button, never body copy. Delete the block if you have none.",
+      "one": {
+        "hex": "#00707F",
+        "label": "First pillar"
+      },
+      "two": {
+        "hex": "#008558",
+        "label": "Second pillar"
+      },
+      "three": {
+        "hex": "#E2006D",
+        "label": "Third pillar"
+      }
+    },
+    "semantic": {
+      "$comment": "Fills that mean 'a human must act'. Keep this list as short as you can defend. A success colour is usually unnecessary: see docs/00-method.md.",
+      "attention": {
+        "hex": "#FFC411",
+        "text": "ink",
+        "use": "needs a decision"
+      },
+      "blocking": {
+        "hex": "#E51919",
+        "text": "ground",
+        "use": "a hard stop"
+      }
+    },
+    "retired": {
+      "$comment": "Every hex your previous identity used. The checker fails on these, which is how old material stops leaking into new work.",
+      "old_accent": "#CF5B2B",
+      "old_ground": "#FAFAF7"
+    }
+  },
+  "avoid_palettes": {
+    "$comment": "Palettes yours must not read as. The build measures RGB distance against every one and fails under the threshold. Add your three closest competitors and whichever AI tool your market uses — that is how a brand stops looking generated. See docs/00-method.md.",
+    "threshold": 40,
+    "sets": {
+      "anthropic": [
+        "#F0EEE6",
+        "#D97757",
+        "#191919"
+      ],
+      "tailwind_default": [
+        "#3B82F6",
+        "#F59E0B",
+        "#DC2626",
+        "#0891B2",
+        "#10B981"
+      ],
+      "competitor_a": []
+    }
+  },
+  "type": {
+    "display": {
+      "family": "Manrope",
+      "npm": "@fontsource-variable/manrope",
+      "file": "manrope-latin-wght-normal",
+      "weights": "200 800",
+      "base_weight": 600,
+      "accent_weight": 800,
+      "has_italic": false,
+      "use": "display, every heading, and the whole interface"
+    },
+    "text": {
+      "family": "Inter Tight",
+      "npm": "@fontsource-variable/inter-tight",
+      "file": "inter-tight-latin-wght-normal",
+      "italic_file": "inter-tight-latin-wght-italic",
+      "weights": "300 800",
+      "has_italic": true,
+      "ceiling_px": 20,
+      "use": "long-form body text only, never above the ceiling"
+    },
+    "mono": {
+      "family": "JetBrains Mono",
+      "npm": "@fontsource-variable/jetbrains-mono",
+      "file": "jetbrains-mono-latin-wght-normal",
+      "weights": "300 700",
+      "use": "labels, metadata, folios, and ALL numerals"
+    },
+    "arabic": {
+      "$comment": "Only used when 'ar' is in locales. Chosen on line-box measurement, not taste — run `python3 build/measure_fonts.py` to compare candidates against your display face.",
+      "family": "IBM Plex Sans Arabic",
+      "npm": "@fontsource/ibm-plex-sans-arabic",
+      "file_pattern": "ibm-plex-sans-arabic-arabic-{w}-normal",
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "scale": 0.95,
+      "line_height_bump": 0.1
+    },
+    "tracking": {
+      "$comment": "Negative tracking is REQUIRED on most geometric sans at display size and PROHIBITED on most serifs. Check yours by eye at 88px before trusting these.",
+      "xl": "-.035em",
+      "lg": "-.03em",
+      "md": "-.02em",
+      "sm": "-.01em"
+    }
+  },
+  "shape": {
+    "surface": 0,
+    "control": 2,
+    "floating": 4,
+    "$comment": "0 holds content, 2 you press, 4 floats. Raise these if your brand is softer, but keep it to three values."
+  },
+  "density": {
+    "$comment": "pad_y is DERIVED so a row is exactly 2*pad + one line box. Set row, text and line_height; the build computes the rest and fails if they disagree.",
+    "line_height": 1.4,
+    "scales": {
+      "comfortable": {
+        "row": 48,
+        "text": 16,
+        "label": 14,
+        "pad_x": 16,
+        "use": "forms, onboarding, anything met once"
+      },
+      "compact": {
+        "row": 36,
+        "text": 14,
+        "label": 12,
+        "pad_x": 12,
+        "use": "the product's working screens"
+      },
+      "dense": {
+        "row": 28,
+        "text": 13,
+        "label": 11,
+        "pad_x": 8,
+        "use": "data tables only, 25 rows or more"
+      }
+    }
+  },
+  "motion": {
+    "durations_ms": {
+      "instant": 0,
+      "fast": 120,
+      "base": 180,
+      "slow": 260,
+      "deliberate": 400
+    },
+    "easing": {
+      "standard": "cubic-bezier(.2,0,0,1)",
+      "enter": "cubic-bezier(0,0,0,1)",
+      "exit": "cubic-bezier(.3,0,1,1)"
+    }
+  },
+  "a11y": {
+    "target": "WCAG 2.2 AA",
+    "target_min_px": 44,
+    "floors": {
+      "body_text": 4.5,
+      "large_text": 3.0,
+      "component_boundary": 3.0
+    }
+  },
+  "voice": {
+    "banned": [
+      "leverage",
+      "synergy",
+      "seamless",
+      "unlock",
+      "empower",
+      "cutting-edge",
+      "best-in-class",
+      "transformative",
+      "journey",
+      "game-changing",
+      "next-generation",
+      "revolutionary"
+    ],
+    "$comment": "The checker warns on these in any generated output. Add the words your market has worn out."
+  },
+  "book": {
+    "page": {
+      "width_mm": 297,
+      "height_mm": 210,
+      "margin_mm": [
+        19,
+        22,
+        15,
+        22
+      ]
+    },
+    "sections": [
+      "00 · Foundation",
+      "01 · Logo",
+      "02 · Colour",
+      "03 · Typography",
+      "04 · Voice",
+      "05 · Composition",
+      "06 · Applications",
+      "07 · Governance",
+      "08 · Interface",
+      "09 · Experience"
+    ],
+    "status": "starter",
+    "$status_note": "starter · draft · final. The divergence check measures how many of the shipped chassis's own sentences are still in your book. 'starter' reports, 'draft' warns, 'final' FAILS over 25% — set it to 'final' before handover so a recoloured chassis cannot go out as a brand book. See docs/05-contents.md."
+  }
+}

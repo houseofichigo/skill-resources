@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prompt Optimizer"
+  short_description: "Build safer, model-aware prompts from evidence"
+  default_prompt: "Use $prompt-optimizer to improve this prompt with the smallest sufficient change."

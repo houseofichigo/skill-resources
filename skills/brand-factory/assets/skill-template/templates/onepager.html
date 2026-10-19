@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<title>{{brand}} — one-pager</title>
+<link rel="stylesheet" href="../references/tokens.css">
+<style>
+  /* A4 portrait, one side, printed or attached. This is the leave-behind:
+     it is read standing up, in under a minute, by someone who will not
+     read the proposal. So the claim goes at the top, the proof in the
+     middle, and one way to respond at the bottom. */
+  body{background:var(--muted);margin:0}
+  .page{width:210mm;min-height:297mm;background:var(--ground);
+    margin:0 auto 6mm;padding:20mm;display:flex;flex-direction:column}
+  .top{display:flex;justify-content:space-between;align-items:baseline}
+  .mark{font-family:var(--display);font-weight:800;font-size:13pt;
+    letter-spacing:var(--track-md)}
+  .eyebrow{font-family:var(--mono);font-size:8pt;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--muted)}
+  h1{font-size:28pt;line-height:1.04;letter-spacing:var(--track-lg);
+    margin:8mm 0 0;max-width:24ch}
+  .lede{font-size:11.5pt;line-height:1.5;margin-top:5mm;max-width:62ch}
+  .hr{border-top:1.4px solid var(--ink);margin:7mm 0 0}
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:8mm;
+    margin-top:7mm}
+  .three h3{font-size:11pt;margin-bottom:2mm}
+  .three p{font-size:9.5pt;line-height:1.5;color:var(--muted)}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8mm;
+    margin-top:auto;padding-top:7mm;border-top:1px solid var(--line)}
+  /* Figures are mono, always, and the label sits UNDER the figure: the
+     number is what the eye is looking for. */
+  .stat .fig{font-family:var(--mono);font-size:24pt;line-height:1;
+    color:var(--brand)}
+  .stat .lab{font-family:var(--mono);font-size:7.5pt;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted);margin-top:2mm}
+  .cta{margin-top:8mm;background:var(--ink);color:var(--ground);
+    padding:6mm 7mm;display:flex;justify-content:space-between;
+    align-items:center}
+  .cta .ask{font-family:var(--display);font-weight:700;font-size:12pt}
+  .cta .how{font-family:var(--mono);font-size:8.5pt;line-height:1.6;
+    text-align:right}
+  @media print{body{background:#fff}.page{margin:0}}
+</style></head>
+<body>
+<section class="page">
+  <div class="top"><div class="mark">{{brand}}</div>
+    <div class="eyebrow">ONE-PAGER · DATE</div></div>
+
+  <h1>THE CLAIM, AS A <span class="accent">SENTENCE</span>.</h1>
+  <p class="lede">ONE OR TWO SENTENCES THAT WOULD SURVIVE BEING READ ALOUD
+    TO A SCEPTIC.</p>
+  <div class="hr"></div>
+
+  <div class="three">
+    <div><h3>WHAT IT IS</h3><p>PLAIN DESCRIPTION.</p></div>
+    <div><h3>WHO IT IS FOR</h3><p>NAMED AUDIENCE.</p></div>
+    <div><h3>WHY NOW</h3><p>THE REASON THIS IS NOT NEXT YEAR'S PROBLEM.</p></div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="fig">00</div><div class="lab">LABEL</div></div>
+    <div class="stat"><div class="fig">00</div><div class="lab">LABEL</div></div>
+    <div class="stat"><div class="fig">00</div><div class="lab">LABEL</div></div>
+  </div>
+
+  <div class="cta"><div class="ask">ONE ASK.</div>
+    <div class="how">name@example.com<br>example.com</div></div>
+</section>
+</body></html>

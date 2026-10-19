@@ -1,0 +1,7 @@
+interface:
+  display_name: "Content Radar Setup"
+  short_description: "Configure a brand for the Content Radar suite"
+  default_prompt: "Use $content-radar-setup to create and confirm our brand profile."
+
+policy:
+  allow_implicit_invocation: true
