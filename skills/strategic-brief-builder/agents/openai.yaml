@@ -1,0 +1,4 @@
+interface:
+  display_name: "Strategic Brief Builder"
+  short_description: "Use Strategic Brief Builder for its focused workflow."
+  default_prompt: "Use $strategic-brief-builder to help with this task."

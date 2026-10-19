@@ -1,0 +1,4 @@
+interface:
+  display_name: "Business Process Mapper"
+  short_description: "Use Business Process Mapper for its focused workflow."
+  default_prompt: "Use $business-process-mapper to help with this task."

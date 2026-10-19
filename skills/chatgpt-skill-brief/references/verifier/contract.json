@@ -1,0 +1,15 @@
+{
+  "packageVersion": "1.0.0-draft.2",
+  "checks": [
+    "supported-profile",
+    "required-sections",
+    "source-citations",
+    "no-credential-material",
+    "no-external-mutation",
+    "approval-lineage",
+    "chatgpt-skill-product-boundary",
+    "resource-code-inventory",
+    "workspace-capability-review",
+    "sharing-and-invocation-tests"
+  ]
+}

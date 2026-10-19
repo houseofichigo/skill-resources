@@ -4,8 +4,9 @@ Report suspected vulnerabilities privately to House of Ichigo before opening a p
 issue. Do not include secrets, private client material or a working exploit in a public
 report.
 
-Each skill folder documents any dependency-specific security constraints in its own
-`SECURITY.md`.
+Dependency-specific security constraints belong in the relevant `SKILL.md` or a
+linked file under its `references/` directory, so the public package stays complete
+without repository wrappers inside the skill folder.
 
 Before reporting, remove credentials and unnecessary personal data from logs and
 screenshots. If a real credential appears in any commit, rotate it immediately;

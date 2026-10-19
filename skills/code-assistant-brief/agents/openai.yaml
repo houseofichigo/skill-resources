@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Assistant Brief"
+  short_description: "Use Code Assistant Brief for its focused workflow."
+  default_prompt: "Use $code-assistant-brief to help with this task."

@@ -1,0 +1,17 @@
+{
+  "packageVersion": "1.0.0-draft.3",
+  "checks": [
+    "supported-profile",
+    "required-sections",
+    "source-citations",
+    "no-credential-material",
+    "no-external-mutation",
+    "approval-lineage",
+    "importable-workflow-json",
+    "unique-trigger-and-reachable-nodes",
+    "credential-placeholders-only",
+    "fallible-node-error-paths",
+    "approval-configuration-handover",
+    "post-create-retrieval-verification-plan"
+  ]
+}

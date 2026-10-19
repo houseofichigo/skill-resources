@@ -1,99 +1,63 @@
 #!/usr/bin/env python3
-"""Build every catalogue ZIP deterministically from its reviewed source."""
-
-from __future__ import annotations
-
-import argparse
-import io
-import json
-import sys
-import zipfile
+"""Build all public skill ZIPs deterministically."""
+import argparse, io, json, sys, zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CATALOG = ROOT / "catalog.json"
 PORTABLE_FILES = {"SKILL.md", "LICENSE.txt"}
 PORTABLE_DIRS = {"agents", "assets", "references", "scripts"}
 ZIP_TIME = (2020, 1, 1, 0, 0, 0)
 
-
-def portable_files(source: Path) -> list[Path]:
-    files: list[Path] = []
+def portable_files(source):
+    out = []
     for path in source.rglob("*"):
-        if not path.is_file():
+        if not path.is_file() or path.is_symlink():
             continue
-        relative = path.relative_to(source)
-        if relative.name == ".DS_Store" or "__pycache__" in relative.parts:
+        rel = path.relative_to(source)
+        if rel.name == ".DS_Store" or "__pycache__" in rel.parts:
             continue
-        if len(relative.parts) == 1 and relative.name in PORTABLE_FILES:
-            files.append(path)
-        elif relative.parts[0] in PORTABLE_DIRS:
-            files.append(path)
-    return sorted(files, key=lambda item: item.relative_to(source).as_posix())
+        if (len(rel.parts) == 1 and rel.name in PORTABLE_FILES) or rel.parts[0] in PORTABLE_DIRS:
+            out.append(path)
+    return sorted(out, key=lambda p: p.relative_to(source).as_posix())
 
-
-def zip_bytes(entries: list[tuple[str, Path]]) -> bytes:
+def skill_archive(skill_id, source):
     output = io.BytesIO()
     with zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
-        for archive_name, source in sorted(entries):
-            info = zipfile.ZipInfo(archive_name, date_time=ZIP_TIME)
+        for path in portable_files(source):
+            rel = path.relative_to(source).as_posix()
+            info = zipfile.ZipInfo(skill_id + "/" + rel, date_time=ZIP_TIME)
             info.compress_type = zipfile.ZIP_DEFLATED
-            payload = source.read_bytes()
-            mode = 0o755 if payload.startswith(b"#!") else 0o644
-            info.external_attr = mode << 16
+            payload = path.read_bytes()
+            info.external_attr = (0o755 if payload.startswith(b"#!") else 0o644) << 16
             info.create_system = 3
             archive.writestr(info, payload)
     return output.getvalue()
 
-
-def skill_archive(skill_id: str, source: Path) -> bytes:
-    return zip_bytes(
-        [(f"{skill_id}/{path.relative_to(source).as_posix()}", path) for path in portable_files(source)]
-    )
-
-
-def suite_archive(records: list[dict[str, str]]) -> bytes:
-    entries: list[tuple[str, Path]] = []
-    for record in records:
-        source = ROOT / record["source"]
-        skill_id = record["id"]
-        for path in portable_files(source):
-            relative = path.relative_to(source).as_posix()
-            entries.append((f"content-radar-skills/skills/{skill_id}/{relative}", path))
-    profile = ROOT / "skills/content-radar-skills/resources/profile.template.md"
-    entries.append(("content-radar-skills/resources/profile.template.md", profile))
-    return zip_bytes(entries)
-
-
-def write_or_check(path: Path, expected: bytes, check: bool) -> bool:
-    if check:
-        if not path.is_file() or path.read_bytes() != expected:
-            print(f"distribution drift: {path.relative_to(ROOT)}")
-            return False
-        return True
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_bytes(expected)
-    print(f"built {path.relative_to(ROOT)}")
-    return True
-
-
-def main() -> int:
+def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--check", action="store_true", help="fail instead of rewriting when a ZIP differs")
+    parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
-
-    records = json.loads(CATALOG.read_text(encoding="utf-8"))["skills"]
+    records = json.loads((ROOT / "catalog.json").read_text())["skills"]
+    expected_paths = {ROOT / r["distribution"] for r in records}
+    dist = ROOT / "dist"
     ok = True
+    actual_paths = set(dist.glob("*.zip")) if dist.is_dir() else set()
+    if args.check:
+        for extra in sorted(actual_paths - expected_paths):
+            print("unexpected distribution:", extra.relative_to(ROOT)); ok = False
+    else:
+        dist.mkdir(exist_ok=True)
+        for extra in sorted(actual_paths - expected_paths):
+            extra.unlink(); print("removed stale", extra.relative_to(ROOT))
     for record in records:
-        source = ROOT / record["source"]
-        target = ROOT / record["distribution"]
-        ok = write_or_check(target, skill_archive(record["id"], source), args.check) and ok
-
-    radar_records = [record for record in records if record["package"] == "skills/content-radar-skills"]
-    suite = ROOT / "skills/content-radar-skills/dist/content-radar-skills.zip"
-    ok = write_or_check(suite, suite_archive(radar_records), args.check) and ok
+        source, target = ROOT / record["source"], ROOT / record["distribution"]
+        expected = skill_archive(record["id"], source)
+        if args.check:
+            if not target.is_file() or target.read_bytes() != expected:
+                print("distribution drift:", target.relative_to(ROOT)); ok = False
+        else:
+            target.write_bytes(expected); print("built", target.relative_to(ROOT))
     return 0 if ok else 1
-
 
 if __name__ == "__main__":
     sys.exit(main())

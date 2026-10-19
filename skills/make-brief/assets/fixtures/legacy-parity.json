@@ -1,0 +1,13 @@
+{
+  "adapter": "make.ts, orchestrator-brief.ts and hybrid.ts",
+  "preserved": [
+    "Approved process and Use Case lineage",
+    "Existing Markdown brief output and approval boundaries",
+    "Source-grounded facts and explicit unresolved gaps"
+  ],
+  "openGaps": [
+    "Platform checks are declared contracts, not yet executable semantic validators",
+    "Old/new output parity and real-provider acceptance remain open",
+    "Package publication, managed verification and activation remain open"
+  ]
+}

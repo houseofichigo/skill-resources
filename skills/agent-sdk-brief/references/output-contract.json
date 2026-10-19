@@ -1,0 +1,36 @@
+{
+  "platform": "claude_sdk",
+  "profiles": ["agent"],
+  "requiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Agent loop and structured output",
+    "Session isolation and recovery",
+    "Permissions and hooks"
+  ],
+  "requiredArtifacts": [
+    "Repository build brief",
+    "Tool and permission matrix",
+    "Session lifecycle and bounded-run test plan"
+  ],
+  "platformRules": [
+    "Describe the application-owned Agent SDK loop, typed outputs and tool interfaces; do not substitute a Claude Project or uploadable skill.",
+    "Bind each session and tool call to the authorized organization and actor; recheck source access after resume.",
+    "Specify permission decisions, hooks, explicit consequential-action approval, deadlines, turn/cost limits and interruption recovery. Hooks and model output never grant authority.",
+    "Produce reviewed source/configuration guidance only; do not run an SDK, install dependencies or deploy.",
+    "Use official documentation as factual reference only. This package includes no Anthropic repository code or skill content and grants no SDK redistribution rights.",
+    "Describe API-key authentication without secret values; do not offer consumer Claude login or subscription limits as authentication for a third-party application.",
+    "Keep permission rules explicit and route consequential tool use through application-owned approval; never choose a bypass mode to make an example work.",
+    "Treat resumed session identifiers as private, actor-scoped state. Record resume or fork intent and recheck process and source access before continuing."
+  ],
+  "forbidden": [
+    "credentials",
+    "automatic external deployment",
+    "unapproved process changes",
+    "uncited provider assertions"
+  ]
+}

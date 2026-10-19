@@ -4,8 +4,8 @@ Corrections and evidence-backed additions are welcome.
 
 - Follow [`STANDARD.md`](STANDARD.md); operational instructions must work for an
   arbitrary organization and keep company profiles outside the package.
-- Keep every package under `skills/<package-name>/` and list each executable skill in
-  `catalog.json`.
+- Keep exactly one skill under `skills/<skill-id>/`, one matching entry in
+  `catalog.json`, and one generated archive at `dist/<skill-id>.zip`.
 - Keep `SKILL.md` at the declared skill root and make its `name` match the catalogue
   ID.
 - Preserve House of Ichigo publisher attribution and applicable licence notices.

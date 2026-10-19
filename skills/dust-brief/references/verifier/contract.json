@@ -1,0 +1,16 @@
+{
+  "packageVersion": "1.0.0-draft.2",
+  "checks": [
+    "supported-profile",
+    "required-sections",
+    "source-citations",
+    "no-credential-material",
+    "no-external-mutation",
+    "approval-lineage",
+    "instruction-process-tool-map",
+    "space-source-audience-boundary",
+    "tool-identity-confirmation",
+    "untrusted-knowledge-boundary",
+    "preview-and-sharing-plan"
+  ]
+}

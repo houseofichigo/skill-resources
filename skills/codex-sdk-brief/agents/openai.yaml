@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Sdk Brief"
+  short_description: "Use Codex Sdk Brief for its focused workflow."
+  default_prompt: "Use $codex-sdk-brief to help with this task."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Meeting Brief Builder"
+  short_description: "Use Meeting Brief Builder for its focused workflow."
+  default_prompt: "Use $meeting-brief-builder to help with this task."

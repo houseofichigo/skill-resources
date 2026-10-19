@@ -1,0 +1,9 @@
+platform: make
+family: automation
+packageVersion: 1.0.0-draft.2
+provenance: hoi_authored_official_docs
+sources:
+  - url: "https://help.make.com/incomplete-executions"
+    kind: official_docs
+  - url: "https://help.make.com/overview-of-error-handling"
+    kind: official_docs

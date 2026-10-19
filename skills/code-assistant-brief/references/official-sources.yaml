@@ -1,0 +1,7 @@
+platform: claude_code
+family: anthropic
+packageVersion: 1.0.0-draft.2
+provenance: hoi_authored_official_docs
+sources:
+  - url: "https://code.claude.com/docs/en/skills"
+    kind: official_docs

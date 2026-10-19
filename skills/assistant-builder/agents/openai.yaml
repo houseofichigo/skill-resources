@@ -1,0 +1,4 @@
+interface:
+  display_name: "Assistant Builder"
+  short_description: "Use Assistant Builder for its focused workflow."
+  default_prompt: "Use $assistant-builder to help with this task."

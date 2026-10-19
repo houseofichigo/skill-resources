@@ -1,0 +1,14 @@
+{
+  "adapter": "zapier.ts and orchestrator-brief.ts",
+  "preserved": [
+    "Markdown-only Zap build brief",
+    "Zap trigger, actions, Paths and Filters terminology",
+    "Mapped process steps, approval gates and unresolved placeholders",
+    "Provider knowledge and source-grounding rules"
+  ],
+  "openGaps": [
+    "The active adapter does not mechanically validate fields, path semantics or error handlers",
+    "The package verifier is declared but is not yet wired into the active response",
+    "Old/new output parity and real-provider acceptance remain open"
+  ]
+}

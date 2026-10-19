@@ -1,0 +1,33 @@
+{
+  "platform": "claude_skill",
+  "profiles": ["skill"],
+  "requiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Skill entry point and progressive disclosure",
+    "Supporting resources and script review",
+    "Host availability and sharing"
+  ],
+  "requiredArtifacts": [
+    "SKILL.md draft",
+    "Relative resource inventory",
+    "Script and permission review",
+    "Upload and invocation test plan"
+  ],
+  "platformRules": [
+    "Keep the reusable SKILL.md instructions distinct from Claude Project instructions and standalone SDK applications.",
+    "Use bounded progressive disclosure with resolvable relative references; list supporting scripts and their side effects for review without running them.",
+    "Record host availability and code-execution prerequisites as deployment checks, never permission to enable them.",
+    "Review authorized knowledge and intended sharing audience before manual upload; skills do not grant source access or bypass confirmations."
+  ],
+  "forbidden": [
+    "credentials",
+    "automatic external deployment",
+    "unapproved process changes",
+    "uncited provider assertions"
+  ]
+}

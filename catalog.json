@@ -1,22 +1,291 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "publisher": "House of Ichigo",
   "repository": "https://github.com/houseofichigo/skill-resources",
   "license": "MIT",
   "standard": "STANDARD.md",
+  "skill_count": 35,
+  "layout": "One canonical skill per skills/<id>/ and one deterministic ZIP per dist/<id>.zip.",
   "skills": [
-    {"id":"brand-factory","package":"skills/brand-factory","source":"skills/brand-factory","distribution":"skills/brand-factory/dist/skill.zip","onboarding":"profile"},
-    {"id":"competitor-scan","package":"skills/content-radar-skills","source":"skills/content-radar-skills/skills/competitor-scan","distribution":"skills/content-radar-skills/dist/competitor-scan.zip","onboarding":"profile"},
-    {"id":"content-ideas","package":"skills/content-radar-skills","source":"skills/content-radar-skills/skills/content-ideas","distribution":"skills/content-radar-skills/dist/content-ideas.zip","onboarding":"profile"},
-    {"id":"content-radar-setup","package":"skills/content-radar-skills","source":"skills/content-radar-skills/skills/content-radar-setup","distribution":"skills/content-radar-skills/dist/content-radar-setup.zip","onboarding":"profile"},
-    {"id":"content-radar","package":"skills/content-radar-skills","source":"skills/content-radar-skills/skills/content-radar","distribution":"skills/content-radar-skills/dist/content-radar.zip","onboarding":"profile"},
-    {"id":"newsjacking","package":"skills/content-radar-skills","source":"skills/content-radar-skills/skills/newsjacking","distribution":"skills/content-radar-skills/dist/newsjacking.zip","onboarding":"profile"},
-    {"id":"seo-aeo-geo","package":"skills/content-radar-skills","source":"skills/content-radar-skills/skills/seo-aeo-geo","distribution":"skills/content-radar-skills/dist/seo-aeo-geo.zip","onboarding":"profile"},
-    {"id":"trend-radar","package":"skills/content-radar-skills","source":"skills/content-radar-skills/skills/trend-radar","distribution":"skills/content-radar-skills/dist/trend-radar.zip","onboarding":"profile"},
-    {"id":"prompt-optimizer","package":"skills/prompt-optimizer","source":"skills/prompt-optimizer","distribution":"skills/prompt-optimizer/dist/skill.zip","onboarding":"intake"},
-    {"id":"skill-repo-forge","package":"skills/skill-repo-forge","source":"skills/skill-repo-forge","distribution":"skills/skill-repo-forge/dist/skill.zip","onboarding":"intake"},
-    {"id":"vibe-prompt-architect","package":"skills/vibe-prompt-architect","source":"skills/vibe-prompt-architect","distribution":"skills/vibe-prompt-architect/dist/skill.zip","onboarding":"intake"},
-    {"id":"visual-prompt-scout","package":"skills/visual-prompt-scout","source":"skills/visual-prompt-scout","distribution":"skills/visual-prompt-scout/dist/skill.zip","onboarding":"intake"},
-    {"id":"which-ai-model","package":"skills/which-ai-model","source":"skills/which-ai-model","distribution":"skills/which-ai-model/dist/which-ai-model.zip","onboarding":"intake"}
+    {
+      "id": "agent-sdk-brief",
+      "title": "Agent SDK Brief",
+      "category": "Implementation briefs",
+      "source": "skills/agent-sdk-brief",
+      "distribution": "dist/agent-sdk-brief.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "agent-skill-brief",
+      "title": "Agent Skill Brief",
+      "category": "Implementation briefs",
+      "source": "skills/agent-skill-brief",
+      "distribution": "dist/agent-skill-brief.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "api-integration-brief",
+      "title": "API Integration Brief",
+      "category": "Implementation briefs",
+      "source": "skills/api-integration-brief",
+      "distribution": "dist/api-integration-brief.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "apps-script-brief",
+      "title": "Apps Script Brief",
+      "category": "Implementation briefs",
+      "source": "skills/apps-script-brief",
+      "distribution": "dist/apps-script-brief.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "assistant-builder",
+      "title": "Assistant Builder",
+      "category": "Build and document",
+      "source": "skills/assistant-builder",
+      "distribution": "dist/assistant-builder.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "brand-factory",
+      "title": "Brand Factory",
+      "category": "Build and document",
+      "source": "skills/brand-factory",
+      "distribution": "dist/brand-factory.zip",
+      "onboarding": "profile"
+    },
+    {
+      "id": "business-process-mapper",
+      "title": "Business Process Mapper",
+      "category": "Build and document",
+      "source": "skills/business-process-mapper",
+      "distribution": "dist/business-process-mapper.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "chatgpt-skill-brief",
+      "title": "ChatGPT Skill Brief",
+      "category": "Implementation briefs",
+      "source": "skills/chatgpt-skill-brief",
+      "distribution": "dist/chatgpt-skill-brief.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "code-assistant-brief",
+      "title": "Code Assistant Brief",
+      "category": "Implementation briefs",
+      "source": "skills/code-assistant-brief",
+      "distribution": "dist/code-assistant-brief.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "codex-cli-brief",
+      "title": "Codex CLI Brief",
+      "category": "Implementation briefs",
+      "source": "skills/codex-cli-brief",
+      "distribution": "dist/codex-cli-brief.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "codex-sdk-brief",
+      "title": "Codex SDK Brief",
+      "category": "Implementation briefs",
+      "source": "skills/codex-sdk-brief",
+      "distribution": "dist/codex-sdk-brief.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "competitor-scan",
+      "title": "Competitor Scan",
+      "category": "Content intelligence",
+      "source": "skills/competitor-scan",
+      "distribution": "dist/competitor-scan.zip",
+      "onboarding": "profile"
+    },
+    {
+      "id": "content-ideas",
+      "title": "Content Ideas",
+      "category": "Content intelligence",
+      "source": "skills/content-ideas",
+      "distribution": "dist/content-ideas.zip",
+      "onboarding": "profile"
+    },
+    {
+      "id": "content-radar",
+      "title": "Content Radar",
+      "category": "Content intelligence",
+      "source": "skills/content-radar",
+      "distribution": "dist/content-radar.zip",
+      "onboarding": "profile"
+    },
+    {
+      "id": "content-radar-setup",
+      "title": "Content Radar Setup",
+      "category": "Content intelligence",
+      "source": "skills/content-radar-setup",
+      "distribution": "dist/content-radar-setup.zip",
+      "onboarding": "profile"
+    },
+    {
+      "id": "crewai-brief",
+      "title": "Crewai Brief",
+      "category": "Implementation briefs",
+      "source": "skills/crewai-brief",
+      "distribution": "dist/crewai-brief.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "custom-code-brief",
+      "title": "Custom Code Brief",
+      "category": "Implementation briefs",
+      "source": "skills/custom-code-brief",
+      "distribution": "dist/custom-code-brief.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "dust-brief",
+      "title": "Dust Brief",
+      "category": "Implementation briefs",
+      "source": "skills/dust-brief",
+      "distribution": "dist/dust-brief.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "make-brief",
+      "title": "Make Brief",
+      "category": "Implementation briefs",
+      "source": "skills/make-brief",
+      "distribution": "dist/make-brief.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "meeting-brief-builder",
+      "title": "Meeting Brief Builder",
+      "category": "Build and document",
+      "source": "skills/meeting-brief-builder",
+      "distribution": "dist/meeting-brief-builder.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "n8n-brief",
+      "title": "n8n Brief",
+      "category": "Implementation briefs",
+      "source": "skills/n8n-brief",
+      "distribution": "dist/n8n-brief.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "newsjacking",
+      "title": "Newsjacking",
+      "category": "Content intelligence",
+      "source": "skills/newsjacking",
+      "distribution": "dist/newsjacking.zip",
+      "onboarding": "profile"
+    },
+    {
+      "id": "pipedream-brief",
+      "title": "Pipedream Brief",
+      "category": "Implementation briefs",
+      "source": "skills/pipedream-brief",
+      "distribution": "dist/pipedream-brief.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "production-skill-kit",
+      "title": "Production Skill Kit",
+      "category": "Build and document",
+      "source": "skills/production-skill-kit",
+      "distribution": "dist/production-skill-kit.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "prompt-documenter",
+      "title": "Prompt Documenter",
+      "category": "Build and document",
+      "source": "skills/prompt-documenter",
+      "distribution": "dist/prompt-documenter.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "prompt-optimizer",
+      "title": "Prompt Optimizer",
+      "category": "Prompt and model intelligence",
+      "source": "skills/prompt-optimizer",
+      "distribution": "dist/prompt-optimizer.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "seo-aeo-geo",
+      "title": "SEO AEO GEO",
+      "category": "Content intelligence",
+      "source": "skills/seo-aeo-geo",
+      "distribution": "dist/seo-aeo-geo.zip",
+      "onboarding": "profile"
+    },
+    {
+      "id": "skill-repo-forge",
+      "title": "Skill Repo Forge",
+      "category": "Skill engineering",
+      "source": "skills/skill-repo-forge",
+      "distribution": "dist/skill-repo-forge.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "sop-deck-builder",
+      "title": "Sop Deck Builder",
+      "category": "Build and document",
+      "source": "skills/sop-deck-builder",
+      "distribution": "dist/sop-deck-builder.zip",
+      "onboarding": "profile"
+    },
+    {
+      "id": "strategic-brief-builder",
+      "title": "Strategic Brief Builder",
+      "category": "Build and document",
+      "source": "skills/strategic-brief-builder",
+      "distribution": "dist/strategic-brief-builder.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "trend-radar",
+      "title": "Trend Radar",
+      "category": "Content intelligence",
+      "source": "skills/trend-radar",
+      "distribution": "dist/trend-radar.zip",
+      "onboarding": "profile"
+    },
+    {
+      "id": "vibe-prompt-architect",
+      "title": "Vibe Prompt Architect",
+      "category": "Prompt and model intelligence",
+      "source": "skills/vibe-prompt-architect",
+      "distribution": "dist/vibe-prompt-architect.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "visual-prompt-scout",
+      "title": "Visual Prompt Scout",
+      "category": "Prompt and model intelligence",
+      "source": "skills/visual-prompt-scout",
+      "distribution": "dist/visual-prompt-scout.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "which-ai-model",
+      "title": "Which Ai Model",
+      "category": "Prompt and model intelligence",
+      "source": "skills/which-ai-model",
+      "distribution": "dist/which-ai-model.zip",
+      "onboarding": "intake"
+    },
+    {
+      "id": "zapier-brief",
+      "title": "Zapier Brief",
+      "category": "Implementation briefs",
+      "source": "skills/zapier-brief",
+      "distribution": "dist/zapier-brief.zip",
+      "onboarding": "intake"
+    }
   ]
 }

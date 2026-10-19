@@ -1,0 +1,14 @@
+platform: n8n
+family: automation
+packageVersion: 1.0.0-draft.3
+provenance: adapted_official_skill
+sources:
+  - url: "https://github.com/n8n-io/skills"
+    kind: official_skill
+    license: Apache-2.0
+    upstreamCommit: 180b8415e3b73f78828cfa01e908e67f89f2a139
+    upstreamPath: "skills"
+    sourceChecksum: d5803953972cee15ecd69b25d2a345bb7b8d22510729f4a5319118b6525c93cf
+    sourceAudit: adaptation_required
+  - url: "https://docs.n8n.io/"
+    kind: official_docs

@@ -1,0 +1,29 @@
+{
+  "platform": "make",
+  "profile": "workflow",
+  "expectedRequiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Scenario and field map",
+    "Connections and approval boundaries",
+    "Error routes and replay",
+    "Profile-specific agent tools"
+  ],
+  "expectedRequiredArtifacts": [
+    "Markdown scenario build brief",
+    "Module, route, filter and field-mapping specification",
+    "Connection and approval inventory without secrets",
+    "Incomplete-execution, replay and acceptance plan"
+  ],
+  "expectedVerifierChecks": [
+    "scenario-field-map",
+    "profile-specific-tool-boundaries",
+    "connection-and-human-approval",
+    "error-route-replay-deduplication"
+  ],
+  "expectedPackageVersion": "1.0.0-draft.2"
+}

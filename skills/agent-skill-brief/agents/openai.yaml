@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Skill Brief"
+  short_description: "Use Agent Skill Brief for its focused workflow."
+  default_prompt: "Use $agent-skill-brief to help with this task."

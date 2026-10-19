@@ -50,6 +50,16 @@ Every skill must:
 9. Keep downloaded material and generated user output outside the installed skill
    directory and public repository.
 
+## Repository shape
+
+- One canonical skill per `skills/<skill-id>/`; the folder and frontmatter name match.
+- Only `SKILL.md`, `LICENSE.txt`, and the standard `agents/`, `assets/`, `references/`
+  and `scripts/` resource folders may appear at a skill root.
+- One deterministic archive per `dist/<skill-id>.zip`, containing exactly one
+  `<skill-id>/` root and the complete canonical payload.
+- Repository documentation, CI, tests and release tooling stay at repository level,
+  never inside a skill package.
+
 ## Attribution boundary
 
 Allowed publisher metadata includes House of Ichigo copyright, creator statements,

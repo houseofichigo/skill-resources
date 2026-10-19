@@ -1,0 +1,19 @@
+{
+  "packageVersion": "1.0.0-draft.3",
+  "checks": [
+    "supported-profile",
+    "required-sections",
+    "source-citations",
+    "no-credential-material",
+    "no-external-mutation",
+    "approval-lineage",
+    "single-grounded-trigger",
+    "ordered-action-and-field-map",
+    "filter-path-semantics",
+    "required-field-missing-data-guards",
+    "connected-account-placeholders-only",
+    "fallible-action-error-plan",
+    "human-approval-boundary",
+    "step-test-and-run-history-handover"
+  ]
+}

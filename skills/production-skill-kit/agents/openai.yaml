@@ -1,0 +1,4 @@
+interface:
+  display_name: "Production Skill Kit"
+  short_description: "Use Production Skill Kit for its focused workflow."
+  default_prompt: "Use $production-skill-kit to help with this task."

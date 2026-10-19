@@ -1,0 +1,4 @@
+interface:
+  display_name: "Chatgpt Skill Brief"
+  short_description: "Use Chatgpt Skill Brief for its focused workflow."
+  default_prompt: "Use $chatgpt-skill-brief to help with this task."

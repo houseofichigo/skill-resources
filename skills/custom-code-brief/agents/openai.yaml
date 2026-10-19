@@ -1,0 +1,4 @@
+interface:
+  display_name: "Custom Code Brief"
+  short_description: "Use Custom Code Brief for its focused workflow."
+  default_prompt: "Use $custom-code-brief to help with this task."

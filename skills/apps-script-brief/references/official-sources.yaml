@@ -1,0 +1,11 @@
+platform: apps_script
+family: google
+packageVersion: 1.0.0-draft.2
+provenance: hoi_authored_official_docs
+sources:
+  - url: "https://developers.google.com/apps-script/guides/services/authorization"
+    kind: official_docs
+  - url: "https://developers.google.com/apps-script/guides/triggers/installable"
+    kind: official_docs
+  - url: "https://developers.google.com/apps-script/guides/services/quotas"
+    kind: official_docs

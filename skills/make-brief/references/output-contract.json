@@ -1,0 +1,35 @@
+{
+  "platform": "make",
+  "profiles": ["workflow", "agent", "hybrid"],
+  "requiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Scenario and field map",
+    "Connections and approval boundaries",
+    "Error routes and replay",
+    "Profile-specific agent tools"
+  ],
+  "requiredArtifacts": [
+    "Markdown scenario build brief",
+    "Module, route, filter and field-mapping specification",
+    "Connection and approval inventory without secrets",
+    "Incomplete-execution, replay and acceptance plan"
+  ],
+  "platformRules": [
+    "Define the trigger, modules, routes, filters and field mappings from the approved process; document missing configuration rather than inventing module identifiers.",
+    "For workflow use deterministic scenario routes; for agent identify model-selected tools; for hybrid identify the exact boundary between those two modes.",
+    "List connections and scopes as requirements, never as configured credentials. Recheck authority before consequential writes and preserve explicit human confirmation.",
+    "Define error routes and replay deduplication for fallible modules. Incomplete executions must be explicitly configured; do not assume they are enabled or that replay reverses earlier external writes.",
+    "Produce a Markdown build brief, not an importable blueprint. Test representative bundles, empty data, failures and retries before an authorized owner activates the scenario."
+  ],
+  "forbidden": [
+    "credentials",
+    "automatic external deployment",
+    "unapproved process changes",
+    "uncited provider assertions"
+  ]
+}
