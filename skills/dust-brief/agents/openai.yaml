@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dust Brief"
+  short_description: "Use Dust Brief for its focused workflow."
+  default_prompt: "Use $dust-brief to help with this task."

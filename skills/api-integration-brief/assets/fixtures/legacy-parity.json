@@ -1,0 +1,14 @@
+{
+  "adapter": "generic-brief.ts through existing export router",
+  "preserved": [
+    "Existing capability profiles and prose brief delivery",
+    "Approved process and Use Case lineage",
+    "Provider grounding and human approval boundaries"
+  ],
+  "openGaps": [
+    "Declared checks are not semantic runtime enforcement",
+    "Selected technology/vendor documentation must be reviewed before package activation",
+    "Old/new output parity and real-provider acceptance remain open",
+    "Publication, managed verification and target enablement remain open"
+  ]
+}

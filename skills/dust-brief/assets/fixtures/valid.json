@@ -1,0 +1,30 @@
+{
+  "platform": "dust",
+  "profile": "workflow",
+  "expectedRequiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Agent instructions and process mapping",
+    "Knowledge spaces and audience",
+    "Tools and approval boundaries",
+    "Preview and handover"
+  ],
+  "expectedRequiredArtifacts": [
+    "Dust agent or workflow-profile Markdown brief",
+    "Instruction and process-to-tool mapping",
+    "Knowledge-space, source and audience inventory",
+    "Tool authorization, preview and handover plan"
+  ],
+  "expectedVerifierChecks": [
+    "instruction-process-tool-map",
+    "space-source-audience-boundary",
+    "tool-identity-confirmation",
+    "untrusted-knowledge-boundary",
+    "preview-and-sharing-plan"
+  ],
+  "expectedPackageVersion": "1.0.0-draft.2"
+}

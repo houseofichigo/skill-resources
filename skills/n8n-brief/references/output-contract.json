@@ -1,0 +1,36 @@
+{
+  "platform": "n8n",
+  "profiles": ["workflow", "agent", "hybrid"],
+  "requiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Workflow definition",
+    "Credential requirements",
+    "Failure path",
+    "Node and configuration assumptions"
+  ],
+  "requiredArtifacts": [
+    "Importable workflow JSON",
+    "Companion implementation brief",
+    "Credential requirements without secret values",
+    "Failure-path and test plan"
+  ],
+  "platformRules": [
+    "Validate the complete workflow before review, then retrieve and verify the saved workflow after any future create or update operation.",
+    "Use n8n credential references and placeholders; never place secret values in workflow parameters, expressions, headers or documentation.",
+    "Add an explicit error path for every fallible production node and return appropriate caller errors for webhook workflows.",
+    "Use stateless subworkflows for reusable units and pass all required context as inputs.",
+    "Do not invent node parameters, node versions, credentials, connectors or expressions that are absent from reviewed evidence.",
+    "Require human review before activation or any external deployment; this package never publishes a workflow."
+  ],
+  "forbidden": [
+    "credentials",
+    "automatic external deployment",
+    "unapproved process changes",
+    "uncited provider assertions"
+  ]
+}

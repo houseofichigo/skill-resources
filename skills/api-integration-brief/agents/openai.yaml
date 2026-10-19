@@ -1,0 +1,4 @@
+interface:
+  display_name: "Api Integration Brief"
+  short_description: "Use Api Integration Brief for its focused workflow."
+  default_prompt: "Use $api-integration-brief to help with this task."

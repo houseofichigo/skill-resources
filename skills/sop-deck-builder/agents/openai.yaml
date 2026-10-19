@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sop Deck Builder"
+  short_description: "Use Sop Deck Builder for its focused workflow."
+  default_prompt: "Use $sop-deck-builder to help with this task."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Cli Brief"
+  short_description: "Use Codex Cli Brief for its focused workflow."
+  default_prompt: "Use $codex-cli-brief to help with this task."

@@ -1,0 +1,34 @@
+{
+  "platform": "codex_cli",
+  "profiles": ["skill"],
+  "requiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "AGENTS.md scope and precedence",
+    "Reusable skill package",
+    "Sandbox and tool confirmation"
+  ],
+  "requiredArtifacts": [
+    "AGENTS.md draft",
+    "Task-scoped SKILL.md and resources",
+    "Instruction-scope integration guide",
+    "Sandbox and invocation test plan"
+  ],
+  "platformRules": [
+    "Keep repository AGENTS.md policy distinct from reusable SKILL.md task instructions and document the intended scope without overwriting existing instructions.",
+    "Validate installation paths and invocation against current Codex host documentation; do not assume Claude or ChatGPT paths are interchangeable.",
+    "Describe required tools and resources without turning company Tool Stack products into executable harness tools.",
+    "Preserve sandbox, network and confirmation restrictions. Markdown exports are not authorization and all server operations must recheck current authority.",
+    "Return files for review only; do not install skills, run shell commands, publish or deploy."
+  ],
+  "forbidden": [
+    "credentials",
+    "automatic external deployment",
+    "unapproved process changes",
+    "uncited provider assertions"
+  ]
+}

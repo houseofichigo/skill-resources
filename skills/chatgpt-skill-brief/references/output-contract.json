@@ -1,0 +1,33 @@
+{
+  "platform": "chatgpt_skill",
+  "profiles": ["skill"],
+  "requiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Skill instructions and supporting files",
+    "Host capability and access review",
+    "Safety and invocation tests"
+  ],
+  "requiredArtifacts": [
+    "Skill instruction package",
+    "Resource and code inventory",
+    "Host capability and sharing checklist",
+    "Positive and refusal test cases"
+  ],
+  "platformRules": [
+    "Produce a reusable ChatGPT skill package, not Custom GPT configuration, a Workspace Agent or a Codex repository policy.",
+    "Separate instructions, supporting files and optional code; declare every dependency and side effect, with no credentials or automatic installation.",
+    "Check the target workspace supports the proposed package and that the intended audience may access its sources; do not invent account entitlements.",
+    "Require source and code review before an authorized user uploads or shares the package. No sharing, tool installation or external actions occur during generation."
+  ],
+  "forbidden": [
+    "credentials",
+    "automatic external deployment",
+    "unapproved process changes",
+    "uncited provider assertions"
+  ]
+}

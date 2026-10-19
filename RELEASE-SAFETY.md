@@ -1,6 +1,6 @@
 # Public release safety policy
 
-The repository publishes exactly the 13 IDs declared in `catalog.json`. House of
+The repository publishes exactly the 35 IDs declared in `catalog.json`. House of
 Ichigo is the publisher and MIT rights holder; that attribution is intentionally
 public. Skill behavior, examples and defaults must remain independent of the
 publisher's company environment.
@@ -19,10 +19,10 @@ Never allowed:
 
 - organization or client profiles, source imports, private archives or originals;
 - personal contact details, credentials, account identifiers or private URLs;
-- internal runtime paths, company procedures or unpublished implementation briefs;
+- internal runtime paths, company procedures or company-specific implementation briefs;
 - downloaded code or prompt-library mirrors gathered during research;
 - generated user output or onboarding answers.
-- expanded package copies under `dist/`; distributions are ZIP files only.
+- expanded copies under `dist/`; distributions are ZIP files only.
 
 HOI OS product skills belong in the separately maintained HOI OS repository. They
 must not be copied into this general-purpose catalogue.
@@ -52,10 +52,11 @@ python3 scripts/validate_catalog.py
 python3 -m unittest discover -s tests -v
 ```
 
-The gate verifies the exact catalogue allowlist, licence and UI metadata, local
-links, forbidden paths, common secret and identity patterns, archive traversal,
-deterministic timestamps, and complete source/ZIP parity. Passing is necessary but
-not sufficient: a human reviewer must inspect every source diff before publication.
+The gate verifies the exact catalogue allowlist, one-folder-per-skill structure,
+licence and UI metadata, local links, forbidden paths, common secret and identity
+patterns, archive traversal, deterministic timestamps, and complete source/ZIP
+parity. Passing is necessary but not sufficient: a human reviewer must inspect every
+source diff before publication.
 
 If confidential data or a credential ever enters Git history, stop publication,
 preserve a private recovery bundle, rotate credentials, and clean the history. A

@@ -1,0 +1,34 @@
+{
+  "platform": "zapier",
+  "profile": "workflow",
+  "expectedRequiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Zap trigger and action map",
+    "Filters, paths and field mappings",
+    "Connected accounts",
+    "Error handling and run review"
+  ],
+  "expectedRequiredArtifacts": [
+    "Markdown Zap build brief",
+    "Trigger, action and field-mapping table",
+    "Connected-account and permission requirements without secret values",
+    "Filter, path and error-handling plan",
+    "Step-test and handover plan"
+  ],
+  "expectedVerifierChecks": [
+    "single-grounded-trigger",
+    "ordered-action-and-field-map",
+    "filter-path-semantics",
+    "required-field-missing-data-guards",
+    "connected-account-placeholders-only",
+    "fallible-action-error-plan",
+    "human-approval-boundary",
+    "step-test-and-run-history-handover"
+  ],
+  "expectedPackageVersion": "1.0.0-draft.3"
+}

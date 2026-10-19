@@ -1,0 +1,34 @@
+{
+  "platform": "codex_sdk",
+  "profiles": ["agent"],
+  "requiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Thread lifecycle and events",
+    "Working directory and repository scope",
+    "Sandbox and approval policy"
+  ],
+  "requiredArtifacts": [
+    "Codex SDK repository brief",
+    "Thread and event contract",
+    "Workspace, sandbox and approval matrix",
+    "Resume and failure test plan"
+  ],
+  "platformRules": [
+    "Specify start, continuation and resume of Codex threads separately from OpenAI Agents SDK orchestration.",
+    "Describe final results and streamed-event handling, cancellation and bounded recovery using the selected SDK version; unsupported options remain explicit gaps.",
+    "Scope working directories, repository access and resumed thread state to the authorized tenant and actor. Never disable repository or sandbox checks to make generation succeed.",
+    "Require least-privilege sandbox settings and explicit approval of consequential operations; generated instructions cannot override host policy.",
+    "Generate a reviewable repository specification only, without executing Codex or changing files outside the artifact."
+  ],
+  "forbidden": [
+    "credentials",
+    "automatic external deployment",
+    "unapproved process changes",
+    "uncited provider assertions"
+  ]
+}

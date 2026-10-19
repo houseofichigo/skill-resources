@@ -2,9 +2,8 @@
 
 ## Unreleased
 
-- Fixed the public catalogue at 13 organization-neutral skill IDs.
-- Added a documented public/private boundary and profile-storage rules.
-- Hardened external-content, permission and publication boundaries.
-- Added deterministic distribution builds with complete source parity.
-- Added identity, secret, internal-path, link and archive-safety validation.
-- Added adversarial release tests and Python 3.10/3.13 CI coverage.
+- Expanded the public catalogue from 13 to 35 organization-neutral skill IDs.
+- Normalized the repository to one canonical folder and one deterministic ZIP per skill.
+- Added seven newly anonymised builder/documentation skills and fifteen neutral implementation briefs.
+- Removed package wrappers, nested distributions, duplicate repository documents and suite-only layout.
+- Extended onboarding, external-content, permission, identity, secret, link and archive-safety gates to the complete allowlist.

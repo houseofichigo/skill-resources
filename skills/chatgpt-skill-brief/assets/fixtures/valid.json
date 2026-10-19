@@ -1,0 +1,28 @@
+{
+  "platform": "chatgpt_skill",
+  "profile": "skill",
+  "expectedRequiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Skill instructions and supporting files",
+    "Host capability and access review",
+    "Safety and invocation tests"
+  ],
+  "expectedRequiredArtifacts": [
+    "Skill instruction package",
+    "Resource and code inventory",
+    "Host capability and sharing checklist",
+    "Positive and refusal test cases"
+  ],
+  "expectedVerifierChecks": [
+    "chatgpt-skill-product-boundary",
+    "resource-code-inventory",
+    "workspace-capability-review",
+    "sharing-and-invocation-tests"
+  ],
+  "expectedPackageVersion": "1.0.0-draft.2"
+}

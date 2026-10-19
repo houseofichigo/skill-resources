@@ -1,0 +1,4 @@
+interface:
+  display_name: "N8n Brief"
+  short_description: "Use N8n Brief for its focused workflow."
+  default_prompt: "Use $n8n-brief to help with this task."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Make Brief"
+  short_description: "Use Make Brief for its focused workflow."
+  default_prompt: "Use $make-brief to help with this task."

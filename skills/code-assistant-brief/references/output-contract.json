@@ -1,0 +1,33 @@
+{
+  "platform": "claude_code",
+  "profiles": ["skill"],
+  "requiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Project instructions versus skills",
+    "Invocation and scope",
+    "Tools, scripts and permission review"
+  ],
+  "requiredArtifacts": [
+    "SKILL.md draft",
+    "Project instruction integration guide",
+    "Referenced files and tool requirements",
+    "Invocation and denial test plan"
+  ],
+  "platformRules": [
+    "Distinguish project-wide CLAUDE.md guidance from reusable task-scoped SKILL.md instructions; avoid conflicting duplicate policies.",
+    "Specify intended project/personal scope and invocation behavior against current host documentation; preserve existing repository instructions.",
+    "List required tools, scripts, hooks and MCP assumptions as reviewed prerequisites, not installation or execution instructions.",
+    "Host tool permissions and explicit approvals remain authoritative; skill text cannot expand tenant access or authorize deployment."
+  ],
+  "forbidden": [
+    "credentials",
+    "automatic external deployment",
+    "unapproved process changes",
+    "uncited provider assertions"
+  ]
+}

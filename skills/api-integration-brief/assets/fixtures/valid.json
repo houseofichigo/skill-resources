@@ -1,0 +1,31 @@
+{
+  "platform": "api_integration",
+  "profile": "workflow",
+  "expectedRequiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Technology and endpoint decisions",
+    "API schemas and mappings",
+    "Retries, rate limits and idempotency",
+    "Observability and deployment assumptions"
+  ],
+  "expectedRequiredArtifacts": [
+    "API integration implementation brief",
+    "Endpoint, request, response and error contract",
+    "Authentication and field-mapping matrix",
+    "Retry, replay and failure test plan",
+    "Deployment and operational handover assumptions"
+  ],
+  "expectedVerifierChecks": [
+    "explicit-api-runtime-versions",
+    "documented-endpoint-schema-mapping",
+    "authentication-tenant-confirmation",
+    "retry-idempotency-partial-failure",
+    "redacted-observability-handover"
+  ],
+  "expectedPackageVersion": "1.0.0-draft.2"
+}

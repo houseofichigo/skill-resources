@@ -1,0 +1,31 @@
+{
+  "platform": "custom_code",
+  "profile": "workflow",
+  "expectedRequiredSections": [
+    "Outcome",
+    "Implementation steps",
+    "Authentication and permissions",
+    "Human review",
+    "Testing",
+    "Handover",
+    "Architecture and technology decisions",
+    "Interfaces and data ownership",
+    "Workflow and agent boundaries",
+    "Testing, observability and deployment assumptions"
+  ],
+  "expectedRequiredArtifacts": [
+    "Custom implementation brief",
+    "Technology and dependency decision record",
+    "Module, interface and data contract",
+    "Security and human-approval matrix",
+    "Test, observability and rollback plan"
+  ],
+  "expectedVerifierChecks": [
+    "explicit-technology-assumptions",
+    "module-interface-lineage",
+    "capability-execution-boundaries",
+    "security-human-approval-matrix",
+    "test-observability-rollback-plan"
+  ],
+  "expectedPackageVersion": "1.0.0-draft.2"
+}

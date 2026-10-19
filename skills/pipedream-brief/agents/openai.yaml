@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pipedream Brief"
+  short_description: "Use Pipedream Brief for its focused workflow."
+  default_prompt: "Use $pipedream-brief to help with this task."

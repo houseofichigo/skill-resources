@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prompt Documenter"
+  short_description: "Use Prompt Documenter for its focused workflow."
+  default_prompt: "Use $prompt-documenter to help with this task."

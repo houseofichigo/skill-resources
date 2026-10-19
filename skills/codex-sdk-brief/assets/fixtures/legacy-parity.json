@@ -1,0 +1,13 @@
+{
+  "adapter": "existing platform router and generic fallback",
+  "preserved": [
+    "Approved process and Use Case lineage",
+    "Existing target route and output format",
+    "Provider grounding and explicit approval boundaries"
+  ],
+  "openGaps": [
+    "Verifier checks are declared contracts, not yet semantic runtime enforcement",
+    "Old/new output parity and real-provider acceptance remain open",
+    "Publication, managed verification and target enablement remain open"
+  ]
+}
